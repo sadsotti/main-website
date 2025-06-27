@@ -140,18 +140,13 @@
     </footer>
 
     <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const formMessage = document.getElementById('form-message');
-            formMessage.textContent = 'Il tuo messaggio è stato inviato!';
-            formMessage.classList.add('text-success');
-            document.getElementById('contactForm').reset();
-            setTimeout(() => {
-                formMessage.textContent = '';
-                formMessage.classList.remove('text-success');
-            }, 5000);
-        });
+    <script src="assets/js/main.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function() {
+        
+          emailjs.init('MTjQjQA3eotCCZb54'); 
+       })();
     </script>
 </body>
 </html>
