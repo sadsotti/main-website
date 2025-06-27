@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 message: contactForm.message.value
             };
 
-            emailjs.send('service_caw3upe', 'template_bn2igxh', formParams)
+            emailjs.send('service_qtd5mzj', 'template_3v60xq9', formParams)
                 .then(function() {
                     alert('Messaggio inviato con successo!');
                     contactForm.reset(); 
