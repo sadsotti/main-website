@@ -1,0 +1,41 @@
+# --- Node.js / NPM ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.cjs
+
+# --- Configurazione ambiente ---
+.env
+.env.*.local
+.env.local
+
+# 'dist/' e 'build/'
+dist/
+build/
+.publish/
+
+# --- System files e IDE ---
+.DS_Store 
+Thumbs.db 
+desktop.ini
+.vscode/ 
+.idea/ 
+*.iml
+
+# --- Temps e backup ---
+*~
+*.bak
+*.swp
+*.swo
+
+# --- Log files ---
+*.log
+logs/
+
+# --- Credenziali e SD ---
+config/credentials.json
+config.ini
+*.key
+*.pem
