@@ -1,0 +1,179 @@
+body {
+  font-family: "VT323", monospace;
+  color: #bbbbbb;
+  background-color: #1a1a1a;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0px, rgba(0, 0, 0, 0.1) 1px, transparent 1px, transparent 2px);
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.1;
+}
+
+.btn-primary {
+  background-color: #4a4a4a;
+  border-color: #4a4a4a;
+  color: #eeeeee;
+}
+.btn-primary:hover {
+  background-color: #5d5d5d;
+  border-color: #5d5d5d;
+  color: #eeeeee;
+}
+
+.btn-outline-primary {
+  border-color: #4a4a4a;
+  color: #4a4a4a;
+}
+.btn-outline-primary:hover {
+  background-color: #4a4a4a;
+  color: #eeeeee;
+}
+
+header {
+  background-color: #2d2d2d;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+header .navbar-brand {
+  color: #eeeeee !important;
+  font-weight: bold;
+}
+header .nav-link {
+  color: #bbbbbb !important;
+}
+header .nav-link:hover {
+  color: #eeeeee !important;
+  text-decoration: underline;
+}
+header .navbar-toggler {
+  border-color: #4a4a4a;
+}
+header .navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28187, 187, 187, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.card, form.p-4 {
+  background-color: #2d2d2d;
+  border: 1px solid #4a4a4a;
+  border-radius: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  color: #bbbbbb;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #eeeeee;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+p, li, label {
+  color: #bbbbbb;
+}
+
+a {
+  color: #eeeeee;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #bbbbbb;
+}
+
+.hero-section {
+  padding: 60px 0;
+  text-align: center;
+}
+.hero-section .profile-image-container {
+  border: 4px solid #888888;
+  border-radius: 0;
+  overflow: hidden;
+  display: inline-block;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+.hero-section .bio-text .lead {
+  color: #888888;
+}
+@media (min-width: 768px) {
+  .hero-section {
+    text-align: left;
+  }
+  .hero-section .profile-image-container {
+    margin-right: 40px;
+  }
+}
+
+.skills-section .card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.skills-section .card i {
+  color: #eeeeee;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+.skills-section .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+  background-color: #4a4a4a;
+}
+
+.cv-section h3 {
+  border-bottom: 2px solid #888888;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  color: #eeeeee;
+}
+.cv-section .text-muted {
+  color: #888888 !important;
+}
+.cv-section hr {
+  border-top: 1px solid #4a4a4a;
+}
+.cv-section .list-unstyled li {
+  margin-bottom: 5px;
+}
+.cv-section .list-unstyled li i {
+  color: #eeeeee;
+}
+
+.contact-section .lead {
+  color: #888888;
+}
+.contact-section form label {
+  color: #bbbbbb;
+}
+.contact-section form .form-control {
+  background-color: #1a1a1a;
+  border: 1px solid #4a4a4a;
+  color: #bbbbbb;
+}
+.contact-section form .form-control:focus {
+  background-color: #1a1a1a;
+  border-color: #eeeeee;
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+  color: #bbbbbb;
+}
+
+footer {
+  background-color: #2d2d2d;
+  color: #bbbbbb;
+  margin-top: 50px;
+  border-top: 1px solid #4a4a4a;
+}
+footer a {
+  color: #bbbbbb;
+}
+footer a:hover {
+  color: #eeeeee;
+  text-decoration: underline;
+}
