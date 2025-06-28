@@ -23,11 +23,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/d293053f23a8a3223c3a0d36/script.js"></script> <!-- End cookieyes banner -->
+    <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/d293053f23a8a3223c3a0d36/script.js"></script> 
 </head>
 
-<body>
-    <header>
+<body class="d-flex flex-column min-vh-100"> <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="index.html">C:\Users\Sotti</a>
@@ -47,8 +46,7 @@
         </nav>
     </header>
 
-    <main class="container my-5">
-        <section class="portfolio-section">
+    <main class="flex-grow-1 container my-5"> <section class="portfolio-section">
             <h1 class="text-center mb-4">Portfolio</h1>
             <p class="text-center lead mb-5">Ho selezionato qualche mio progetto, alcuni di questi sono stati realizzati in stretta collaborazione con Zerouno Media di Seveso (MB).</p>
             
@@ -72,12 +70,12 @@
                             <h5 class="card-title">Progetto: Studio Ca'Bella</h5>
                             <p class="card-text">Sito web in WordPress immobiliare completo con un gestionale su misura che permette agli agenti di aggiornare e gestire gli immobili in modo facile e veloce, garantendo informazioni sempre precise e disponibili.</p>
                         </div>
-                         <div class="card-footer text-center">
+                       <div class="card-footer text-center">
                             <a href="https://studiocabella.it/" target="_blank" class="btn btn-outline-primary btn-sm">Visita il Sito</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="12 col-md-6 col-lg-4 mb-4">
                     <div class="card project-card h-100">
                         <img src="assets/img/project3.jpg" class="card-img-top project-img" alt="Render e Modellazione">
                         <div class="card-body">
@@ -85,13 +83,102 @@
                             <p class="card-text">Apri il carosello per visualizzare alcuni altri render da me realizzati.</p>
                         </div>
                         <div class="card-footer text-center">
-                            <a href="https://www.lorenzosottile.it/" target="_blank" class="btn btn-outline-primary btn-sm">Apri il carosello immagini</a>
+                            <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#imageCarouselModal">
+                                Apri il carosello immagini
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <div class="modal fade" id="imageCarouselModal" tabindex="-1" aria-labelledby="imageCarouselModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageCarouselModalLabel">Render e Modellazione</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9" aria-bs-slide-to="9" aria-label="Slide 10"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="10" aria-label="Slide 11"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="11" aria-label="Slide 12"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="12" aria-label="Slide 13"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="13" aria-label="Slide 14"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="14" aria-label="Slide 15"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/img/render1.jpg" class="d-block w-100" alt="Render 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/render2.jpg" class="d-block w-100" alt="Render 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/render3.jpg" class="d-block w-100" alt="Render 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/render4.jpg" class="d-block w-100" alt="Render 4">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/render5.jpg" class="d-block w-100" alt="Render 5">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/render6.jpg" class="d-block w-100" alt="Render 6">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/render7.jpg" class="d-block w-100" alt="Render 7">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/render8.jpg" class="d-block w-100" alt="Render 8">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/render9.jpg" class="d-block w-100" alt="Render 9">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/render10.jpg" class="d-block w-100" alt="Render 10">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/render11.jpg" class="d-block w-100" alt="Render 11">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/render12.jpg" class="d-block w-100" alt="Render 12">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/render13.jpg" class="d-block w-100" alt="Render 13">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/render14.jpg" class="d-block w-100" alt="Render 14">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/img/render15.jpg" class="d-block w-100" alt="Render 15">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div class="container text-center py-3">
