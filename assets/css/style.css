@@ -102,6 +102,51 @@ a:hover {
   display: inline-block;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
+
+.profile-image-hover-wrapper-about {
+    position: relative;
+    overflow: hidden; 
+    border-radius: 50%; 
+    background-image: url('../img/profile-pic.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.3s ease-in-out; 
+}
+
+.profile-image-hover-wrapper-about .profile-main-img-about {
+    display: block; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: opacity 0.3s ease-in-out; 
+}
+
+.profile-image-hover-wrapper-about:hover .profile-main-img-about {
+    opacity: 0; 
+}
+
+.profile-image-hover-wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px; 
+    margin: auto;
+    background-image: url('../img/white_logo_no_bg.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 0.3s ease-in-out; 
+}
+
+.profile-image-hover-wrapper .profile-main-img {
+    display: block; 
+    transition: opacity 0.3s ease-in-out; 
+}
+
+.profile-image-hover-wrapper:hover .profile-main-img {
+    opacity: 0; 
+}
+
 .hero-section .bio-text .lead {
   color: #888888;
 }
