@@ -1,92 +1,95 @@
-# My Main Website - Lorenzo Sottile
+# My Main Website – Lorenzo Sottile
 
-Questo repository contiene il codice sorgente del mio sito web personale, sono un Developer & IT Consultant specializzato in sviluppo web, software, app, digital advertising, video making e modellazione 3D per immobiliari. Il sito è progettato per mostrare i progetti, servizi, curriculum vitae e fornire un modo per essere contattato.
+This repository contains the source code of my main personal website. I am a Developer & IT Consultant specialized in web development, digital advertising, video making, and 3D modeling for real estate. The website is designed to showcase my projects, services, résumé, and provide a way to get in touch. 
 
----
+**The website is entirely in Italian, as it serves as a business card for clients based in Italy, where I live.**
 
-## 🚀 Panoramica del Progetto
-
-Questo progetto rappresenta un sito web personale statico, interamente costruito utilizzando HTML, CSS (con Sass) e il framework Bootstrap 5. L'obiettivo principale è mostrare le mie competenze nello sviluppo web front-end e fornire un punto di contatto professionale per collaborazioni e consulenze.
-
-Il sito include le seguenti sezioni principali:
-
-* **Homepage:** Una pagina di benvenuto e introduzione ai servizi e al portfolio.
-* **Chi Sono:** Una sezione dedicata alla mia storia e alla passione per l'informatica, la musica e l'elettronica, che guida il mio lavoro come developer e consulente IT.
-* **Portfolio Progetti:** Una galleria dei lavori realizzati, come siti web per "Casa Vacanze Ribocchi" e "Studio Ca'Bella", e progetti di modellazione e render 3D per immobiliari.
-* **Curriculum Vitae:** Una sezione dettagliata del mio percorso professionale, inclusi esperienza come IT Consultant e ICT Developer, competenze tecniche, formazione e certificazioni (es. Corso per Programmatori Java Junior, Google Analytics Advanced).
-* **Contattami:** Un modulo di contatto per facilitare le comunicazioni e richieste.
-* **Privacy Policy & Cookies:** Informazioni sulla gestione della privacy, sull'uso dei cookie e sui collegamenti a siti esterni.
 
 ---
 
-## ✨ Funzionalità Principali
+## 🚀 Project Overview
 
-* **Design Responsive:** Layout adattabile e ottimizzato per diverse dimensioni di schermo (desktop, tablet, mobile) grazie all'utilizzo di Bootstrap 5.
-* **HTML Semantico:** Struttura del codice HTML chiara, pulita e semanticamente corretta.
-* **Stilizzazione Avanzata con Sass:** Gestione efficiente e modulare degli stili CSS attraverso l'uso del preprocessore Sass.
-* **Modulo di Contatto Semplice:** Il modulo di contatto è gestito lato client e mostra un messaggio di conferma dopo l'invio. È predisposto per un'eventuale futura integrazione con servizi di invio email esterni.
-* **Navigazione Intuitiva:** Menu di navigazione chiaro e facile da usare per accedere a tutte le sezioni del sito.
-* **Icone Professionali:** Utilizzo di icone per migliorare l'interfaccia utente.
+This project represents a static personal website, entirely built using HTML, CSS (with Sass), and the Bootstrap 5 framework. The main goal is to showcase my front-end web development skills and provide a professional contact point for collaborations and consulting.
+
+The site includes the following main sections:
+
+* **Homepage:** A welcome page introducing services and portfolio.
+* **About Me:** A section dedicated to my background and passion for IT, music, and electronics, which drive my work as a developer and IT consultant.
+* **Project Portfolio:** A gallery of completed projects, such as websites for "Casa Vacanze Ribocchi" and "Studio Ca'Bella", and 3D modeling/rendering projects for real estate.
+* **Curriculum Vitae:** A detailed section on my professional background, including experience as IT Consultant and ICT Developer, technical skills, education, and certifications (e.g., Java Junior Developer course, Google Analytics Advanced).
+* **Contact Me:** A contact form to facilitate communication and requests.
+* **Privacy Policy & Cookies:** Information about privacy management, cookie usage, and links to external sites.
 
 ---
 
-## 🛠️ Tecnologie Utilizzate
+## ✨ Key Features
+
+* **Responsive Design:** Adaptive and optimized layout for various screen sizes (desktop, tablet, mobile) thanks to Bootstrap 5.
+* **Semantic HTML:** Clear, clean, and semantically correct HTML structure.
+* **Advanced Styling with Sass:** Efficient and modular CSS management using the Sass preprocessor.
+* **Simple Contact Form:** The contact form is handled client-side and displays a confirmation message after submission. It is ready for future integration with external email services.
+* **Intuitive Navigation:** Clear and easy-to-use navigation menu to access all site sections.
+* **Professional Icons:** Use of icons to enhance the user interface.
+
+---
+
+## 🛠️ Technologies Used
 
 * **HTML5**
 * **CSS3**
 * **Sass (SCSS)**
-* **Bootstrap 5** (versione 5.3.6)
-* **JavaScript** (per funzionalità di base e interazioni UI, inclusa la gestione del modulo di contatto)
+* **Bootstrap 5** (version 5.3.6)
+* **JavaScript** (for basic functionality and UI interactions, including contact form handling)
 
 ---
 
-## 📦 Installazione e Setup
+## 📦 Installation & Setup
 
-Per configurare e avviare il progetto in locale, segui questi semplici passaggi:
+To configure and run the project locally, follow these simple steps:
 
-1.  **Clona il repository:**
+1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/sadsotti/main-website.git](https://github.com/sadsotti/main-website.git)
+    git clone https://github.com/sadsotti/main-website.git
     ```
-2.  **Naviga nella directory del progetto:**
+2.  **Navigate into the project directory:**
     ```bash
     cd main-website
     ```
-3.  **Installa le dipendenze npm:**
-    Questo comando installerà Sass e Bootstrap, necessari per il progetto.
+3.  **Install npm dependencies:**
+    This command installs Sass and Bootstrap, required for the project.
     ```bash
     npm install
     ```
-4.  **Avvia la compilazione di Sass in modalità "watch":**
-    Questo comando monitorerà le modifiche ai tuoi file `.scss` e compilerà automaticamente il CSS, aggiornando `assets/css/style.css`.
+4.  **Start Sass in "watch" mode:**
+    This command will monitor changes to your `.scss` files and automatically compile CSS, updating `assets/css/style.css`.
     ```bash
     npm run sass:watch
     ```
-5.  **Visualizza il sito:**
-    Apri il file `index.html` nel tuo browser web preferito per vedere il sito in azione.
+5.  **View the site:**
+    Open the `index.html` file in your favorite web browser to view the site in action.
 
 ---
 
-## 📧 Configurazione del Modulo di Contatto (Opzionale)
+## 📧 Contact Form Setup (Optional)
 
-Il modulo di contatto in `contattami.html` è attualmente configurato per mostrare un messaggio di "successo" sul lato client quando viene inviato. Se desideri che il modulo invii effettivamente delle email, dovrai integrare un servizio di terze parti (ad esempio, EmailJS, Formspree, Netlify Forms, ecc.).
+The contact form in `contattami.html` is currently configured to display a “success” message on the client side when submitted. If you'd like the form to actually send emails, you’ll need to integrate a third-party service (e.g., EmailJS, Formspree, Netlify Forms, etc.).
 
-* **Esempio con EmailJS:**
-    Se in futuro decidi di usare EmailJS, dovrai:
-    1.  Creare un account su [EmailJS](https://www.emailjs.com/).
-    2.  Ottenere la tua **Public Key** dal tuo account EmailJS.
-    3.  Configurare un **Service ID** e un **Template ID** nel tuo account.
-    4.  Aggiornare il tuo codice JavaScript (probabilmente nello script presente in `contattami.html` o un file `main.js` esterno) con queste credenziali, seguendo la documentazione di EmailJS.
-
----
-
-## 🔗 Link Utili
-
-* **Visualizza il Progetto Online:** [https://www.lorenzosottile.it/](https://www.lorenzosottile.it/)
-* **Il Mio LinkedIn:** [https://www.linkedin.com/in/lorenzo-sottile/](https://www.linkedin.com/in/lorenzo-sottile/)
+* **Example with EmailJS:**
+    If you decide to use EmailJS in the future, you'll need to:
+    1.  Create an account on [EmailJS](https://www.emailjs.com/).
+    2.  Obtain your **Public Key** from your EmailJS account.
+    3.  Configure a **Service ID** and **Template ID** in your account.
+    4.  Update your JavaScript code (probably in the script inside `contattami.html` or an external `main.js` file) with these credentials, following EmailJS documentation.
 
 ---
 
-## 📄 Licenza
+## 🔗 Useful Links
 
-Questo progetto è rilasciato sotto la [Licenza MIT](https://opensource.org/licenses/MIT).
+* **View the Live Project:** [https://www.lorenzosottile.it/](https://www.lorenzosottile.it/)
+* **My LinkedIn:** [https://www.linkedin.com/in/lorenzo-sottile/](https://www.linkedin.com/in/lorenzo-sottile/)
+
+---
+
+## 📄 License
+
+This project is released under the [MIT License](https://opensource.org/licenses/MIT).
