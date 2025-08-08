@@ -37,7 +37,7 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link" href="servizi.html">Servizi</a></li>
-                        <li class="nav-item"><a class="nav-link" href="chi-sono.html">Chi Sono</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="chi-sono.html">Chi Sono</a></li>
                         <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
                         <li class="nav-item"><a class="nav-link" href="contatti.html">Contatti</a></li>
                     </ul>
@@ -47,85 +47,92 @@
     </header>
 
     <main class="flex-grow-1 container my-5">
-        <section class="about-me-section">
-            <h1 class="text-center mb-4">Qualche curiosità su di me...</h1>
-            <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                    <div class="profile-image-hover-wrapper-about mx-auto mb-4" style="max-width: 180px; height: 180px;">
-                        <img src="assets/img/mia-foto.jpg" class="img-fluid rounded-circle profile-main-img-about" alt="Foto Profilo">
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <div class="card p-4 h-100 shadow-lg border border-white">
+                    <h1 class="text-center mb-4">Qualche curiosità su di me...</h1>
+                    <div class="row justify-content-center">
+                        <div class="col-md-10 text-center">
+                            <div class="profile-image-hover-wrapper-about mx-auto mb-4" style="max-width: 180px; height: 180px;">
+                                <img src="assets/img/mia-foto.jpg" class="img-fluid rounded-circle profile-main-img-about" alt="Foto Profilo">
+                            </div>
+                            <p>Sono razionale, preciso e determinato. Amante della musica, ho prestato la mia voce con chitarra d’accompagnamento ad alcune piccole band locali e prodotto tracce musicali, con software appositi, per cantanti emergenti.</p>
+                            <p>Sono appassionato da verdissima età al mondo dell’elettronica e dell'informatica, pratico riparazioni a “perditempo” di dispositivi elettronici.</p>
+                        </div>
                     </div>
-                    <p class="lead">Sono razionale, preciso e determinato. Amante della musica, ho prestato la mia voce con chitarra d’accompagnamento ad alcune piccole band locali e prodotto tracce musicali, con software appositi, per cantanti emergenti.</p>
-                    <p class="lead">Sono appassionato da verdissima età al mondo dell’elettronica e dell'informatica, pratico riparazioni a “perditempo” di dispositivi elettronici.</p>
                 </div>
             </div>
-        </section>
 
-        <section class="objectives-section my-5">
-            <h2 class="text-center mb-4">Il mio impegno per l'innovazione</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                    <p class="lead"> Il mondo dell’informatica e della tecnologia è in costante evoluzione, una trasformazione continua che mi appassiona e mi spinge a mettermi sempre in gioco. Per questo, il mio obiettivo primario è l’apprendimento continuo. Voglio rimanere aggiornato sulle ultime tendenze, tecnologie emergenti e migliori pratiche del settore.</p>
+            <div class="col-lg-6">
+                <div class="card p-4 h-100 shadow-lg border border-white">
+                    <h2 class="text-center mb-4">Il mio impegno per l'innovazione</h2>
+                    <div class="row justify-content-center">
+                        <div class="col-md-12 text-center">
+                            <p>Il mondo dell’informatica e della tecnologia è in costante evoluzione, una trasformazione continua che mi appassiona e mi spinge a mettermi sempre in gioco. Per questo, il mio obiettivo primario è l’apprendimento continuo. Voglio rimanere aggiornato sulle ultime tendenze, tecnologie emergenti e migliori pratiche del settore.</p>
+                                        <h2 class="text-center mb-4">Un percorso di formazione senza fine</h2>
+                <p class="text-center mb-5">Credo fermamente che nel settore tech l'aggiornamento costante sia la chiave del successo. Per questo motivo, dedico parte del mio tempo all'apprendimento su alcune delle migliori piattaforme di formazione online, ampliando costantemente le mie conoscenze e competenze.</p>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
 
         <section class="learning-platforms-section my-5">
-            <h2 class="text-center mb-4">Un percorso di formazione senza fine</h2>
-            <p class="text-center lead mb-5">Credo fermamente che nel settore tech l'aggiornamento costante sia la chiave del successo. Per questo motivo, dedico parte del mio tempo all'apprendimento su alcune delle migliori piattaforme di formazione online, ampliando costantemente le mie conoscenze e competenze.</p>
-            <div class="row justify-content-center align-items-center">
-                <div class="col-6 col-md-3 col-lg-2 mb-4 d-flex">
-                    <div class="card p-3 text-center d-flex flex-column align-items-center justify-content-center h-100 w-100 shadow-lg border border-white bg-dark text-white">
-                        <img src="assets/img/logo-google.png" alt="Logo Google" class="img-fluid" style="max-height: 60px;">
-                        <p class="medium mt-2 mb-0">Google</p>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-6 col-md-3 col-lg-2 mb-4 d-flex">
+                        <div class="card p-3 text-center d-flex flex-column align-items-center justify-content-center h-100 w-100 border border-white">
+                            <img src="assets/img/logo-google.png" alt="Logo Google" class="img-fluid" style="max-height: 60px;">
+                            <p class="medium mt-2 mb-0">Google</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-2 mb-4 d-flex">
+                        <div class="card p-3 text-center d-flex flex-column align-items-center justify-content-center h-100 w-100 border border-white">
+                            <img src="assets/img/logo-microsoft.png" alt="Logo Microsoft" class="img-fluid" style="max-height: 60px;">
+                            <p class="medium mt-2 mb-0">Microsoft</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-2 mb-4 d-flex">
+                        <div class="card p-3 text-center d-flex flex-column align-items-center justify-content-center h-100 w-100 border border-white">
+                            <img src="assets/img/logo-start2impact.png" alt="Logo start2impact" class="img-fluid" style="max-height: 60px;">
+                            <p class="medium mt-2 mb-0">start2impact</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-2 mb-4 d-flex">
+                        <div class="card p-3 text-center d-flex flex-column align-items-center justify-content-center h-100 w-100 border border-white">
+                            <img src="assets/img/logo-freecodecamp.png" alt="Logo FreeCodeCamp" class="img-fluid" style="max-height: 60px;">
+                            <p class="medium mt-2 mb-0">FreeCodeCamp</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-2 mb-4 d-flex">
+                        <div class="card p-3 text-center d-flex flex-column align-items-center justify-content-center h-100 w-100 border border-white">
+                            <img src="assets/img/logo-udemy.png" alt="Logo Udemy" class="img-fluid" style="max-height: 60px;">
+                            <p class="medium mt-2 mb-0">Udemy</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-2 mb-4 d-flex">
+                        <div class="card p-3 text-center d-flex flex-column align-items-center justify-content-center h-100 w-100 border border-white">
+                            <img src="assets/img/logo-saylor-academy.png" alt="Logo Saylor Academy" class="img-fluid" style="max-height: 60px;">
+                            <p class="medium mt-2 mb-0">Saylor Academy</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-2 mb-4 d-flex">
+                        <div class="card p-3 text-center d-flex flex-column align-items-center justify-content-center h-100 w-100 border border-white">
+                            <img src="assets/img/logo-aquent-gymnasium.png" alt="Logo Aquent Gymnasium" class="img-fluid" style="max-height: 60px;">
+                            <p class="medium mt-2 mb-0">Aquent Gymnasium</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 col-lg-2 mb-4 d-flex">
+                        <div class="card p-3 text-center d-flex flex-column align-items-center justify-content-center h-100 w-100 border border-white">
+                            <img src="assets/img/logo-cisco.png" alt="Logo Cisco" class="img-fluid" style="max-height: 60px;">
+                            <p class="medium mt-2 mb-0">Cisco</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-6 col-md-3 col-lg-2 mb-4 d-flex">
-                    <div class="card p-3 text-center d-flex flex-column align-items-center justify-content-center h-100 w-100 shadow-lg border border-white bg-dark text-white">
-                        <img src="assets/img/logo-microsoft.png" alt="Logo Microsoft" class="img-fluid" style="max-height: 60px;">
-                        <p class="medium mt-2 mb-0">Microsoft</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2 mb-4 d-flex">
-                    <div class="card p-3 text-center d-flex flex-column align-items-center justify-content-center h-100 w-100 shadow-lg border border-white bg-dark text-white">
-                        <img src="assets/img/logo-start2impact.png" alt="Logo start2impact" class="img-fluid" style="max-height: 60px;">
-                        <p class="medium mt-2 mb-0">start2impact</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2 mb-4 d-flex">
-                    <div class="card p-3 text-center d-flex flex-column align-items-center justify-content-center h-100 w-100 shadow-lg border border-white bg-dark text-white">
-                        <img src="assets/img/logo-freecodecamp.png" alt="Logo FreeCodeCamp" class="img-fluid" style="max-height: 60px;">
-                        <p class="medium mt-2 mb-0">FreeCodeCamp</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2 mb-4 d-flex">
-                    <div class="card p-3 text-center d-flex flex-column align-items-center justify-content-center h-100 w-100 shadow-lg border border-white bg-dark text-white">
-                        <img src="assets/img/logo-udemy.png" alt="Logo Udemy" class="img-fluid" style="max-height: 60px;">
-                        <p class="medium mt-2 mb-0">Udemy</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2 mb-4 d-flex">
-                    <div class="card p-3 text-center d-flex flex-column align-items-center justify-content-center h-100 w-100 shadow-lg border border-white bg-dark text-white">
-                        <img src="assets/img/logo-saylor-academy.png" alt="Logo Saylor Academy" class="img-fluid" style="max-height: 60px;">
-                        <p class="medium mt-2 mb-0">Saylor Academy</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2 mb-4 d-flex">
-                    <div class="card p-3 text-center d-flex flex-column align-items-center justify-content-center h-100 w-100 shadow-lg border border-white bg-dark text-white">
-                        <img src="assets/img/logo-aquent-gymnasium.png" alt="Logo Aquent Gymnasium" class="img-fluid" style="max-height: 60px;">
-                        <p class="medium mt-2 mb-0">Aquent Gymnasium</p>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3 col-lg-2 mb-4 d-flex">
-                    <div class="card p-3 text-center d-flex flex-column align-items-center justify-content-center h-100 w-100 shadow-lg border border-white bg-dark text-white">
-                        <img src="assets/img/logo-cisco.png" alt="Logo Cisco" class="img-fluid" style="max-height: 60px;">
-                        <p class="medium mt-2 mb-0">Cisco</p>
-                    </div>
-                </div>
-            </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="mt-auto">
         <div class="container text-center py-3">
             <p>&copy; 2025 Lorenzo Sottile. Tutti i diritti riservati. | Made by Me with ♡.</p>
             <div class="social-links">
