@@ -72,7 +72,7 @@ To configure and run the project locally, follow these simple steps:
 
 ## 📧 Contact Form Setup (Optional)
 
-The contact form in `contattami.html` is currently configured to display a “success” message on the client side when submitted. If you'd like the form to actually send emails, you’ll need to integrate a third-party service (e.g., EmailJS, Formspree, Netlify Forms, etc.).
+The contact form in `contatti.html` is currently configured to display a “success” message on the client side when submitted. If you'd like the form to actually send emails, you’ll need to integrate a third-party service (e.g., EmailJS, Formspree, Netlify Forms, etc.).
 
 * **Example with EmailJS:**
     If you decide to use EmailJS in the future, you'll need to:
