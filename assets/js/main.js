@@ -155,6 +155,7 @@ Credo fermamente che nel settore tech l'aggiornamento costante sia la chiave del
   - Certificate of Excellence – UX Fundamentals
   - Google Analytics Advanced
   - Foundational C# with Microsoft
+  - CS107: C++ Programming
 
 <span class="b-white">=== LINGUE ===</span>
   - Italiano: Madrelingua
