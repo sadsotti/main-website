@@ -135,8 +135,8 @@ Credo fermamente che nel settore tech l'aggiornamento costante sia la chiave del
 <span class="b-white">=== FORMAZIONE ===</span>
 
 * <span class="b-white">start2impact</span>
-  <span class="i-gray">Master professionalizzante | In corso, Full Stack Development e AI</span>
-  Percorso formativo intensivo in Full Stack Development & AI focalizzato su AI e Prompt Engineering, HTML e CSS, JavaScript (Basics e Advanced), TypeScript, React, Angular, Vue.js, PHP e MySQL, Node.js, Java, culminando in un Progetto Finale completo.
+  <span class="i-gray">Master professionalizzante | In corso, Full Stack Development e Agenti AI</span>
+  Percorso formativo intensivo focalizzato su AI e Prompt Engineering, HTML e CSS, JavaScript (Basics e Advanced), TypeScript, React, Angular, Vue.js, PHP e MySQL, Node.js, Java, culminando in un Progetto Finale completo.
 
 * <span class="b-white">Università degli Studi di Milano-Bicocca</span>
   <span class="i-gray">Laurea triennale | Studi interrotti, Corso di laurea in Ottica e Optometria</span>
