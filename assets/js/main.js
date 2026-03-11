@@ -136,7 +136,7 @@ Credo fermamente che nel settore tech l'aggiornamento costante sia la chiave del
 
 * <span class="b-white">start2impact</span>
   <span class="i-gray">Master professionalizzante | In corso, Full Stack Development e Agenti AI</span>
-  Percorso formativo intensivo focalizzato su AI e Prompt Engineering, HTML e CSS, JavaScript (Basics e Advanced), TypeScript, React, Angular, Vue.js, PHP e MySQL, Node.js, Java, culminando in un Progetto Finale completo.
+  Percorso formativo intensivo focalizzato su AI e Prompt Engineering, HTML, CSS, JavaScript (Basics e Advanced), TypeScript, React, Angular, Vue.js, PHP e MySQL, Node.js e Java. Include la progettazione di Agenti AI no-code per la produttività e Agenti AI avanzati per lo sviluppo, con la realizzazione di un chatbot AI-based che integra front-end, back-end e modelli di intelligenza artificiale, culminando infine in un Progetto Finale completo che sintetizza le competenze acquisite.
 
 * <span class="b-white">Università degli Studi di Milano-Bicocca</span>
   <span class="i-gray">Laurea triennale | Studi interrotti, Corso di laurea in Ottica e Optometria</span>
