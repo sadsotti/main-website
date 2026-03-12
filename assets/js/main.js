@@ -218,6 +218,15 @@ Progettazione e sviluppo di un sito vetrina responsive "tailor-made" per una rea
 >> Visita il sito: 
 <a href="https://www.up-solutions.it/">https://www.up-solutions.it/</a>
 
+
+<span class="b-white">4. EASY CHANGE ITALIA</span>
+<span class="i-gray">Portale Fintech & Currency Exchange Booking System</span>
+Sviluppo di una piattaforma finanziaria specializzata per un ufficio di cambio valuta nel cuore di Milano. Il progetto integra la gestione automatizzata dei tassi in tempo reale tramite API finanziarie, con algoritmi personalizzati per il calcolo dello spread. Include un avanzato motore di prenotazione che consente agli utenti di riservare valuta fisica, supportato da un'architettura di notifiche e promemoria automatici (Cron Job) per l'ottimizzazione dei flussi operativi aziendali.
+<span class="i-darkgray">(Progetto realizzato in collaborazione con </span><a href="https://www.zerounomedia.com/" class="i-darkgray">Zerouno Media</a><span class="i-darkgray">)</span>
+
+>> Visita il sito: 
+<a href="https://www.easychangeitalia.com/">https://www.easychangeitalia.com/</a>
+
 `,
 
         privacy: `
