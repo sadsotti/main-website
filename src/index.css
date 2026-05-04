@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap');
+
+@theme {
+  --font-sans: "Space Grotesk", system-ui, sans-serif;
+  --font-barcode: "Libre Barcode 39 Text", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.cky-modal,
+.cky-preference-center,
+.cky-detail-modal {
+  overscroll-behavior: contain;
+}
