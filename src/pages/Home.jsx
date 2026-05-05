@@ -33,6 +33,7 @@ function Home() {
         <meta property="og:description" content="Costruisco soluzioni digitali moderne, unendo codice pulito, design e performance. Scopri i miei servizi di sviluppo software, consulenza IT e 3D." />
         <meta property="og:url" content="https://www.lorenzosottile.it/" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.lorenzosottile.it/og-home.webp" />
       </Helmet>
 
       <style>{`
