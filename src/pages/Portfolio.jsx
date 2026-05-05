@@ -44,10 +44,6 @@ function Portfolio() {
         <title>Portfolio Progetti | Sviluppo Web e 3D | Lorenzo Sottile</title>
         <meta name="description" content="Esplora i miei progetti: dallo sviluppo di piattaforme web immobiliari e portali booking, fino alla realizzazione di rendering 3D fotorealistici di pregio." />
         <link rel="canonical" href="https://www.lorenzosottile.it/portfolio" />
-        <meta property="og:title" content="Portfolio Progetti | Lorenzo Sottile" />
-        <meta property="og:description" content="Guarda i miei ultimi lavori: sviluppo siti web per l'hospitality, piattaforme custom e rendering 3D per l'interior design e l'architettura." />
-        <meta property="og:url" content="https://www.lorenzosottile.it/portfolio" />
-        <meta property="og:type" content="website" />
       </Helmet>
 
       <motion.div 

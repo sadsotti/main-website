@@ -29,11 +29,6 @@ function Home() {
         <title>Lorenzo Sottile | Developer & IT Consultant</title>
         <meta name="description" content="Sviluppatore Full Stack e Consulente IT freelance. Realizzo software su misura, web app, campagne digital e rendering 3D. Operativo a Monza Brianza, Milano e da remoto." />
         <link rel="canonical" href="https://www.lorenzosottile.it/" />
-        <meta property="og:title" content="Lorenzo Sottile | Developer & IT Consultant" />
-        <meta property="og:description" content="Costruisco soluzioni digitali moderne, unendo codice pulito, design e performance. Scopri i miei servizi di sviluppo software, consulenza IT e 3D." />
-        <meta property="og:url" content="https://www.lorenzosottile.it/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.lorenzosottile.it/og-home.webp" />
       </Helmet>
 
       <style>{`

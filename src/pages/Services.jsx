@@ -21,10 +21,6 @@ function Services() {
         <title>Servizi IT e Digitali | Software, Ads & 3D | Lorenzo Sottile</title>
         <meta name="description" content="Offro consulenza IT a 360°: sviluppo software personalizzato, gestione campagne Digital Advertising (Google/Meta) e rendering 3D per il settore immobiliare." />
         <link rel="canonical" href="https://www.lorenzosottile.it/servizi" />
-        <meta property="og:title" content="Servizi IT e Digitali | Lorenzo Sottile" />
-        <meta property="og:description" content="Dal codice al design 3D. Scopri i miei servizi: Sviluppo Software e Web App, Consulenza IT, Digital Advertising e Rendering fotorealistico." />
-        <meta property="og:url" content="https://www.lorenzosottile.it/servizi" />
-        <meta property="og:type" content="website" />
       </Helmet>
 
       <motion.div 

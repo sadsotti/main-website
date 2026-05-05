@@ -98,10 +98,6 @@ function Contacts() {
         <title>Contatti | Richiedi una Consulenza | Lorenzo Sottile</title>
         <meta name="description" content="Hai un progetto in mente? Contattami per una consulenza tecnica. Ricevi assistenza per sviluppo web, sistemi IT o rendering 3D. Risposta rapida garantita." />
         <link rel="canonical" href="https://www.lorenzosottile.it/contatti" />
-        <meta property="og:title" content="Contatti | Parliamo del tuo progetto | Lorenzo Sottile" />
-        <meta property="og:description" content="Hai un'idea per un progetto web, software o 3D? Scrivimi per una consulenza. Operativo su Milano, Monza e Brianza e da remoto." />
-        <meta property="og:url" content="https://www.lorenzosottile.it/contatti" />
-        <meta property="og:type" content="website" />
       </Helmet>
 
       <motion.div 

@@ -122,10 +122,6 @@ function Start2Impact() {
         <title>Percorso Full Stack Development & AI | start2impact | Lorenzo Sottile</title>
         <meta name="description" content="Scopri il mio percorso nel Master in Full Stack Development e Agenti AI di start2impact. 16 progetti pratici, da React e Node.js fino all'integrazione di Intelligenza Artificiale." />
         <link rel="canonical" href="https://www.lorenzosottile.it/start2impact" />
-        <meta property="og:title" content="Percorso Full Stack & AI | start2impact | Lorenzo Sottile" />
-        <meta property="og:description" content="16 progetti pratici affrontati durante il Master in Full Stack Development e Agenti AI. Dai un'occhiata al mio codice e alle architetture realizzate." />
-        <meta property="og:url" content="https://www.lorenzosottile.it/start2impact" />
-        <meta property="og:type" content="website" />
       </Helmet>
 
       <motion.div className="flex flex-col gap-10" variants={containerVariants} initial="hidden" animate="visible">

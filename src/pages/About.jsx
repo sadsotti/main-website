@@ -22,10 +22,6 @@ function About() {
         <title>Chi Sono | Lorenzo Sottile | Developer & IT Consultant</title>
         <meta name="description" content="Scopri la mia storia: un percorso tra musica, elettronica e sviluppo software. Leggi il mio CV completo e la mia filosofia di apprendimento continuo nel tech." />
         <link rel="canonical" href="https://www.lorenzosottile.it/about" />
-        <meta property="og:title" content="Chi Sono | Lorenzo Sottile" />
-        <meta property="og:description" content="Dalla passione per l'elettronica allo sviluppo Full Stack. Scopri il mio percorso professionale, le mie competenze e le mie certificazioni." />
-        <meta property="og:url" content="https://www.lorenzosottile.it/about" />
-        <meta property="og:type" content="website" />
       </Helmet>
 
       <motion.div
