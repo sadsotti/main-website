@@ -122,6 +122,7 @@ function About() {
                 <li>• Google Analytics Advanced</li>
                 <li>• Foundational C# with Microsoft</li>
                 <li>• CS107: C++ Programming</li>
+                <li>• CS105: Introduction to Python</li>
               </ul>
             </section>
 
