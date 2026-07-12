@@ -114,6 +114,37 @@ function Portfolio() {
         <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <section className={`${bentoCard} lg:col-span-2 p-0 overflow-hidden relative aspect-16/10 lg:aspect-auto group`}>
             <img 
+              src="/progetti/mockup-stimatech-claims-solutions.webp" 
+              alt="Mockup Stimatech Claims Solutions" 
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+            />
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
+          </section>
+
+          <section className={`${bentoCard} lg:col-span-1 flex flex-col`}>
+            <div className="text-xs font-semibold text-neutral-500 mb-2 uppercase tracking-wider">Corporate Website & Lead Generation per Studio Peritale</div>
+            <h2 className="text-2xl font-medium text-white mb-4">Stimatech Claims Solutions</h2>
+            
+            <div className="mb-6">
+              <p className="text-sm text-neutral-400 leading-relaxed">
+                Sito corporate multipagina per uno studio peritale assicurativo indipendente, con hero animata, sezioni dedicate a metodo, competenze e aree operative, contatori statistici animati allo scroll e FAQ interattive. Il modulo contatti è collegato a un backend PHP con protezioni anti-spam (honeypot e controllo temporale) e invio email in HTML, oltre a un sistema completo di consenso cookie con banner, modale delle preferenze e pulsante flottante.
+              </p>
+            </div>
+
+            <div className="mt-auto">
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className={badgeStyle}>In collaborazione con Zerouno Media</span>
+              </div>
+              <a href="https://www.stimatech.it/" target="_blank" rel="noreferrer" className="block text-sm text-black font-semibold bg-white px-5 py-3 rounded-xl hover:bg-neutral-200 transition-colors text-center">
+                Visita il sito web <span className="font-sans">&rarr;</span>
+              </a>
+            </div>
+          </section>
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <section className={`${bentoCard} lg:col-span-2 p-0 overflow-hidden relative aspect-16/10 lg:aspect-auto group`}>
+            <img 
               src="/progetti/mockup-studio-cabella.webp" 
               alt="Mockup Studio Ca'Bella" 
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
@@ -276,6 +307,34 @@ function Portfolio() {
                 <span className={badgeStyle}>In collaborazione con Zerouno Media</span>
               </div>
               <a href="https://www.residenzanella.it/" target="_blank" rel="noreferrer" className="block text-sm text-black font-semibold bg-white px-5 py-3 rounded-xl hover:bg-neutral-200 transition-colors text-center">
+                Visita il sito web <span className="font-sans">&rarr;</span>
+              </a>
+            </div>
+          </section>
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <section className={`${bentoCard} lg:col-span-2 p-0 overflow-hidden relative aspect-16/10 lg:aspect-auto group`}>
+            <img 
+              src="/progetti/mockup-verde-leonardo.webp" 
+              alt="Mockup Verde Leonardo" 
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+            />
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
+          </section>
+
+          <section className={`${bentoCard} lg:col-span-1 flex flex-col`}>
+            <div className="text-xs font-semibold text-neutral-500 mb-2 uppercase tracking-wider">Sito Vetrina Multipagina & Backend PHP</div>
+            <h2 className="text-2xl font-medium text-white mb-4">Verde Leonardo</h2>
+            
+            <div className="mb-6">
+              <p className="text-sm text-neutral-400 leading-relaxed">
+                Sito vetrina multipagina per un'attività di tree climbing e arboricoltura, con un design a griglia bento e un blog le cui anteprime si aprono in un modale dedicato. Il modulo di richiesta preventivo permette di allegare foto direttamente dal form ed è collegato a un backend PHP con invio email via SMTP autenticato, oltre alla gestione completa di banner cookie e preferenze secondo il GDPR.
+              </p>
+            </div>
+
+            <div className="mt-auto">
+              <a href="https://www.verdeleonardo.it/" target="_blank" rel="noreferrer" className="block text-sm text-black font-semibold bg-white px-5 py-3 rounded-xl hover:bg-neutral-200 transition-colors text-center">
                 Visita il sito web <span className="font-sans">&rarr;</span>
               </a>
             </div>
