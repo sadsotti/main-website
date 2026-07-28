@@ -43,6 +43,14 @@ function Portfolio() {
       { src: "/progetti/residenza_nella_4.webp" },
       { src: "/progetti/residenza_nella_5.webp" },
       { src: "/progetti/residenza_nella_6.webp" }
+    ],
+    parco: [
+      { src: "/progetti/residenza_del_parco_1.webp" },
+      { src: "/progetti/residenza_del_parco_2.webp" },
+      { src: "/progetti/residenza_del_parco_3.webp" },
+      { src: "/progetti/residenza_del_parco_4.webp" },
+      { src: "/progetti/residenza_del_parco_5.webp" },
+      { src: "/progetti/residenza_del_parco_6.webp" }
     ]
   };
 
@@ -335,6 +343,50 @@ function Portfolio() {
 
             <div className="mt-auto">
               <a href="https://www.verdeleonardo.it/" target="_blank" rel="noreferrer" className="block text-sm text-black font-semibold bg-white px-5 py-3 rounded-xl hover:bg-neutral-200 transition-colors text-center">
+                Visita il sito web <span className="font-sans">&rarr;</span>
+              </a>
+            </div>
+          </section>
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <div className="lg:col-span-2 flex flex-col gap-4">
+            <section className={`${bentoCard} p-0 overflow-hidden relative aspect-video group`}>
+              <img 
+                src="/progetti/mockup-residenza-del-parco.webp" 
+                alt="Mockup Residenza del Parco" 
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+              />
+            </section>
+            
+            <section className={`${bentoCard} flex flex-col sm:flex-row items-center justify-between gap-4 p-6`}>
+              <div>
+                <h3 className="text-white font-medium">Esplora il progetto 3D</h3>
+                <p className="text-sm text-neutral-400">Render fotorealistici degli interni e planimetrie.</p>
+              </div>
+              <button onClick={() => setOpenGallery('parco')} className="text-sm text-white font-medium bg-white/10 border border-white/10 px-6 py-3 rounded-xl hover:bg-white/20 transition-colors whitespace-nowrap flex items-center gap-2">
+                <ImageIcon size={18} /> Apri Galleria
+              </button>
+            </section>
+          </div>
+
+          <section className={`${bentoCard} lg:col-span-1 flex flex-col`}>
+            <div className="text-xs font-semibold text-neutral-500 mb-2 uppercase tracking-wider">Sito Web Custom, 3D & Video</div>
+            <h2 className="text-2xl font-medium text-white mb-4">Residenza del Parco</h2>
+            
+            <div className="mb-6 space-y-4">
+              <div>
+                <p className="text-sm text-neutral-400 leading-relaxed">
+                  Progettazione e sviluppo di un sito web su misura per un nuovo complesso residenziale, costruito in puro HTML, CSS e JavaScript per garantire prestazioni ottimali e tempi di caricamento minimi. Il progetto comprende la realizzazione di rendering 3D fotorealistici degli interni, planimetrie arredate dettagliate e videomontaggio promozionale per una presentazione immersiva degli spazi.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-auto">
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className={badgeStyle}>In collaborazione con Zerouno Media</span>
+              </div>
+              <a href="https://www.residenzadelparcolentate.it/" target="_blank" rel="noreferrer" className="block text-sm text-black font-semibold bg-white px-5 py-3 rounded-xl hover:bg-neutral-200 transition-colors text-center">
                 Visita il sito web <span className="font-sans">&rarr;</span>
               </a>
             </div>
