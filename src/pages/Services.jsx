@@ -80,7 +80,6 @@ function Services() {
           <ul className="text-neutral-400 text-sm space-y-3">
             <li>• Realizzazione di rendering fotorealistici e planimetrie con arredi 3D</li>
             <li>• Video animazione 3D e soluzioni specifiche per la valorizzazione del settore immobiliare</li>
-            <li>• Video editing e montaggi</li>
           </ul>
         </motion.section>
       </motion.div>
