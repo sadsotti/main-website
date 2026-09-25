@@ -213,37 +213,6 @@ function Portfolio() {
         </motion.div>
 
         <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          <section className={`${bentoCard} lg:col-span-2 p-0 overflow-hidden relative aspect-16/10 lg:aspect-auto group`}>
-            <img 
-              src="/progetti/mockup-easy-change-italia.webp" 
-              alt="Mockup Easy Change Italia" 
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-            />
-            <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
-          </section>
-
-          <section className={`${bentoCard} lg:col-span-1 flex flex-col`}>
-            <div className="text-xs font-semibold text-neutral-500 mb-2 uppercase tracking-wider">Fintech & Currency Exchange Booking System</div>
-            <h2 className="text-2xl font-medium text-white mb-4">Easy Change Italia</h2>
-            
-            <div className="mb-6">
-              <p className="text-sm text-neutral-400 leading-relaxed">
-                Sviluppo di una piattaforma finanziaria specializzata per un ufficio di cambio valuta nel cuore di Milano. Il progetto integra la gestione automatizzata dei tassi in tempo reale tramite API finanziarie, con algoritmi personalizzati per il calcolo dello spread. Include un avanzato motore di prenotazione che consente agli utenti di riservare valuta fisica, supportato da un'architettura di notifiche e promemoria automatici per l'ottimizzazione dei flussi operativi aziendali.
-              </p>
-            </div>
-
-            <div className="mt-auto">
-              <div className="flex flex-wrap gap-2 mb-6">
-                <span className={badgeStyle}>In collaborazione con Zerouno Media</span>
-              </div>
-              <a href="https://www.easychangeitalia.com/" target="_blank" rel="noreferrer" className="block text-sm text-black font-semibold bg-white px-5 py-3 rounded-xl hover:bg-neutral-200 transition-colors text-center">
-                Visita il sito web <span className="font-sans">&rarr;</span>
-              </a>
-            </div>
-          </section>
-        </motion.div>
-
-        <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <section className={`${bentoCard} lg:col-span-1 flex flex-col`}>
             <div className="text-xs font-semibold text-neutral-500 mb-2 uppercase tracking-wider">3D Architecture Rendering</div>
             <h2 className="text-2xl font-medium text-white mb-4">Calla's Immobiliare</h2>
