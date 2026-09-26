@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import { Image as ImageIcon } from 'lucide-react';
+import { Image as ImageIcon, Lock, Info, X, Users, CalendarClock, Target, Megaphone, LayoutDashboard, KeyRound, SearchCheck, FileSpreadsheet, Smartphone } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 
 function Portfolio() {
@@ -55,6 +55,30 @@ function Portfolio() {
   };
 
   const [openGallery, setOpenGallery] = useState(null);
+  const [dettagliUps, setDettagliUps] = useState(false);
+
+  useEffect(() => {
+    if (!dettagliUps) return;
+    const onKey = (e) => e.key === 'Escape' && setDettagliUps(false);
+    document.addEventListener('keydown', onKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    };
+  }, [dettagliUps]);
+
+  const funzionalitaUps = [
+    { icon: Users, titolo: "Clienti e forniture", testo: "Anagrafiche complete con lo storico delle forniture attive per ogni cliente, i dati tecnici delle utenze e le condizioni contrattuali." },
+    { icon: CalendarClock, titolo: "Scadenze e lavorazione", testo: "Monitoraggio delle scadenze contrattuali con livelli di priorità, stati di lavorazione e pianificazione delle azioni successive." },
+    { icon: Target, titolo: "Cross-selling", testo: "Individuazione automatica dei servizi non ancora attivi per ciascun cliente, con registro dei contatti effettuati e dei relativi esiti." },
+    { icon: Megaphone, titolo: "Campagne e lead", testo: "Gestione delle campagne pubblicitarie su Meta, Google Ads e TikTok con monitoraggio del budget e pipeline dei lead fino alla conversione in cliente." },
+    { icon: LayoutDashboard, titolo: "Dashboard e notifiche", testo: "Grafici e indicatori chiave sull'andamento dell'attività e un centro notifiche integrato per scadenze e follow-up." },
+    { icon: KeyRound, titolo: "Ruoli e accessi", testo: "Accesso autenticato con profili differenziati: gli amministratori hanno la visione completa, ogni agente consulta il proprio portafoglio clienti." },
+    { icon: SearchCheck, titolo: "Qualità dei dati", testo: "Strumenti di controllo per individuare omonimie e utenze duplicate, mantenendo l'archivio ordinato e affidabile." },
+    { icon: FileSpreadsheet, titolo: "Backup e importazione", testo: "Esportazione e importazione dei dati in formato Excel e CSV, con storico dei backup effettuati." },
+    { icon: Smartphone, titolo: "App installabile", testo: "Progressive Web App installabile su desktop e smartphone, per un utilizzo rapido anche in mobilità." },
+  ];
 
   return (
     <>
@@ -75,6 +99,48 @@ function Portfolio() {
           <p className="text-neutral-400 max-w-2xl">
             Selezione di progetti recenti.
           </p>
+        </motion.div>
+
+        <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <div className="lg:col-span-2 flex flex-col gap-4">
+            <section className={`${bentoCard} p-0 overflow-hidden relative aspect-video group`}>
+              <img
+                src="/progetti/mockup-up-solutions-gestionale.webp"
+                alt="Mockup gestionale Up Solutions"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+            </section>
+
+            <section className={`${bentoCard} flex flex-col sm:flex-row items-center justify-between gap-4 p-6`}>
+              <div>
+                <h3 className="text-white font-medium">Scopri il progetto</h3>
+                <p className="text-sm text-neutral-400">Funzionalità e moduli della piattaforma.</p>
+              </div>
+              <button onClick={() => setDettagliUps(true)} className="text-sm text-white font-medium bg-white/10 border border-white/10 px-6 py-3 rounded-xl hover:bg-white/20 transition-colors whitespace-nowrap flex items-center gap-2">
+                <Info size={18} /> Scopri i dettagli
+              </button>
+            </section>
+          </div>
+
+          <section className={`${bentoCard} lg:col-span-1 flex flex-col`}>
+            <div className="text-xs font-semibold text-neutral-500 mb-2 uppercase tracking-wider">Web App Gestionale & CRM su Misura</div>
+            <h2 className="text-2xl font-medium text-white mb-4">Up Solutions</h2>
+
+            <div className="mb-6">
+              <p className="text-sm text-neutral-400 leading-relaxed">
+                Piattaforma gestionale web sviluppata su misura per un'agenzia di consulenza multiservizio operante nei settori energia, telefonia, fotovoltaico, termoidraulica e consulenza informatica. Il sistema centralizza clienti, forniture e scadenze contrattuali, individua le opportunità di cross-selling e gestisce campagne pubblicitarie e lead in un'unica piattaforma, accessibile da desktop e smartphone.
+              </p>
+            </div>
+
+            <div className="mt-auto">
+              <div
+                aria-disabled="true"
+                className="flex items-center justify-center gap-2 text-sm text-neutral-400 font-medium bg-white/5 border border-white/10 px-5 py-3 rounded-xl cursor-not-allowed select-none"
+              >
+                <Lock size={16} /> Accesso riservato
+              </div>
+            </div>
+          </section>
         </motion.div>
 
         <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-3 gap-4">
@@ -383,8 +449,59 @@ function Portfolio() {
             )
           }}
         />
-        
+
       </motion.div>
+
+      <AnimatePresence>
+        {dettagliUps && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setDettagliUps(false)}
+          >
+            <motion.div
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="ups-titolo"
+              className="relative w-full max-w-3xl max-h-[85vh] overflow-y-auto bg-[#121212] border border-white/10 rounded-3xl p-6 md:p-10"
+              initial={{ opacity: 0, y: 30, scale: 0.97 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.97 }}
+              transition={{ type: "spring", stiffness: 260, damping: 25 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setDettagliUps(false)}
+                aria-label="Chiudi"
+                className="absolute top-4 right-4 md:top-6 md:right-6 p-2 rounded-full bg-white/5 border border-white/10 text-neutral-400 hover:text-white hover:bg-white/10 transition-colors"
+              >
+                <X size={18} />
+              </button>
+
+              <div className="text-xs font-semibold text-neutral-500 mb-2 uppercase tracking-wider">Web App Gestionale & CRM su Misura</div>
+              <h2 id="ups-titolo" className="text-2xl md:text-3xl font-medium text-white mb-4 pr-10">Up Solutions</h2>
+              <p className="text-sm text-neutral-400 leading-relaxed mb-8">
+                Piattaforma gestionale web progettata e sviluppata su misura per un'agenzia di consulenza multiservizio operante nei settori energia, telefonia, fotovoltaico, termoidraulica e consulenza informatica. Il sistema riunisce in un unico ambiente la gestione del portafoglio clienti, il monitoraggio dei contratti e le attività commerciali e di marketing, offrendo al team uno strumento operativo quotidiano, rapido e accessibile da qualsiasi dispositivo.
+              </p>
+
+              <h3 className="text-white font-medium mb-4">Funzionalità principali</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {funzionalitaUps.map(({ icon: Icon, titolo, testo }) => (
+                  <div key={titolo} className="bg-white/3 border border-white/5 rounded-2xl p-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Icon size={16} className="text-neutral-300" />
+                      <h4 className="text-sm text-white font-medium">{titolo}</h4>
+                    </div>
+                    <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed">{testo}</p>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
