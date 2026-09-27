@@ -19,7 +19,10 @@ The project is a **Single Page Application (SPA)** built with **React** and **Vi
 - 🤖 **AI Focused**: A dedicated section for the start2impact Master, highlighting 16 projects focused on Full Stack development and AI Agent.
 - 🖼️ **Interactive 3D Portfolio**: An integrated Lightbox system to showcase 3D architectural renderings and web mockups.
 - 📧 **Professional Contact System**: A robust form powered by EmailJS with real-time feedback (loading, success, error states) and GDPR-compliant privacy management.
-- 🔍 **Optimized SEO**: Dynamic metadata management via React Helmet Async for each individual route.
+- 🔍 **Optimized SEO**: Per-route metadata via React Helmet Async, plus static HTML generated at build time for every route so search engines and social previews get the right title, description and Open Graph tags.
+- ⚡ **Performance**: Route-based code splitting, lazy-loaded images and self-hosted fonts with no external requests.
+- 🍪 **Privacy by Design**: No cookies, no trackers and no third-party analytics, so no consent banner is needed.
+- ♿ **Accessibility**: Keyboard-friendly navigation, ARIA attributes, skip link and full support for `prefers-reduced-motion`.
 
 ---
 
@@ -33,10 +36,11 @@ The project is a **Single Page Application (SPA)** built with **React** and **Vi
 - **Services**:
   - [EmailJS](https://www.emailjs.com/) (Client-side email handling)
   - [React Helmet Async](https://github.com/staylor/react-helmet-async) (SEO Management)
-- **Typography**:
+- **Typography** (self-hosted via [Fontsource](https://fontsource.org/)):
   - **Space Grotesk** (Main Sans Font)
   - **Libre Barcode 39 Text** (For specific decorative elements)
 - **Hosting & Deployment**: [Netlify](https://www.netlify.com/) (with custom `_redirects` for SPA routing)
+
 ---
 
 ## 📂 Navigation Structure
@@ -46,11 +50,13 @@ The website is organized into the following main sections:
 | Page | Description |
 |------|-------------|
 | **Home** | Main dashboard with a quick overview of bio, services, and core philosophy. |
-| **Portfolio** | Detailed showcase of professional works (Web Platforms, Fintech, 3D Rendering). |
+| **Portfolio** | Detailed showcase of professional works (Management Web Apps, Websites, 3D Rendering). |
 | **start2impact** | Academic timeline featuring 16 modules from the Full Stack & AI Master. |
 | **Servizi** | Breakdown of IT offerings: Software, Consulting, Ads, and 3D Video. |
 | **Chi Sono** | My background, my hobbies, and the connection between music and coding. |
 | **Contatti** | Direct contact form with zone-specific info and social links. |
+| **Privacy / I tuoi diritti** | Privacy & Cookie Policy and instructions to exercise GDPR rights. |
+| **404** | Custom not-found page, excluded from indexing. |
 
 ---
 
@@ -59,15 +65,18 @@ The website is organized into the following main sections:
 ```text
 main-website/
 ├── public/                 # Static assets (PDFs, Progetti covers, Logo)
-│   └── _redirects          # Netlify SPA routing configuration
+│   ├── _headers            # Netlify security and caching headers
+│   └── _redirects          # Netlify routing (static route pages + SPA fallback)
 ├── src/
-│   ├── assets/             # Images and global styles
-│   ├── components/         # Reusable UI components (Navbar, Footer, Icons)
+│   ├── assets/             # Images
+│   ├── components/         # Reusable UI components (Navbar, Footer, Seo, Icons)
+│   ├── lib/                # Site data, SEO metadata and shared UI tokens
 │   ├── pages/              # Main route components (Home, About, etc.)
 │   ├── App.jsx             # Main Router and layout configuration
 │   ├── main.jsx            # Entry point & Providers
 │   └── index.css           # Tailwind v4 configuration and @theme
-├── index.html              # HTML5 template and font imports
+├── index.html              # HTML5 template and default metadata
+├── vite.config.js          # Vite config and static route metadata plugin
 └── package.json            # Dependencies and scripts
 ```
 

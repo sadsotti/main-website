@@ -1,33 +1,28 @@
 import { useState, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { Send, Mail, MapPin, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from '../components/Icons'; 
-import { Helmet } from 'react-helmet-async';
+import { GithubIcon, LinkedinIcon } from '../components/Icons';
+import Seo from '../components/Seo';
+import { containerVariants, itemVariants, bentoCard } from '../lib/ui';
 
 function Contacts() {
   const form = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); 
+  const [submitStatus, setSubmitStatus] = useState(null);
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
-
-  const bentoCard = "bg-[#121212] border border-white/5 rounded-3xl p-6 md:p-8 hover:bg-[#171717] transition-colors duration-300";
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 15 } },
-  };
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    if (!privacyAccepted) {
-      alert("Per favore, accetta la Privacy Policy prima di inviare il messaggio.");
+    if (!privacyAccepted || isSubmitting) return;
+
+    if (form.current.elements.website.value) {
+      form.current.reset();
+      setPrivacyAccepted(false);
+      setSubmitStatus('success');
+      setTimeout(() => setSubmitStatus(null), 3000);
       return;
     }
 
@@ -55,52 +50,48 @@ function Contacts() {
     if (isSubmitting) {
       return (
         <>
-          Invio in corso <Loader2 size={16} className="animate-spin ml-2" />
+          Invio in corso <Loader2 size={16} className="animate-spin ml-2" aria-hidden="true" />
         </>
       );
     }
     if (submitStatus === 'success') {
       return (
         <>
-          Inviato con successo <CheckCircle size={16} className="ml-2" />
+          Inviato con successo <CheckCircle size={16} className="ml-2" aria-hidden="true" />
         </>
       );
     }
     if (submitStatus === 'error') {
       return (
         <>
-          Errore nell'invio <AlertCircle size={16} className="ml-2" />
+          Errore nell'invio <AlertCircle size={16} className="ml-2" aria-hidden="true" />
         </>
       );
     }
     return (
       <>
-        Invia Messaggio <Send size={16} className="ml-2" />
+        Invia Messaggio <Send size={16} className="ml-2" aria-hidden="true" />
       </>
     );
   };
 
   const getButtonClass = () => {
     const baseClass = "w-full sm:w-auto inline-flex justify-center items-center px-8 py-3 rounded-xl text-sm font-semibold transition-all duration-300 ";
-    
+
     if (isSubmitting) return baseClass + "bg-neutral-700 text-white cursor-wait";
     if (submitStatus === 'success') return baseClass + "bg-green-600 text-white";
     if (submitStatus === 'error') return baseClass + "bg-red-600 text-white";
-    
-    return baseClass + (privacyAccepted 
-      ? "bg-white text-black hover:bg-neutral-200" 
+
+    return baseClass + (privacyAccepted
+      ? "bg-white text-black hover:bg-neutral-200"
       : "bg-neutral-800 text-neutral-500 cursor-not-allowed");
   };
 
   return (
     <>
-      <Helmet>
-        <title>Contatti | Richiedi una Consulenza | Lorenzo Sottile</title>
-        <meta name="description" content="Hai un progetto in mente? Contattami per una consulenza tecnica. Ricevi assistenza per sviluppo web, sistemi IT o rendering 3D. Risposta rapida garantita." />
-        <link rel="canonical" href="https://www.lorenzosottile.it/contatti" />
-      </Helmet>
+      <Seo path="/contatti" />
 
-      <motion.div 
+      <motion.div
         className="flex flex-col gap-6"
         variants={containerVariants}
         initial="hidden"
@@ -117,11 +108,11 @@ function Contacts() {
           <motion.div variants={itemVariants} className="lg:col-span-1 flex flex-col gap-6">
             <section className={`${bentoCard} grow`}>
               <h2 className="text-xl font-medium text-white mb-6">Info utili</h2>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white/5 rounded-xl border border-white/10 text-neutral-300">
-                    <Mail size={20} />
+                    <Mail size={20} aria-hidden="true" />
                   </div>
                   <div>
                     <p className="text-xs text-neutral-500 font-medium uppercase tracking-widest mb-1">Email</p>
@@ -131,7 +122,7 @@ function Contacts() {
 
                 <div className="flex items-start gap-4">
                   <div className="p-3 bg-white/5 rounded-xl border border-white/10 text-neutral-300">
-                    <MapPin size={20} />
+                    <MapPin size={20} aria-hidden="true" />
                   </div>
                   <div>
                     <p className="text-xs text-neutral-500 font-medium uppercase tracking-widest mb-1">Zona Operativa</p>
@@ -142,11 +133,11 @@ function Contacts() {
 
               <div className="mt-10 pt-6 border-t border-white/5">
                 <p className="text-xs text-neutral-500 font-medium uppercase tracking-widest mb-4 text-left">I miei profili</p>
-                <div className="flex justify-left gap-4 text-neutral-400">
-                  <a href="https://github.com/sadsotti" target="_blank" rel="noreferrer" className="hover:text-white transition-colors p-2 bg-white/5 rounded-lg border border-white/5 hover:border-white/20">
+                <div className="flex justify-start gap-4 text-neutral-400">
+                  <a href="https://github.com/sadsotti" target="_blank" rel="noreferrer" aria-label="Profilo GitHub" className="hover:text-white transition-colors p-2 bg-white/5 rounded-lg border border-white/5 hover:border-white/20">
                     <GithubIcon size={20} />
                   </a>
-                  <a href="https://www.linkedin.com/in/lorenzo-sottile/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors p-2 bg-white/5 rounded-lg border border-white/5 hover:border-white/20">
+                  <a href="https://www.linkedin.com/in/lorenzo-sottile/" target="_blank" rel="noreferrer" aria-label="Profilo LinkedIn" className="hover:text-white transition-colors p-2 bg-white/5 rounded-lg border border-white/5 hover:border-white/20">
                     <LinkedinIcon size={20} />
                   </a>
                 </div>
@@ -156,21 +147,26 @@ function Contacts() {
 
           <motion.section variants={itemVariants} className={`${bentoCard} lg:col-span-2`}>
             <h2 className="text-2xl font-medium text-white mb-6">Invia un messaggio</h2>
-            
+
             <form ref={form} onSubmit={sendEmail} className="space-y-4">
+              <div className="absolute -left-[9999px] w-px h-px overflow-hidden" aria-hidden="true">
+                <label htmlFor="website">Lascia vuoto questo campo</label>
+                <input type="text" name="website" id="website" tabIndex={-1} autoComplete="off" />
+              </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-1">
                   <label htmlFor="name" className="text-xs font-medium text-neutral-400 pl-1">Nome completo <span className="text-red-500">*</span></label>
-                  <input 
-                    type="text" name="name" id="name" required 
+                  <input
+                    type="text" name="name" id="name" required autoComplete="name"
                     className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/30 transition-all"
                     placeholder="Mario Rossi"
                   />
                 </div>
                 <div className="space-y-1">
                   <label htmlFor="email" className="text-xs font-medium text-neutral-400 pl-1">Indirizzo Email <span className="text-red-500">*</span></label>
-                  <input 
-                    type="email" name="email" id="email" required 
+                  <input
+                    type="email" name="email" id="email" required autoComplete="email"
                     className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/30 transition-all"
                     placeholder="mario@esempio.com"
                   />
@@ -179,8 +175,8 @@ function Contacts() {
 
               <div className="space-y-1">
                 <label htmlFor="subject" className="text-xs font-medium text-neutral-400 pl-1">Oggetto</label>
-                <input 
-                  type="text" name="subject" id="subject" 
+                <input
+                  type="text" name="subject" id="subject"
                   className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/30 transition-all"
                   placeholder="Richiesta informazioni..."
                 />
@@ -188,7 +184,7 @@ function Contacts() {
 
               <div className="space-y-1">
                 <label htmlFor="message" className="text-xs font-medium text-neutral-400 pl-1">Messaggio <span className="text-red-500">*</span></label>
-                <textarea 
+                <textarea
                   name="message" id="message" required rows="5"
                   className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/30 transition-all resize-none"
                   placeholder="Scrivi qui il tuo messaggio..."
@@ -196,20 +192,24 @@ function Contacts() {
               </div>
 
               <div className="flex items-start gap-3 py-2">
-                <input 
-                  type="checkbox" id="privacy_check" 
+                <input
+                  type="checkbox" id="privacy_check"
                   className="mt-1 h-4 w-4 rounded border-white/20 bg-[#1a1a1a] text-white accent-white cursor-pointer"
                   checked={privacyAccepted}
                   onChange={(e) => setPrivacyAccepted(e.target.checked)}
                 />
                 <label htmlFor="privacy_check" className="text-xs text-neutral-500 leading-relaxed cursor-pointer select-none">
-                  Ho letto e accetto la <a href="/privacy" target="_blank" className="text-neutral-300 hover:text-white underline">Privacy Policy</a>. Acconsento al trattamento dei miei dati personali in base al Regolamento UE n. 679/2016 (GDPR).
+                  Ho letto l’<Link to="/privacy" target="_blank" className="text-neutral-300 hover:text-white underline">Informativa Privacy</Link> e sono consapevole che i miei dati saranno trattati per rispondere alla mia richiesta, ai sensi del Regolamento (UE) 2016/679 (GDPR).
                 </label>
               </div>
 
               <div className="pt-2">
-                <button 
-                  type="submit" 
+                <p className="sr-only" role="status" aria-live="polite">
+                  {submitStatus === 'success' && 'Messaggio inviato con successo.'}
+                  {submitStatus === 'error' && "Errore nell'invio del messaggio. Riprova oppure scrivi a info@lorenzosottile.it."}
+                </p>
+                <button
+                  type="submit"
                   disabled={isSubmitting || !privacyAccepted || submitStatus !== null}
                   className={getButtonClass()}
                 >
