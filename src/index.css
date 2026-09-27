@@ -1,8 +1,5 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Text&display=swap');
-
 @theme {
   --font-sans: "Space Grotesk", system-ui, sans-serif;
   --font-barcode: "Libre Barcode 39 Text", system-ui, sans-serif;
@@ -12,8 +9,44 @@ html {
   scroll-behavior: smooth;
 }
 
-.cky-modal,
-.cky-preference-center,
-.cky-detail-modal {
-  overscroll-behavior: contain;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@property --rainbow-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rainbow-spin {
+  from { --rainbow-angle: 0deg; }
+  to { --rainbow-angle: 360deg; }
+}
+
+.rainbow-container {
+  position: relative;
+  display: inline-flex;
+  border-radius: 1rem;
+  padding: 3px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  background: conic-gradient(from var(--rainbow-angle),
+    #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80,
+    #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080, #ff0000);
+  animation: rainbow-spin 5s linear infinite;
+}
+
+.rainbow-container:hover {
+  transform: scale(1.03);
 }
