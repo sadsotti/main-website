@@ -434,7 +434,7 @@ function Portfolio() {
 
             <div className="mb-6">
               <p className="text-sm text-neutral-400 leading-relaxed">
-                Sito ufficiale di una società calcistica dilettantistica di Legnano, sviluppato come tema WordPress interamente su misura, senza page builder né plugin a pagamento, con un'identità visiva costruita sui colori sociali. Un pannello di gestione dedicato permette alla segreteria di aggiornare tutto in autonomia: calendario eventi con creazione diretta dal giorno, schede squadra con rosa, staff e classifiche collegate ai widget di Tuttocampo, galleria ad album con caricamento multiplo e riordino drag & drop, editor del consiglio direttivo e area documenti. Completano il progetto una navigazione a pillola con menu mobile a schermo intero, un'area riservata con login personalizzato e font ospitati localmente per prestazioni e conformità GDPR.
+                Sito ufficiale di una società calcistica di Legnano, sviluppato come tema WordPress interamente su misura, senza page builder né plugin a pagamento. Un pannello di gestione dedicato permette alla segreteria di aggiornare tutto in autonomia: calendario eventi, schede squadra con classifiche collegate a Tuttocampo, galleria ad album con caricamento multiplo e riordino drag & drop, consiglio direttivo e documenti. Completano il progetto il menu mobile a schermo intero e un'area riservata con login personalizzato.
               </p>
             </div>
 
