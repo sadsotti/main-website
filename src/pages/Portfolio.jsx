@@ -442,7 +442,7 @@ function Portfolio() {
               <div className="flex flex-wrap gap-2 mb-6">
                 <span className={badgeStyle}>In collaborazione con Up Solutions</span>
               </div>
-              <a href="https://www.legnarellossm.it/" target="_blank" rel="noreferrer" className="block text-sm text-black font-semibold bg-white px-5 py-3 rounded-xl hover:bg-neutral-200 transition-colors text-center">
+              <a href="https://www.legnarellocalcio.it/" target="_blank" rel="noreferrer" className="block text-sm text-black font-semibold bg-white px-5 py-3 rounded-xl hover:bg-neutral-200 transition-colors text-center">
                 Visita il sito web <span className="font-sans" aria-hidden="true">&rarr;</span>
               </a>
             </div>
