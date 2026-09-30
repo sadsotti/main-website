@@ -416,6 +416,39 @@ function Portfolio() {
           </section>
         </motion.div>
 
+        <motion.div variants={itemVariants} className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+          <section className={`${bentoCard} lg:col-span-2 p-0 overflow-hidden relative aspect-16/10 lg:aspect-auto group`}>
+            <img
+              src="/progetti/mockup-legnarello-ssm.webp"
+              loading="lazy"
+              decoding="async"
+              alt="Mockup A.S.D. Legnarello SSM"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" aria-hidden="true" />
+          </section>
+
+          <section className={`${bentoCard} lg:col-span-1 flex flex-col`}>
+            <div className="text-xs font-semibold text-neutral-500 mb-2 uppercase tracking-wider">Sito Web WordPress Custom & Gestione Contenuti</div>
+            <h2 className="text-2xl font-medium text-white mb-4">A.S.D. Legnarello SSM</h2>
+
+            <div className="mb-6">
+              <p className="text-sm text-neutral-400 leading-relaxed">
+                Sito ufficiale di una società calcistica dilettantistica di Legnano, sviluppato come tema WordPress interamente su misura, senza page builder né plugin a pagamento, con un'identità visiva costruita sui colori sociali. Un pannello di gestione dedicato permette alla segreteria di aggiornare tutto in autonomia: calendario eventi con creazione diretta dal giorno, schede squadra con rosa, staff e classifiche collegate ai widget di Tuttocampo, galleria ad album con caricamento multiplo e riordino drag & drop, editor del consiglio direttivo e area documenti. Completano il progetto una navigazione a pillola con menu mobile a schermo intero, un'area riservata con login personalizzato e font ospitati localmente per prestazioni e conformità GDPR.
+              </p>
+            </div>
+
+            <div className="mt-auto">
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className={badgeStyle}>In collaborazione con Up Solutions</span>
+              </div>
+              <a href="https://www.legnarellossm.it/" target="_blank" rel="noreferrer" className="block text-sm text-black font-semibold bg-white px-5 py-3 rounded-xl hover:bg-neutral-200 transition-colors text-center">
+                Visita il sito web <span className="font-sans" aria-hidden="true">&rarr;</span>
+              </a>
+            </div>
+          </section>
+        </motion.div>
+
         <Lightbox
           open={openGallery !== null}
           close={() => setOpenGallery(null)}
