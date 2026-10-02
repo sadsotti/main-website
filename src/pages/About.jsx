@@ -56,6 +56,18 @@ function About() {
             <div className="space-y-10">
               <div className="relative pl-6 border-l border-white/10">
                 <div className="absolute w-3 h-3 bg-white rounded-full left-[-6.5px] top-1.5 shadow-[0_0_10px_rgba(255,255,255,0.5)]" aria-hidden="true"></div>
+                <h3 className="text-xl font-medium text-white mb-1">Fractional CTO</h3>
+                <div className="flex flex-wrap gap-2 items-center mb-4">
+                  <span className="text-sm text-neutral-300 font-medium">Snapix Image S.r.l.</span>
+                  <span className="text-xs px-2 py-0.5 bg-white/10 rounded text-neutral-400">settembre 2026 - presente</span>
+                </div>
+                <p className="text-sm text-neutral-400 leading-relaxed">
+                  Direzione tecnica esterna (fractional CTO) della piattaforma digitale di Snapix Image: riferimento per sicurezza, architettura e sviluppo full-stack del prodotto. Ho avviato l'incarico con una revisione completa di sicurezza, architettura e qualità del codice della piattaforma, definendo una roadmap di intervento prioritizzata per rischio/sforzo e verificando sul campo in produzione i rilievi principali. Cura del passaggio di consegne tecnico dal fornitore uscente. Oggi seguo con continuità l'hardening e l'ottimizzazione della piattaforma, la risoluzione degli incidenti in produzione, l'onboarding di nuove agenzie partner e lo sviluppo di nuove funzionalità, garantendo inoltre l'assistenza tecnica continuativa.
+                </p>
+              </div>
+
+              <div className="relative pl-6 border-l border-white/10">
+                <div className="absolute w-3 h-3 bg-white rounded-full left-[-6.5px] top-1.5 shadow-[0_0_10px_rgba(255,255,255,0.5)]" aria-hidden="true"></div>
                 <h3 className="text-xl font-medium text-white mb-1">Developer & IT Consultant</h3>
                 <div className="flex flex-wrap gap-2 items-center mb-4">
                   <span className="text-sm text-neutral-300 font-medium">Freelance</span>
@@ -74,7 +86,7 @@ function About() {
                   <span className="text-xs px-2 py-0.5 bg-white/5 rounded text-neutral-500">dicembre 2022 - marzo 2024</span>
                 </div>
                 <p className="text-sm text-neutral-400 leading-relaxed">
-                  Sviluppo e gestione di software, applicazioni mobile e web app gestionali (lato client e lato server); assistenza hardware e software; sviluppo e cura di siti web ed i relativi servizi di web marketing.
+                  Sviluppo e gestione di software, applicazioni mobile e web app gestionali (lato client e lato server); assistenza hardware e software; sviluppo e cura di siti web e i relativi servizi di web marketing.
                 </p>
               </div>
 
@@ -86,7 +98,7 @@ function About() {
                   <span className="text-xs px-2 py-0.5 bg-white/5 rounded text-neutral-500">luglio 2022 - novembre 2022</span>
                 </div>
                 <p className="text-sm text-neutral-400 leading-relaxed">
-                  Community moderation, social media management, content creation, graphic design e front end web development.
+                  Community moderation, social media management, content creation, graphic design e front-end web development.
                 </p>
               </div>
             </div>
@@ -118,15 +130,15 @@ function About() {
               <div className="space-y-4">
                 <div className="flex justify-between items-center border-b border-white/5 pb-3">
                   <span className="text-sm text-white">Italiano</span>
-                  <span className="text-xs text-neutral-500 bg-white/5 px-2 py-1 rounded">Madrelingua</span>
+                  <span className="text-xs text-neutral-500 bg-white/5 px-2 py-1 rounded">Conoscenza madrelingua o bilingue</span>
                 </div>
                 <div className="flex justify-between items-center border-b border-white/5 pb-3">
                   <span className="text-sm text-white">Inglese</span>
-                  <span className="text-xs text-neutral-500 bg-white/5 px-2 py-1 rounded">Livello Professionale Avanzato</span>
+                  <span className="text-xs text-neutral-500 bg-white/5 px-2 py-1 rounded">Conoscenza professionale</span>
                 </div>
                 <div className="flex justify-between items-center pb-1">
                   <span className="text-sm text-white">Spagnolo</span>
-                  <span className="text-xs text-neutral-500 bg-white/5 px-2 py-1 rounded">Livello Elementare</span>
+                  <span className="text-xs text-neutral-500 bg-white/5 px-2 py-1 rounded">Conoscenza lavorativa limitata</span>
                 </div>
               </div>
             </section>
