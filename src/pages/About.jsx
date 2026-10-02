@@ -130,15 +130,15 @@ function About() {
               <div className="space-y-4">
                 <div className="flex justify-between items-center border-b border-white/5 pb-3">
                   <span className="text-sm text-white">Italiano</span>
-                  <span className="text-xs text-neutral-500 bg-white/5 px-2 py-1 rounded">Conoscenza madrelingua o bilingue</span>
+                  <span className="text-xs text-neutral-500 bg-white/5 px-2 py-1 rounded">Madrelingua</span>
                 </div>
                 <div className="flex justify-between items-center border-b border-white/5 pb-3">
                   <span className="text-sm text-white">Inglese</span>
-                  <span className="text-xs text-neutral-500 bg-white/5 px-2 py-1 rounded">Conoscenza professionale</span>
+                  <span className="text-xs text-neutral-500 bg-white/5 px-2 py-1 rounded">Professionale</span>
                 </div>
                 <div className="flex justify-between items-center pb-1">
                   <span className="text-sm text-white">Spagnolo</span>
-                  <span className="text-xs text-neutral-500 bg-white/5 px-2 py-1 rounded">Conoscenza lavorativa limitata</span>
+                  <span className="text-xs text-neutral-500 bg-white/5 px-2 py-1 rounded">Lavorativa limitata</span>
                 </div>
               </div>
             </section>
