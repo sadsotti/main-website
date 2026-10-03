@@ -58,7 +58,7 @@ function About() {
                 <div className="absolute w-3 h-3 bg-white rounded-full left-[-6.5px] top-1.5 shadow-[0_0_10px_rgba(255,255,255,0.5)]" aria-hidden="true"></div>
                 <h3 className="text-xl font-medium text-white mb-1">Fractional CTO</h3>
                 <div className="flex flex-wrap gap-2 items-center mb-4">
-                  <span className="text-sm text-neutral-300 font-medium">Snapix Image S.r.l.</span>
+                  <span className="text-sm text-neutral-300 font-medium">SNAPIX IMAGE SRL</span>
                   <span className="text-xs px-2 py-0.5 bg-white/10 rounded text-neutral-400">settembre 2026 - presente</span>
                 </div>
                 <p className="text-sm text-neutral-400 leading-relaxed">
