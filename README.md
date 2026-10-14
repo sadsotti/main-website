@@ -17,6 +17,7 @@ The project is a **Single Page Application (SPA)** built with **React** and **Vi
 - 🍱 **Bento Grid Design**: A modular, responsive layout that organizes information into elegant "cards", providing a clear overview of services and projects.
 - 🎭 **Framer Motion Animations**: Smooth, spring-based transitions and stagger animations that enhance the user experience without sacrificing performance.
 - 🤖 **AI Focused**: A dedicated section for the start2impact Master, highlighting 16 projects focused on Full Stack development and AI Agent.
+- 🧪 **Personal Projects Lab**: A showcase of personal tools and apps, each with a custom cover, tech stack, GitHub repository and, when available, a link to the live app.
 - 🖼️ **Interactive 3D Portfolio**: An integrated Lightbox system to showcase 3D architectural renderings and web mockups.
 - 📧 **Professional Contact System**: A robust form powered by EmailJS with real-time feedback (loading, success, error states) and GDPR-compliant privacy management.
 - 🔍 **Optimized SEO**: Per-route metadata via React Helmet Async, plus static HTML generated at build time for every route so search engines and social previews get the right title, description and Open Graph tags.
@@ -52,6 +53,7 @@ The website is organized into the following main sections:
 | **Home** | Main dashboard with a quick overview of bio, services, and core philosophy. |
 | **Portfolio** | Detailed showcase of professional works (Management Web Apps, Websites, 3D Rendering). |
 | **start2impact** | Academic timeline featuring 16 modules from the Full Stack & AI Master. |
+| **Progetti Personali** | Personal projects (`/lab`): tools, apps and bots with links to GitHub and, when available, the live app. |
 | **Servizi** | Breakdown of IT offerings: Software, Consulting, Ads, and 3D Video. |
 | **Chi Sono** | My background, my hobbies, and the connection between music and coding. |
 | **Contatti** | Direct contact form with zone-specific info and social links. |
