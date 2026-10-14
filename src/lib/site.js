@@ -30,6 +30,10 @@ export const PAGES = {
     title: 'Percorso Full Stack Development & AI | start2impact | Lorenzo Sottile',
     description: "Il mio percorso nel Master in Full Stack Development e Agenti AI di start2impact. 16 progetti pratici, da React e Node.js fino all'integrazione di Intelligenza Artificiale.",
   },
+  '/lab': {
+    title: 'Progetti Personali e Open Source | Lorenzo Sottile',
+    description: 'I miei progetti personali: un tool di steganografia in C++, un analizzatore di rete con IDS in Python e un bot Discord con AI. Codice disponibile su GitHub.',
+  },
   '/contatti': {
     title: 'Contatti | Richiedi una Consulenza | Lorenzo Sottile',
     description: 'Hai un progetto in mente? Contattami per una consulenza su sviluppo web, sistemi IT, digital advertising o rendering 3D.',

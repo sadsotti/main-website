@@ -11,7 +11,8 @@ const navLinks = [
     label: 'Progetti',
     subLinks: [
       { path: '/portfolio', label: 'Portfolio Generale' },
-      { path: '/start2impact', label: 'Master start2impact' }
+      { path: '/start2impact', label: 'Master start2impact' },
+      { path: '/lab', label: 'Progetti Personali' }
     ]
   },
   { path: '/contatti', label: 'Contatti' },
