@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, ShieldCheck, Radar, Bot } from 'lucide-react';
+import { ExternalLink, Mail, BookOpen, ShieldCheck, Radar, Bot } from 'lucide-react';
 import { GithubIcon } from '../components/Icons';
 import Seo from '../components/Seo';
 
@@ -20,6 +20,12 @@ function Lab() {
   };
 
   const labProjects = [
+    {
+      id: 0, icon: BookOpen, titolo: "BookPaw",
+      stack: ["React", "Firebase", "Cloudflare Workers", "Gemini AI"],
+      desc: "Web app per lettori con libreria personale, scanner ISBN, citazioni e recensioni, calendario delle letture, amici e un mentore AI basato su Gemini. Installabile come app, con accesso su invito.",
+      cover: "/progetti/cover_bookpaw.webp", alt: "BookPaw, web app per lettori con libreria personale e mentore AI", linkApp: "https://joinbookpaw.web.app", linkAccess: `mailto:info@lorenzosottile.it?subject=${encodeURIComponent("Richiesta di accesso a BookPaw")}`, linkCode: ""
+    },
     {
       id: 1, icon: ShieldCheck, titolo: "Bastion++",
       stack: ["C++", "Steganografia LSB", "Crittografia XOR"],
@@ -89,7 +95,7 @@ function Lab() {
                   ))}
                 </div>
 
-                <div className={`grid ${p.linkApp && p.linkCode ? 'grid-cols-2' : 'grid-cols-1'} gap-2 mt-auto pt-4 border-t border-white/5`}>
+                <div className={`grid ${[p.linkApp, p.linkAccess, p.linkCode].filter(Boolean).length > 1 ? 'grid-cols-2' : 'grid-cols-1'} gap-2 mt-auto pt-4 border-t border-white/5`}>
                   {p.linkApp && (
                     <a
                       href={p.linkApp}
@@ -99,6 +105,16 @@ function Lab() {
                       className={bottonePrimario}
                     >
                       <ExternalLink size={14} aria-hidden="true" /> Apri l'app
+                    </a>
+                  )}
+
+                  {p.linkAccess && (
+                    <a
+                      href={p.linkAccess}
+                      aria-label={`Richiedi l'accesso a ${p.titolo}`}
+                      className={bottoneSecondario}
+                    >
+                      <Mail size={14} aria-hidden="true" /> Richiedi l'accesso
                     </a>
                   )}
 
