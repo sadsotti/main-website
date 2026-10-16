@@ -32,7 +32,7 @@ export const PAGES = {
   },
   '/lab': {
     title: 'Progetti Personali: App e Software | Lorenzo Sottile',
-    description: 'I miei progetti personali: BookPaw, una web app per lettori con AI, un tool di steganografia in C++, un analizzatore di rete in Python e un bot Discord con AI.',
+    description: 'I miei progetti personali: le web app con AI BookPaw, CineLista e Sumptus, un tool di steganografia in C++, un analizzatore di rete in Python e un bot Discord.',
   },
   '/contatti': {
     title: 'Contatti | Richiedi una Consulenza | Lorenzo Sottile',

@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { Send, Mail, MapPin, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
@@ -9,6 +9,8 @@ import { containerVariants, itemVariants, bentoCard } from '../lib/ui';
 
 function Contacts() {
   const form = useRef();
+  const [searchParams] = useSearchParams();
+  const presetSubject = (searchParams.get('oggetto') || '').slice(0, 120);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [privacyAccepted, setPrivacyAccepted] = useState(false);
@@ -177,6 +179,8 @@ function Contacts() {
                 <label htmlFor="subject" className="text-xs font-medium text-neutral-400 pl-1">Oggetto</label>
                 <input
                   type="text" name="subject" id="subject"
+                  key={presetSubject}
+                  defaultValue={presetSubject}
                   className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/30 transition-all"
                   placeholder="Richiesta informazioni..."
                 />

@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ExternalLink, Mail, BookOpen, ShieldCheck, Radar, Bot } from 'lucide-react';
+import { ExternalLink, Mail, BookOpen, Clapperboard, Receipt, ShieldCheck, Radar, Bot } from 'lucide-react';
 import { GithubIcon } from '../components/Icons';
 import Seo from '../components/Seo';
 
@@ -24,7 +25,19 @@ function Lab() {
       id: 0, icon: BookOpen, titolo: "BookPaw",
       stack: ["React", "Firebase", "Cloudflare Workers", "Gemini AI"],
       desc: "Web app per lettori con libreria personale, scanner ISBN, citazioni e recensioni, calendario delle letture, amici e un mentore AI basato su Gemini. Installabile come app, con accesso su invito.",
-      cover: "/progetti/cover_bookpaw.webp", alt: "BookPaw, web app per lettori con libreria personale e mentore AI", linkApp: "https://joinbookpaw.web.app", linkAccess: `mailto:info@lorenzosottile.it?subject=${encodeURIComponent("Richiesta di accesso a BookPaw")}`, linkCode: ""
+      cover: "/progetti/cover_bookpaw.webp", alt: "BookPaw, web app per lettori con libreria personale e mentore AI", linkApp: "https://joinbookpaw.web.app", linkAccess: `/contatti?oggetto=${encodeURIComponent("Richiesta di accesso a BookPaw")}`, linkCode: ""
+    },
+    {
+      id: 4, icon: Clapperboard, titolo: "CineLista",
+      stack: ["React", "Firebase", "Cloudflare Workers", "Gemini AI"],
+      desc: "Web app per collezionisti di film: catalogo dei film che possiedi e di quelli da vedere, ricerca nel database OMDb, filtri avanzati, esportazione CSV e un assistente AI basato su Gemini. Accesso su invito.",
+      cover: "/progetti/cover_cinelista.webp", alt: "CineLista, web app per collezionisti di film con assistente AI", linkApp: "https://joincinelista.web.app", linkAccess: `/contatti?oggetto=${encodeURIComponent("Richiesta di accesso a CineLista")}`, linkCode: ""
+    },
+    {
+      id: 5, icon: Receipt, titolo: "Sumptus",
+      stack: ["React", "Supabase", "Claude AI", "Chart.js"],
+      desc: "Gestionale web per la mia attività da freelance in regime forfettario: fatture, spese, clienti, progetti, scadenze e calcolo di tasse e contributi, con preventivi generati dall'AI e pronti per la stampa. Uso personale.",
+      cover: "/progetti/cover_sumptus.webp", alt: "Sumptus, gestionale per freelance in regime forfettario con preventivi generati dall'AI", linkApp: "", linkInfo: `/contatti?oggetto=${encodeURIComponent("Informazioni su Sumptus")}`, linkCode: ""
     },
     {
       id: 1, icon: ShieldCheck, titolo: "Bastion++",
@@ -95,7 +108,7 @@ function Lab() {
                   ))}
                 </div>
 
-                <div className={`grid ${[p.linkApp, p.linkAccess, p.linkCode].filter(Boolean).length > 1 ? 'grid-cols-2' : 'grid-cols-1'} gap-2 mt-auto pt-4 border-t border-white/5`}>
+                <div className={`grid ${[p.linkApp, p.linkAccess, p.linkInfo, p.linkCode].filter(Boolean).length > 1 ? 'grid-cols-2' : 'grid-cols-1'} gap-2 mt-auto pt-4 border-t border-white/5`}>
                   {p.linkApp && (
                     <a
                       href={p.linkApp}
@@ -109,13 +122,23 @@ function Lab() {
                   )}
 
                   {p.linkAccess && (
-                    <a
-                      href={p.linkAccess}
+                    <Link
+                      to={p.linkAccess}
                       aria-label={`Richiedi l'accesso a ${p.titolo}`}
                       className={bottoneSecondario}
                     >
                       <Mail size={14} aria-hidden="true" /> Richiedi l'accesso
-                    </a>
+                    </Link>
+                  )}
+
+                  {p.linkInfo && (
+                    <Link
+                      to={p.linkInfo}
+                      aria-label={`Chiedi informazioni su ${p.titolo}`}
+                      className={bottonePrimario}
+                    >
+                      <Mail size={14} aria-hidden="true" /> Chiedi informazioni
+                    </Link>
                   )}
 
                   {p.linkCode && (
