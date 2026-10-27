@@ -2,6 +2,10 @@ export const SITE_URL = 'https://www.lorenzosottile.it';
 export const SITE_NAME = 'Lorenzo Sottile';
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og/og-first.webp`;
 
+export const ROLE = 'Developer & IT Consultant';
+
+export const PITCH = 'Seguo la parte digitale delle aziende dalla strategia tecnica alla realizzazione, con software su misura, sistemi IT, campagne pubblicitarie e rendering 3D.';
+
 export const OWNER = {
   name: 'Lorenzo Sottile',
   address: 'Via Orsini, 68, 20821 Meda (MB)',
@@ -12,23 +16,23 @@ export const OWNER = {
 export const PAGES = {
   '/': {
     title: 'Lorenzo Sottile | Developer & IT Consultant',
-    description: 'Sviluppatore Full Stack e Consulente IT freelance. Realizzo software su misura, web app, campagne digital e rendering 3D. Operativo a Monza Brianza, Milano e da remoto.',
+    description: 'Developer & IT Consultant: seguo la parte digitale delle aziende, dalla strategia tecnica al software su misura, fino a campagne Ads e rendering 3D.',
   },
   '/about': {
     title: 'Chi Sono | Lorenzo Sottile | Developer & IT Consultant',
-    description: 'Scopri la mia storia: un percorso tra musica, elettronica e sviluppo software. Esperienze, formazione e la mia filosofia di apprendimento continuo nel tech.',
+    description: "La mia storia: dall'elettronica allo sviluppo software, fino alla direzione tecnica di piattaforme in produzione. Esperienze, formazione e certificazioni.",
   },
   '/servizi': {
     title: 'Servizi IT e Digitali | Software, Ads & 3D | Lorenzo Sottile',
-    description: 'Consulenza IT a 360°: sviluppo software personalizzato, gestione campagne Digital Advertising (Google/Meta) e rendering 3D per il settore immobiliare.',
+    description: "IT Consulting, Sviluppo Software & Web, Digital Advertising su Google e Meta, Rendering 3D & Video per l'immobiliare. Un unico referente per il digitale.",
   },
   '/portfolio': {
-    title: 'Portfolio Progetti | Sviluppo Web e 3D | Lorenzo Sottile',
-    description: 'Esplora i miei progetti: web app gestionali, siti per il settore immobiliare e hospitality, rendering 3D fotorealistici e video promozionali.',
+    title: 'Portfolio | Direzione Tecnica, Sviluppo Web e 3D | Lorenzo Sottile',
+    description: 'Incarichi e progetti: direzione tecnica, web app gestionali, siti per immobiliare e hospitality, rendering 3D fotorealistici e video promozionali.',
   },
   '/start2impact': {
     title: 'Percorso Full Stack Development & AI | start2impact | Lorenzo Sottile',
-    description: "Il mio percorso nel Master in Full Stack Development e Agenti AI di start2impact. 16 progetti pratici, da React e Node.js fino all'integrazione di Intelligenza Artificiale.",
+    description: "Il mio Master in Full Stack Development e Agenti AI di start2impact: 16 progetti pratici, da React e Node.js fino all'integrazione dell'AI.",
   },
   '/lab': {
     title: 'Progetti Personali: App e Software | Lorenzo Sottile',
@@ -36,7 +40,7 @@ export const PAGES = {
   },
   '/contatti': {
     title: 'Contatti | Richiedi una Consulenza | Lorenzo Sottile',
-    description: 'Hai un progetto in mente? Contattami per una consulenza su sviluppo web, sistemi IT, digital advertising o rendering 3D.',
+    description: 'Hai un progetto in mente? Contattami per una consulenza su direzione tecnica, sviluppo software, sistemi IT, digital advertising o rendering 3D.',
   },
   '/privacy': {
     title: 'Privacy Policy & Cookie | Lorenzo Sottile',

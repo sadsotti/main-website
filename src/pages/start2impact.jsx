@@ -4,7 +4,7 @@ import { GithubIcon, CodepenIcon } from '../components/Icons';
 import Seo from '../components/Seo';
 
 function Start2Impact() {
-  const bentoCard = "bg-[#121212] border border-white/5 rounded-3xl p-6 hover:bg-[#171717] transition-all duration-300 flex flex-col group";
+  const bentoCard = "spotlight bg-[#121212] border border-white/5 rounded-3xl p-6 hover:bg-[#171717] hover:border-white/10 transition-all duration-300 flex flex-col group";
   const badgeStyle = "px-2 py-1 bg-white/5 border border-white/10 rounded-lg text-[10px] font-medium text-neutral-400";
 
   const containerVariants = {

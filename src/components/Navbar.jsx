@@ -10,13 +10,18 @@ const navLinks = [
   {
     label: 'Progetti',
     subLinks: [
-      { path: '/portfolio', label: 'Portfolio Generale' },
-      { path: '/start2impact', label: 'Master start2impact' },
-      { path: '/lab', label: 'Progetti Personali' }
+      { path: '/portfolio', label: 'Portfolio' },
+      { path: '/lab', label: 'Progetti personali' },
+      { path: '/start2impact', label: 'Master start2impact' }
     ]
   },
-  { path: '/contatti', label: 'Contatti' },
+  { path: '/contatti', label: 'Contatti', cta: true },
 ];
+
+const ctaLinkStyle = ({ isActive }) =>
+  `ml-2 px-4 py-2 rounded-xl font-semibold transition-all text-sm border ${
+    isActive ? 'bg-white text-black border-white' : 'bg-white/10 text-white border-white/15 hover:bg-white hover:text-black'
+  }`;
 
 const desktopLinkStyle = ({ isActive }) =>
   isActive
@@ -93,10 +98,10 @@ function Navbar() {
                   </motion.span>
                 </button>
 
-                <div className="absolute top-full left-0 pt-2 z-50">
+                <div className={`absolute top-full left-0 pt-2 z-50 ${openDropdown === link.label ? '' : 'pointer-events-none'}`}>
                   <div
                     id="menu-progetti"
-                    className={`w-52 bg-[#121212] border border-white/10 rounded-2xl p-2 shadow-2xl transition-all duration-200 flex flex-col ${openDropdown === link.label ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
+                    className={`w-56 bg-[#121212] border border-white/10 rounded-2xl p-2 shadow-2xl transition-all duration-200 flex flex-col ${openDropdown === link.label ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
                   >
                     {link.subLinks.map((subLink) => (
                       <NavLink
@@ -116,7 +121,7 @@ function Navbar() {
                 </div>
               </div>
             ) : (
-              <NavLink key={link.path} to={link.path} className={desktopLinkStyle}>
+              <NavLink key={link.path} to={link.path} className={link.cta ? ctaLinkStyle : desktopLinkStyle}>
                 {link.label}
               </NavLink>
             )

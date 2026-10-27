@@ -6,6 +6,7 @@ import { Send, Mail, MapPin, CheckCircle, AlertCircle, Loader2 } from 'lucide-re
 import { GithubIcon, LinkedinIcon } from '../components/Icons';
 import Seo from '../components/Seo';
 import { containerVariants, itemVariants, bentoCard } from '../lib/ui';
+import { SERVIZI, linkRichiesta } from '../lib/services';
 
 function Contacts() {
   const form = useRef();
@@ -100,14 +101,14 @@ function Contacts() {
         animate="visible"
       >
         <motion.div variants={itemVariants} className="mb-2">
-          <h1 className="text-4xl font-semibold mb-4 text-white">Contatti</h1>
+          <h1 className="text-4xl md:text-5xl font-semibold mb-4 text-white tracking-tight">Contatti</h1>
           <p className="text-neutral-400 max-w-2xl leading-relaxed">
-            Hai un'idea per un progetto, una richiesta di consulenza o vuoi semplicemente fare due chiacchiere? Scrivimi.
+            Hai un'idea per un progetto, una richiesta di consulenza o vuoi semplicemente fare due chiacchiere? Scrivimi: partiamo da una call conoscitiva per capire obiettivi, contesto e vincoli.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <motion.div variants={itemVariants} className="lg:col-span-1 flex flex-col gap-6">
+          <motion.div variants={itemVariants} className="lg:col-span-1 flex flex-col gap-6 order-2 lg:order-none">
             <section className={`${bentoCard} grow`}>
               <h2 className="text-xl font-medium text-white mb-6">Info utili</h2>
 
@@ -150,6 +151,31 @@ function Contacts() {
           <motion.section variants={itemVariants} className={`${bentoCard} lg:col-span-2`}>
             <h2 className="text-2xl font-medium text-white mb-6">Invia un messaggio</h2>
 
+            <div className="mb-6">
+              <p className="text-xs font-medium text-neutral-400 pl-1 mb-2" id="argomento-label">Di cosa hai bisogno?</p>
+              <div className="flex flex-wrap gap-2" role="group" aria-labelledby="argomento-label">
+                {SERVIZI.map(({ titolo }) => {
+                  const oggetto = `Richiesta: ${titolo}`;
+                  return (
+                    <Link
+                      key={titolo}
+                      to={linkRichiesta(titolo)}
+                      replace
+                      preventScrollReset
+                      aria-current={presetSubject === oggetto ? 'true' : undefined}
+                      className={`px-4 py-2.5 rounded-full text-xs font-medium border transition-colors ${
+                        presetSubject === oggetto
+                          ? 'bg-white text-black border-white'
+                          : 'bg-white/5 text-neutral-400 border-white/10 hover:text-white hover:bg-white/10'
+                      }`}
+                    >
+                      {titolo}
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
             <form ref={form} onSubmit={sendEmail} className="space-y-4">
               <div className="absolute -left-[9999px] w-px h-px overflow-hidden" aria-hidden="true">
                 <label htmlFor="website">Lascia vuoto questo campo</label>
@@ -161,7 +187,7 @@ function Contacts() {
                   <label htmlFor="name" className="text-xs font-medium text-neutral-400 pl-1">Nome completo <span className="text-red-500">*</span></label>
                   <input
                     type="text" name="name" id="name" required autoComplete="name"
-                    className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/30 transition-all"
+                    className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-base sm:text-sm text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/30 transition-all"
                     placeholder="Mario Rossi"
                   />
                 </div>
@@ -169,7 +195,7 @@ function Contacts() {
                   <label htmlFor="email" className="text-xs font-medium text-neutral-400 pl-1">Indirizzo Email <span className="text-red-500">*</span></label>
                   <input
                     type="email" name="email" id="email" required autoComplete="email"
-                    className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/30 transition-all"
+                    className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-base sm:text-sm text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/30 transition-all"
                     placeholder="mario@esempio.com"
                   />
                 </div>
@@ -181,7 +207,7 @@ function Contacts() {
                   type="text" name="subject" id="subject"
                   key={presetSubject}
                   defaultValue={presetSubject}
-                  className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/30 transition-all"
+                  className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-base sm:text-sm text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/30 transition-all"
                   placeholder="Richiesta informazioni..."
                 />
               </div>
@@ -190,7 +216,7 @@ function Contacts() {
                 <label htmlFor="message" className="text-xs font-medium text-neutral-400 pl-1">Messaggio <span className="text-red-500">*</span></label>
                 <textarea
                   name="message" id="message" required rows="5"
-                  className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/30 transition-all resize-none"
+                  className="w-full bg-[#1a1a1a] border border-white/10 rounded-xl px-4 py-3 text-base sm:text-sm text-white placeholder:text-neutral-600 focus:outline-none focus:ring-2 focus:ring-white/20 focus:border-white/30 transition-all resize-none"
                   placeholder="Scrivi qui il tuo messaggio..."
                 ></textarea>
               </div>
@@ -198,7 +224,7 @@ function Contacts() {
               <div className="flex items-start gap-3 py-2">
                 <input
                   type="checkbox" id="privacy_check"
-                  className="mt-1 h-4 w-4 rounded border-white/20 bg-[#1a1a1a] text-white accent-white cursor-pointer"
+                  className="mt-0.5 h-5 w-5 shrink-0 rounded border-white/20 bg-[#1a1a1a] text-white accent-white cursor-pointer"
                   checked={privacyAccepted}
                   onChange={(e) => setPrivacyAccepted(e.target.checked)}
                 />

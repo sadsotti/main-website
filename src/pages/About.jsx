@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Music, Lightbulb, BookOpen, Briefcase, Award, Globe, GraduationCap } from 'lucide-react';
+import { Music, Lightbulb, Briefcase, Award, Globe, GraduationCap } from 'lucide-react';
 import Seo from '../components/Seo';
-import { containerVariants, itemVariants, bentoCard } from '../lib/ui';
+import { containerVariants, itemVariants, cardBase, bentoCard, eyebrow } from '../lib/ui';
+import { ROLE } from '../lib/site';
+import mioAvatar from '../assets/mia-foto.jpg';
 
 function About() {
   return (
@@ -16,35 +18,41 @@ function About() {
         animate="visible"
       >
         <motion.div variants={itemVariants} className="mb-2">
-          <h1 className="text-4xl font-semibold mb-4 text-white">Chi Sono</h1>
+          <h1 className="text-4xl md:text-5xl font-semibold mb-4 text-white tracking-tight">Chi Sono</h1>
           <p className="text-neutral-400 max-w-2xl">
             Un tuffo nel mio percorso personale, professionale e accademico.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <motion.section variants={itemVariants} className={`${cardBase} lg:col-span-2 p-8 md:p-10 flex flex-col sm:flex-row gap-8 items-start`}>
+            <img
+              src={mioAvatar}
+              alt="Foto di Lorenzo Sottile"
+              width="112"
+              height="112"
+              className="w-28 h-28 rounded-full object-cover border border-white/10 shrink-0"
+            />
+            <div>
+              <p className={`${eyebrow} mb-3`}>{ROLE}</p>
+              <h2 className="text-2xl md:text-3xl font-semibold text-white tracking-tight mb-4">
+                Dalla strategia tecnica alla realizzazione.
+              </h2>
+              <p className="text-sm text-neutral-400 leading-relaxed mb-4">
+                Ho iniziato da ragazzo smontando e riparando dispositivi elettronici e oggi guido la parte tecnica di piattaforme in produzione: per Snapix Image seguo, come consulente freelance esterno, sicurezza, architettura e sviluppo del prodotto.
+              </p>
+              <p className="text-sm text-neutral-400 leading-relaxed">
+                Affianco le aziende come unico referente per la parte digitale: dalle scelte tecniche allo sviluppo di software su misura, fino alle campagne pubblicitarie e ai rendering 3D per il settore immobiliare.
+              </p>
+            </div>
+          </motion.section>
+
           <motion.section variants={itemVariants} className={`${bentoCard} flex flex-col`}>
             <Music className="text-neutral-400 mb-6" size={32} strokeWidth={1.5} aria-hidden="true" />
             <h2 className="font-medium text-white mb-3 uppercase tracking-wider text-xs">Oltre il codice</h2>
             <p className="text-sm text-neutral-400 leading-relaxed">
-              Sono razionale, preciso e determinato. Amante della musica, ho prestato la mia voce con chitarra d’accompagnamento ad alcune piccole band locali e prodotto tracce musicali, con software appositi, per cantanti emergenti.<br/><br/>
-              Sono appassionato da verdissima età al mondo dell’elettronica e dell'informatica, pratico riparazioni a “perditempo” di dispositivi elettronici.
-            </p>
-          </motion.section>
-
-          <motion.section variants={itemVariants} className={`${bentoCard} flex flex-col`}>
-            <Lightbulb className="text-neutral-400 mb-6" size={32} strokeWidth={1.5} aria-hidden="true" />
-            <h2 className="font-medium text-white mb-3 uppercase tracking-wider text-xs">Il mio impegno per l'innovazione</h2>
-            <p className="text-sm text-neutral-400 leading-relaxed">
-              Il mondo dell’informatica e della tecnologia è in costante evoluzione, una trasformazione continua che mi appassiona e mi spinge a mettermi sempre in gioco. Per questo, il mio obiettivo primario è l’apprendimento continuo. Voglio rimanere aggiornato sulle ultime tendenze, tecnologie emergenti e migliori pratiche del settore.
-            </p>
-          </motion.section>
-
-          <motion.section variants={itemVariants} className={`${bentoCard} flex flex-col`}>
-            <BookOpen className="text-neutral-400 mb-6" size={32} strokeWidth={1.5} aria-hidden="true" />
-            <h2 className="font-medium text-white mb-3 uppercase tracking-wider text-xs">Un percorso di formazione senza fine</h2>
-            <p className="text-sm text-neutral-400 leading-relaxed">
-              Credo fermamente che nel settore tech l'aggiornamento costante sia la chiave del successo. Per questo motivo, dedico parte del mio tempo all'apprendimento su alcune delle migliori piattaforme di formazione online, ampliando costantemente le mie conoscenze e competenze.
+              Amo la musica: ho prestato la mia voce, con chitarra d’accompagnamento, ad alcune band locali e ho prodotto tracce musicali per cantanti emergenti.<br/><br/>
+              L’elettronica resta la mia prima passione: smontare, riparare e capire come funzionano le cose.
             </p>
           </motion.section>
 
@@ -58,17 +66,18 @@ function About() {
                 <div className="absolute w-3 h-3 bg-white rounded-full left-[-6.5px] top-1.5 shadow-[0_0_10px_rgba(255,255,255,0.5)]" aria-hidden="true"></div>
                 <h3 className="text-xl font-medium text-white mb-1">Fractional CTO</h3>
                 <div className="flex flex-wrap gap-2 items-center mb-4">
-                  <span className="text-sm text-neutral-300 font-medium">SNAPIX IMAGE SRL</span>
+                  <span className="text-sm text-neutral-300 font-medium">SNAPIX IMAGE SRL · Freelance</span>
                   <span className="text-xs px-2 py-0.5 bg-white/10 rounded text-neutral-400">settembre 2026 - presente</span>
+                  <span className="text-xs px-2 py-0.5 bg-green-500/10 border border-green-500/20 rounded text-green-400">In corso</span>
                 </div>
                 <p className="text-sm text-neutral-400 leading-relaxed">
-                  Direzione tecnica esterna (fractional CTO) della piattaforma digitale di Snapix Image: riferimento per sicurezza, architettura e sviluppo full-stack del prodotto. Ho avviato l'incarico con una revisione completa di sicurezza, architettura e qualità del codice della piattaforma, definendo una roadmap di intervento prioritizzata per rischio/sforzo e verificando sul campo in produzione i rilievi principali. Cura del passaggio di consegne tecnico dal fornitore uscente. Oggi seguo con continuità l'hardening e l'ottimizzazione della piattaforma, la risoluzione degli incidenti in produzione, l'onboarding di nuove agenzie partner e lo sviluppo di nuove funzionalità, garantendo inoltre l'assistenza tecnica continuativa.
+                  Direzione tecnica esterna della piattaforma digitale di Snapix Image: riferimento per sicurezza, architettura e sviluppo full-stack del prodotto. Ho avviato l'incarico con una revisione completa di sicurezza, architettura e qualità del codice della piattaforma, definendo una roadmap di intervento prioritizzata per rischio/sforzo e verificando sul campo in produzione i rilievi principali. Cura del passaggio di consegne tecnico dal fornitore uscente, con la ricostruzione da zero delle pipeline CI/CD. Oggi seguo con continuità l'hardening e l'ottimizzazione della piattaforma, la risoluzione degli incidenti in produzione, l'onboarding di nuove agenzie partner e lo sviluppo di nuove funzionalità, garantendo inoltre l'assistenza tecnica continuativa.
                 </p>
               </div>
 
               <div className="relative pl-6 border-l border-white/10">
                 <div className="absolute w-3 h-3 bg-white rounded-full left-[-6.5px] top-1.5 shadow-[0_0_10px_rgba(255,255,255,0.5)]" aria-hidden="true"></div>
-                <h3 className="text-xl font-medium text-white mb-1">Developer & IT Consultant</h3>
+                <h3 className="text-xl font-medium text-white mb-1">{ROLE}</h3>
                 <div className="flex flex-wrap gap-2 items-center mb-4">
                   <span className="text-sm text-neutral-300 font-medium">Freelance</span>
                   <span className="text-xs px-2 py-0.5 bg-white/10 rounded text-neutral-400">maggio 2024 - presente</span>
@@ -105,21 +114,29 @@ function About() {
           </motion.section>
 
           <motion.div variants={itemVariants} className="lg:col-span-1 flex flex-col gap-6">
+            <section className={bentoCard}>
+              <Lightbulb className="text-neutral-400 mb-6" size={32} strokeWidth={1.5} aria-hidden="true" />
+              <h2 className="font-medium text-white mb-3 uppercase tracking-wider text-xs">Apprendimento continuo</h2>
+              <p className="text-sm text-neutral-400 leading-relaxed">
+                Il mondo della tecnologia è in costante evoluzione, e questo mi spinge a mettermi sempre in gioco. Dedico parte del mio tempo alla formazione su alcune delle migliori piattaforme online, per restare aggiornato su tecnologie emergenti e migliori pratiche del settore.
+              </p>
+            </section>
+
             <section className={`${bentoCard} grow`}>
               <h2 className="text-xl font-medium text-white mb-6 flex items-center gap-3">
                 <Award size={24} className="text-neutral-400" aria-hidden="true" /> Certificazioni Selezionate
               </h2>
               <ul className="text-sm text-neutral-400 space-y-3 leading-relaxed">
-                <li>• Corso per Programmatori Java Junior</li>
-                <li>• Certificate of Excellence - JavaScript and jQuery Survival Guide</li>
-                <li>• Certificate of Excellence - Modern Web Design</li>
                 <li>• Introduction to Cybersecurity</li>
-                <li>• Certificate of Excellence – Responsive Web Design Fundamentals</li>
-                <li>• Certificate of Excellence – UX Fundamentals</li>
                 <li>• Google Analytics Advanced</li>
                 <li>• Foundational C# with Microsoft</li>
                 <li>• CS107: C++ Programming</li>
                 <li>• CS105: Introduction to Python</li>
+                <li>• Certificate of Excellence – UX Fundamentals</li>
+                <li>• Certificate of Excellence - Modern Web Design</li>
+                <li>• Certificate of Excellence – Responsive Web Design Fundamentals</li>
+                <li>• Certificate of Excellence - JavaScript and jQuery Survival Guide</li>
+                <li>• Corso per Programmatori Java Junior</li>
               </ul>
             </section>
 

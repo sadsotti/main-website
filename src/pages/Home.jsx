@@ -1,133 +1,200 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Laptop, Settings, TrendingUp, Box } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import Seo from '../components/Seo';
-import { containerVariants, itemVariants } from '../lib/ui';
-import mioLogoSfondo from '../assets/logo.png';
+import { containerVariants, itemVariants, inView, cardBase, bentoCard, eyebrow, bottonePrimario } from '../lib/ui';
+import { ROLE, PITCH } from '../lib/site';
+import { SERVIZI } from '../lib/services';
+import { PROGETTI, SNAPIX } from '../lib/projects';
+import mioLogoSfondo from '../assets/logo.webp';
 import mioAvatar from '../assets/mia-foto.jpg';
 
-const competenze = [
-  {
-    icon: Laptop,
-    title: "Software & Web",
-    desc: "Sviluppo di software personalizzati, app desktop, web app gestionali e piattaforme web."
-  },
-  {
-    icon: Settings,
-    title: "IT Consulting",
-    desc: "Analisi, assistenza specialistica e ottimizzazione sistemi IT."
-  },
-  {
-    icon: TrendingUp,
-    title: "Digital Advertising",
-    desc: "Creazione e gestione campagne Google/Meta e ottimizzazione conversioni."
-  },
-  {
-    icon: Box,
-    title: "3D & Video Editing",
-    desc: "Rendering fotorealistici, planimetrie 3D immobiliari e video animazione."
-  },
+const numeri = [
+  { valore: "50+", etichetta: "Progetti realizzati" },
+  { valore: "2022", etichetta: "Dal primo incarico come sviluppatore in azienda" },
+  { valore: SERVIZI.length, etichetta: "Aree di competenza, un unico referente" },
 ];
 
-function Home() {
-  const bentoCard = "bg-[#121212] border border-white/5 rounded-3xl p-8 flex flex-col justify-between hover:bg-[#171717] transition-colors duration-300 relative overflow-hidden group";
+const inEvidenza = ['up-solutions', 'corso-liberta', 'stimatech'].map((id) => PROGETTI.find((p) => p.id === id));
 
+const parolaVariants = {
+  hidden: { y: '110%' },
+  visible: (i) => ({ y: 0, transition: { delay: 0.15 + i * 0.12, type: 'spring', stiffness: 90, damping: 16 } }),
+};
+
+function Home() {
   return (
     <>
       <Seo path="/" />
 
-      <motion.div
-        className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-[minmax(300px,auto)_minmax(250px,auto)] gap-4"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <motion.section variants={itemVariants} className={`${bentoCard} md:col-span-2`}>
-          <div className="absolute inset-0 opacity-[0.05] pointer-events-none z-0 transition-transform duration-700 group-hover:scale-105 flex items-center justify-center overflow-hidden p-12" aria-hidden="true">
-            <img
-              src={mioLogoSfondo}
-              alt=""
-              className="w-full h-full object-contain object-center scale-150"
-            />
-          </div>
-
-          <div className="relative z-10 flex flex-col justify-between h-full w-full">
-            <div>
-              <div className="inline-block px-3 py-1 mb-6 border border-white/10 rounded-full text-xs font-semibold text-neutral-400 tracking-wider bg-[#121212]">
-                <span className="w-2 h-2 inline-block bg-green-500 rounded-full mr-2 animate-pulse" aria-hidden="true"></span>
-                Benvenuto!
-              </div>
-              <h1 className="text-5xl md:text-6xl font-semibold mb-4 tracking-tight text-white">
-                Lorenzo Sottile
-              </h1>
-              <p className="text-xl text-neutral-400 font-light max-w-lg leading-relaxed">
-                Developer & IT Consultant. Costruisco soluzioni digitali moderne, unendo codice pulito, design e performance.
-              </p>
+      <motion.div className="flex flex-col gap-4" variants={containerVariants} initial="hidden" animate="visible">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <motion.section variants={itemVariants} className={`${cardBase} md:col-span-2 p-8 md:p-12 overflow-hidden group min-h-105 flex`}>
+            <div className="absolute inset-0 opacity-14 group-hover:opacity-20 pointer-events-none -z-10 transition-all duration-700 group-hover:scale-105 flex items-center justify-center overflow-hidden p-12" aria-hidden="true">
+              <img src={mioLogoSfondo} alt="" className="w-full h-full object-contain object-center scale-110" />
             </div>
 
-            <div className="mt-8 flex items-start">
-              <div className="rainbow-container">
-                <Link to="/contatti" className="w-full h-full bg-black text-white font-semibold py-3 px-6 rounded-xl hover:bg-neutral-800 transition-all inline-flex items-center gap-2 group-hover:pl-8 duration-300">
-                  Iniziamo un progetto <span className="text-lg font-sans" aria-hidden="true">&rarr;</span>
+            <div className="flex flex-col justify-between w-full">
+              <div>
+                <div className="inline-flex items-center px-3 py-1 mb-8 border border-white/10 rounded-full text-xs font-semibold text-neutral-400 tracking-wider bg-[#121212]">
+                  <span className="w-2 h-2 inline-block bg-green-500 rounded-full mr-2 animate-pulse" aria-hidden="true"></span>
+                  {ROLE}
+                </div>
+                <h1 className="text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tight text-white leading-[0.95] mb-6">
+                  {['Lorenzo', 'Sottile'].map((parola, i) => (
+                    <span key={parola} className="block overflow-hidden pb-1">
+                      <motion.span className="block" custom={i} variants={parolaVariants}>
+                        {parola}
+                      </motion.span>
+                    </span>
+                  ))}
+                </h1>
+                <p className="text-lg md:text-xl text-neutral-400 font-light max-w-xl leading-relaxed">
+                  {PITCH}
+                </p>
+              </div>
+
+              <div className="mt-10 flex flex-wrap items-center gap-4">
+                <div className="cta-ring">
+                  <Link to="/contatti" className="bg-[#0a0a0a] text-white font-semibold py-3 px-6 rounded-[0.8rem] hover:bg-neutral-900 transition-colors inline-flex items-center gap-2">
+                    Iniziamo un progetto <span className="text-lg font-sans" aria-hidden="true">&rarr;</span>
+                  </Link>
+                </div>
+                <Link to="/portfolio" className="py-2.5 text-sm text-neutral-400 hover:text-white underline underline-offset-4 transition-colors">
+                  Guarda i lavori
                 </Link>
               </div>
             </div>
-          </div>
-        </motion.section>
+          </motion.section>
 
-        <motion.section variants={itemVariants} className={`${bentoCard} md:col-span-1 justify-center items-center text-center`}>
-          <motion.div
-            className="w-24 h-24 bg-neutral-800 rounded-full mb-6 flex items-center justify-center border border-white/10 relative z-10 overflow-hidden"
-            whileHover={{ scale: 1.1, rotate: 5 }}
-          >
-            <img
-              src={mioAvatar}
-              alt="Foto di Lorenzo Sottile"
-              width="96"
-              height="96"
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-          <div className="relative z-10 flex flex-col items-center">
+          <motion.section variants={itemVariants} className={`${bentoCard} flex flex-col justify-center items-center text-center`}>
+            <motion.div
+              className="w-28 h-28 bg-neutral-800 rounded-full mb-6 flex items-center justify-center border border-white/10 overflow-hidden"
+              whileHover={{ scale: 1.08, rotate: 4 }}
+            >
+              <img src={mioAvatar} alt="Foto di Lorenzo Sottile" width="112" height="112" className="w-full h-full object-cover" />
+            </motion.div>
             <h2 className="text-2xl font-medium text-white mb-2">Freelance</h2>
-            <p className="text-neutral-500">Milano, Monza e Brianza & Remote</p>
-            <Link to="/about" className="mt-6 text-sm text-neutral-400 hover:text-white underline underline-offset-4 transition-colors">
+            <p className="text-neutral-500 text-sm">Milano, Monza e Brianza & Remote</p>
+            <Link to="/about" className="mt-4 py-2 text-sm text-neutral-400 hover:text-white underline underline-offset-4 transition-colors">
               La mia storia
             </Link>
-          </div>
-        </motion.section>
+          </motion.section>
+        </div>
 
-        <motion.section variants={itemVariants} className={`${bentoCard} md:col-span-1`}>
-          <div className="relative z-10">
-            <h2 className="text-2xl font-medium text-white mb-4">La mia filosofia</h2>
-            <p className="text-neutral-400 leading-relaxed text-sm">
-              Razionale, preciso e determinato. Nel settore tech l'aggiornamento costante è fondamentale. Dedico il mio tempo all'apprendimento continuo per rimanere al passo.
-            </p>
-          </div>
-          <Link to="/about" className="mt-6 text-sm text-neutral-300 hover:text-white flex justify-between items-center group/link relative z-10">
-            Scopri di più <span className="transform group-hover/link:translate-x-1 transition-transform font-sans" aria-hidden="true">&rarr;</span>
-          </Link>
-        </motion.section>
-
-        <motion.section variants={itemVariants} className={`${bentoCard} md:col-span-2`}>
-          <div className="relative z-10">
-            <h2 className="text-2xl font-medium text-white mb-6">Aree di competenza</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {competenze.map((comp) => (
-                <motion.div key={comp.title} whileHover={{ y: -5 }} className="p-4 rounded-2xl bg-white/5 border border-white/5 transition-colors hover:bg-white/10 flex flex-col">
-                  <comp.icon className="text-neutral-400 mb-2" size={24} aria-hidden="true" />
-                  <h3 className="text-white font-medium mb-1 text-sm">{comp.title}</h3>
-                  <p className="text-xs text-neutral-500 leading-relaxed">{comp.desc}</p>
-                </motion.div>
-              ))}
+        <motion.section variants={itemVariants} aria-label="In numeri" className="grid grid-cols-3 gap-2 sm:gap-4">
+          {numeri.map(({ valore, etichetta }) => (
+            <div key={etichetta} className={`${cardBase} p-4 sm:p-6`}>
+              <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white tracking-tight mb-1 sm:mb-2">{valore}</p>
+              <p className="text-[11px] sm:text-xs text-neutral-500 leading-snug sm:leading-relaxed">{etichetta}</p>
             </div>
-          </div>
-
-          <Link to="/servizi" className="mt-6 pt-5 border-t border-white/5 text-sm text-neutral-300 hover:text-white flex justify-between items-center group/link relative z-10">
-            Scopri i dettagli di tutti i servizi offerti <span className="transform group-hover/link:translate-x-1 transition-transform font-sans" aria-hidden="true">&rarr;</span>
-          </Link>
+          ))}
         </motion.section>
       </motion.div>
+
+      <motion.section variants={itemVariants} {...inView} className={`${cardBase} mt-4 p-8 md:p-12`}>
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
+          <div className="lg:col-span-2 flex flex-col">
+            <p className={`${eyebrow} mb-4`}>Incarico freelance in evidenza</p>
+            <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-2">{SNAPIX.ruolo}</h2>
+            <p className="text-xl text-neutral-300 mb-6">{SNAPIX.titolo}</p>
+            <p className="text-sm text-neutral-400 leading-relaxed mb-8">{SNAPIX.testo}</p>
+            <Link to="/portfolio#snapix" className="mt-auto text-sm text-neutral-300 hover:text-white inline-flex items-center gap-2 group/link w-fit py-2">
+              Leggi il caso <ArrowUpRight size={16} className="transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" aria-hidden="true" />
+            </Link>
+          </div>
+          <ol className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {SNAPIX.fasi.map(({ titolo, testo }, i) => (
+              <li key={titolo} className="p-5 rounded-2xl bg-white/3 border border-white/5">
+                <span className="text-xs font-mono text-neutral-600">0{i + 1}</span>
+                <h3 className="text-white font-medium mt-2 mb-1">{titolo}</h3>
+                <p className="text-xs text-neutral-500 leading-relaxed">{testo}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </motion.section>
+
+      <motion.section className="mt-24" variants={containerVariants} {...inView} aria-labelledby="servizi-titolo">
+        <motion.div variants={itemVariants} className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <p className={`${eyebrow} mb-3`}>Servizi</p>
+            <h2 id="servizi-titolo" className="text-3xl md:text-4xl font-semibold text-white tracking-tight max-w-xl">
+              Un unico referente, dalla strategia alla realizzazione.
+            </h2>
+          </div>
+          <Link to="/servizi" className="text-sm text-neutral-400 hover:text-white inline-flex items-center gap-2 group/link shrink-0">
+            Tutti i servizi <span className="transition-transform group-hover/link:translate-x-1 font-sans" aria-hidden="true">&rarr;</span>
+          </Link>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {SERVIZI.map(({ icon: Icon, titolo, breve }, i) => (
+            <motion.div key={titolo} variants={itemVariants} className={`${bentoCard} flex flex-col`}>
+              <div className="flex items-center justify-between mb-8">
+                <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center text-neutral-300 border border-white/10">
+                  <Icon size={24} strokeWidth={1.5} aria-hidden="true" />
+                </div>
+                <span className="text-xs font-mono text-neutral-600">0{i + 1}</span>
+              </div>
+              <h3 className="text-xl font-medium text-white mb-2">{titolo}</h3>
+              <p className="text-sm text-neutral-400 leading-relaxed">{breve}</p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
+      <motion.section className="mt-24" variants={containerVariants} {...inView} aria-labelledby="lavori-titolo">
+        <motion.div variants={itemVariants} className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+          <div>
+            <p className={`${eyebrow} mb-3`}>Lavori selezionati</p>
+            <h2 id="lavori-titolo" className="text-3xl md:text-4xl font-semibold text-white tracking-tight max-w-xl">
+              Progetti online, dal gestionale al 3D.
+            </h2>
+          </div>
+          <Link to="/portfolio" className="text-sm text-neutral-400 hover:text-white inline-flex items-center gap-2 group/link shrink-0">
+            Tutto il portfolio <span className="transition-transform group-hover/link:translate-x-1 font-sans" aria-hidden="true">&rarr;</span>
+          </Link>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {inEvidenza.map((p, i) => (
+            <motion.div key={p.id} variants={itemVariants} className={i === 0 ? 'md:col-span-2' : ''}>
+              <Link to={`/portfolio#${p.id}`} className={`${cardBase} overflow-hidden group flex flex-col h-full`}>
+                <div className={`relative overflow-hidden ${i === 0 ? 'aspect-video md:aspect-21/9' : 'aspect-16/10'}`}>
+                  <img
+                    src={p.img}
+                    alt={p.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6 flex items-end justify-between gap-4">
+                  <div>
+                    <p className="text-xs text-neutral-500 mb-1">{p.eyebrow}</p>
+                    <h3 className="text-lg font-medium text-white">{p.titolo}</h3>
+                  </div>
+                  <ArrowUpRight size={20} className="text-neutral-500 shrink-0 transition-all group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
+      <motion.section variants={itemVariants} {...inView} className={`${cardBase} mt-24 p-10 md:p-16 text-center flex flex-col items-center overflow-hidden`}>
+        <p className={`${eyebrow} mb-4`}>Parliamone</p>
+        <h2 className="text-3xl md:text-5xl font-semibold text-white tracking-tight max-w-2xl mb-6">
+          Hai un progetto in mente?
+        </h2>
+        <p className="text-neutral-400 max-w-xl leading-relaxed mb-10">
+          Raccontami di cosa hai bisogno: analizziamo insieme obiettivi, tempi e soluzione più adatta.
+        </p>
+        <Link to="/contatti" className={bottonePrimario}>
+          Richiedi una consulenza <span className="font-sans" aria-hidden="true">&rarr;</span>
+        </Link>
+      </motion.section>
     </>
   );
 }

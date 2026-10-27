@@ -23,30 +23,75 @@ html {
   }
 }
 
-@property --rainbow-angle {
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(60rem 30rem at 50% -10%, rgba(255, 255, 255, 0.07), transparent 70%),
+    radial-gradient(40rem 25rem at 100% 0%, rgba(120, 140, 255, 0.05), transparent 70%);
+}
+
+.ambient::after {
+  content: '';
+  position: absolute;
+  inset: -8%;
+  background: url('/topografia.svg') center / cover no-repeat;
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 30%, #000 40%, transparent 100%);
+  animation: respira 70s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes respira {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(-3%, -2%, 0) scale(1.07); }
+}
+
+.spotlight {
+  position: relative;
+  isolation: isolate;
+}
+
+.spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.07), transparent 45%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+@property --ring-angle {
   syntax: '<angle>';
   initial-value: 0deg;
   inherits: false;
 }
 
-@keyframes rainbow-spin {
-  from { --rainbow-angle: 0deg; }
-  to { --rainbow-angle: 360deg; }
+@keyframes ring-spin {
+  from { --ring-angle: 0deg; }
+  to { --ring-angle: 360deg; }
 }
 
-.rainbow-container {
+.cta-ring {
   position: relative;
   display: inline-flex;
-  border-radius: 1rem;
-  padding: 3px;
-  overflow: hidden;
+  border-radius: 0.875rem;
+  padding: 1.5px;
   transition: transform 0.3s ease;
-  background: conic-gradient(from var(--rainbow-angle),
-    #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80,
-    #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080, #ff0000);
-  animation: rainbow-spin 5s linear infinite;
+  background:
+    conic-gradient(from var(--ring-angle), transparent 0deg, rgba(255, 255, 255, 0.95) 50deg, transparent 110deg, transparent 230deg, rgba(160, 175, 255, 0.8) 280deg, transparent 330deg),
+    rgba(255, 255, 255, 0.15);
+  animation: ring-spin 4s linear infinite;
 }
 
-.rainbow-container:hover {
+.cta-ring:hover {
   transform: scale(1.03);
 }

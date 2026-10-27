@@ -4,6 +4,7 @@ import { MotionConfig } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import SpotlightTracker from './components/SpotlightTracker';
 import Home from './pages/Home';
 
 const About = lazy(() => import('./pages/About'));
@@ -21,7 +22,10 @@ function App() {
     <Router>
       <MotionConfig reducedMotion="user">
         <ScrollToTop />
+        <SpotlightTracker />
         <div className="min-h-screen bg-[#0a0a0a] text-neutral-200 flex flex-col font-sans selection:bg-white selection:text-black">
+          <div className="ambient" aria-hidden="true" />
+
           <a
             href="#contenuto"
             className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[60] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded-xl focus:text-sm focus:font-semibold"
@@ -31,9 +35,9 @@ function App() {
 
           <Navbar />
 
-          <main id="contenuto" className="grow p-4 md:p-8 flex justify-center w-full mt-24">
+          <main id="contenuto" className="grow p-4 md:p-8 flex justify-center w-full mt-24 relative z-10">
             <div className="w-full max-w-5xl">
-              <Suspense fallback={<div className="min-h-[60vh]" aria-busy="true" />}>
+              <Suspense fallback={<div className="min-h-screen" aria-busy="true" />}>
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/about" element={<About />} />

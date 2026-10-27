@@ -2,7 +2,7 @@
 
 This repository contains the source code for my professional portfolio, **Lorenzo Sottile | Developer & IT Consultant**.
 
-The website has been completely redesigned, moving away from the old CLI terminal to a modern, high-performance **Bento Grid** interface. It balances a minimalist aesthetic with advanced interactivity, showcasing my skills in **Full Stack Development**, **AI integration**, and **3D Rendering**.
+The website presents my work as a single point of contact for the digital side of a business: **IT Consulting** (including technical direction and security/architecture audits), **Software & Web Development**, **Digital Advertising** and **3D Rendering & Video**. It uses a modern, high-performance **Bento Grid** interface that balances a minimalist aesthetic with subtle interactivity.
 
 > **Note:** The website content is entirely in Italian to serve my primary client base in Italy.
 
@@ -14,14 +14,16 @@ The project is a **Single Page Application (SPA)** built with **React** and **Vi
 
 ### Key Features
 
-- 🍱 **Bento Grid Design**: A modular, responsive layout that organizes information into elegant "cards", providing a clear overview of services and projects.
-- 🎭 **Framer Motion Animations**: Smooth, spring-based transitions and stagger animations that enhance the user experience without sacrificing performance.
+- 🍱 **Bento Grid Design**: A modular, responsive layout that organizes information into elegant "cards", with a soft light that follows the pointer on hover.
+- 🗺️ **Topographic Background**: Contour lines generated once as a lightweight SVG (`public/topografia.svg`) that slowly "breathe" with a GPU-friendly CSS animation.
+- 🎭 **Framer Motion Animations**: Spring-based entrance and scroll-reveal animations that enhance the experience without sacrificing performance.
+- 🧩 **Single Source of Truth**: Service names and client projects live in `src/lib/services.js` and `src/lib/projects.js`, shared by Home, Services, Portfolio and Contacts so wording stays consistent everywhere.
 - 🤖 **AI Focused**: A dedicated section for the start2impact Master, highlighting 16 projects focused on Full Stack development and AI Agent.
 - 🧪 **Personal Projects Lab**: A showcase of personal tools and apps, each with a custom cover, tech stack, GitHub repository and, when available, a link to the live app.
-- 🖼️ **Interactive 3D Portfolio**: An integrated Lightbox system to showcase 3D architectural renderings and web mockups.
-- 📧 **Professional Contact System**: A robust form powered by EmailJS with real-time feedback (loading, success, error states) and GDPR-compliant privacy management.
-- 🔍 **Optimized SEO**: Per-route metadata via React Helmet Async, plus static HTML generated at build time for every route so search engines and social previews get the right title, description and Open Graph tags.
-- ⚡ **Performance**: Route-based code splitting, lazy-loaded images and self-hosted fonts with no external requests.
+- 🖼️ **Interactive Portfolio**: Filterable by service, with a featured case study, a Lightbox for 3D architectural renderings and web mockups, and deep links to each project (`/portfolio#project-id`).
+- 📧 **Professional Contact System**: A form powered by EmailJS with real-time feedback (loading, success, error states), service shortcuts that pre-fill the subject, and GDPR-compliant privacy management.
+- 🔍 **Optimized SEO**: Per-route metadata via React Helmet Async, static HTML generated at build time for every route (title, description, canonical, Open Graph), `ProfessionalService` structured data with the service catalog, and a sitemap.
+- ⚡ **Performance**: Route-based code splitting with per-route `modulepreload`, preloaded key images, WebP images, lazy loading, zero layout shift and self-hosted fonts with no external requests.
 - 🍪 **Privacy by Design**: No cookies, no trackers and no third-party analytics, so no consent banner is needed.
 - ♿ **Accessibility**: Keyboard-friendly navigation, ARIA attributes, skip link and full support for `prefers-reduced-motion`.
 
@@ -50,13 +52,13 @@ The website is organized into the following main sections:
 
 | Page | Description |
 |------|-------------|
-| **Home** | Main dashboard with a quick overview of bio, services, and core philosophy. |
-| **Portfolio** | Detailed showcase of professional works (Management Web Apps, Websites, 3D Rendering). |
+| **Home** | Hero, key numbers, featured engagement, the four services, selected works and a final call to action. |
+| **Portfolio** | Featured case study and professional works (Management Web Apps, Websites, 3D Rendering), filterable by service. |
 | **start2impact** | Academic timeline featuring 16 modules from the Full Stack & AI Master. |
 | **Progetti Personali** | Personal projects (`/lab`): tools, apps and bots with links to GitHub and, when available, the live app. |
-| **Servizi** | Breakdown of IT offerings: Software, Consulting, Ads, and 3D Video. |
-| **Chi Sono** | My background, my hobbies, and the connection between music and coding. |
-| **Contatti** | Direct contact form with zone-specific info and social links. |
+| **Servizi** | IT Consulting (with the Technical Audit and Fractional CTO formulas), Software & Web, Digital Advertising, 3D Rendering & Video, and how I work in four steps. |
+| **Chi Sono** | My background, experience, certifications, languages and education. |
+| **Contatti** | Contact form with service shortcuts, operating area and social links. |
 | **Privacy / I tuoi diritti** | Privacy & Cookie Policy and instructions to exercise GDPR rights. |
 | **404** | Custom not-found page, excluded from indexing. |
 
@@ -66,20 +68,32 @@ The website is organized into the following main sections:
 
 ```text
 main-website/
-├── public/                 # Static assets (PDFs, Progetti covers, Logo)
+├── public/                 # Static assets (PDFs, project images, topographic background)
 │   ├── _headers            # Netlify security and caching headers
 │   └── _redirects          # Netlify routing (static route pages + SPA fallback)
 ├── src/
 │   ├── assets/             # Images
-│   ├── components/         # Reusable UI components (Navbar, Footer, Seo, Icons)
-│   ├── lib/                # Site data, SEO metadata and shared UI tokens
+│   ├── components/         # Reusable UI components (Navbar, Footer, Seo, Icons, SpotlightTracker)
+│   ├── lib/                # Site data and SEO metadata (site.js), services, projects, shared UI tokens
 │   ├── pages/              # Main route components (Home, About, etc.)
 │   ├── App.jsx             # Main Router and layout configuration
 │   ├── main.jsx            # Entry point & Providers
 │   └── index.css           # Tailwind v4 configuration and @theme
 ├── index.html              # HTML5 template and default metadata
-├── vite.config.js          # Vite config and static route metadata plugin
+├── vite.config.js          # Vite config and static route plugin (metadata + preloads)
 └── package.json            # Dependencies and scripts
+```
+
+---
+
+## 🧑‍💻 Development
+
+```bash
+npm install
+npm run dev      # local development server
+npm run lint     # ESLint
+npm run build    # production build in dist/
+npm run preview  # serve the production build locally
 ```
 
 ---

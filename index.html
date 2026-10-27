@@ -5,8 +5,8 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title data-seo>Lorenzo Sottile | Developer & IT Consultant</title>
-    <meta name="description" content="Sviluppatore Full Stack e Consulente IT freelance. Realizzo software su misura, web app, campagne digital e rendering 3D. Operativo a Monza Brianza, Milano e da remoto." data-seo />
+    <title data-seo>Lorenzo Sottile | Developer &amp; IT Consultant</title>
+    <meta name="description" content="Developer &amp; IT Consultant: seguo la parte digitale delle aziende, dalla strategia tecnica al software su misura, fino a campagne Ads e rendering 3D." data-seo />
     <link rel="canonical" href="https://www.lorenzosottile.it/" data-seo />
 
     <meta name="author" content="Lorenzo Sottile" />
@@ -16,26 +16,26 @@
     <meta property="og:type" content="website" data-seo />
     <meta property="og:locale" content="it_IT" data-seo />
     <meta property="og:site_name" content="Lorenzo Sottile" data-seo />
-    <meta property="og:title" content="Lorenzo Sottile | Developer & IT Consultant" data-seo />
-    <meta property="og:description" content="Sviluppatore Full Stack e Consulente IT freelance. Realizzo software su misura, web app, campagne digital e rendering 3D. Operativo a Monza Brianza, Milano e da remoto." data-seo />
+    <meta property="og:title" content="Lorenzo Sottile | Developer &amp; IT Consultant" data-seo />
+    <meta property="og:description" content="Developer &amp; IT Consultant: seguo la parte digitale delle aziende, dalla strategia tecnica al software su misura, fino a campagne Ads e rendering 3D." data-seo />
     <meta property="og:url" content="https://www.lorenzosottile.it/" data-seo />
     <meta property="og:image" content="https://www.lorenzosottile.it/og/og-first.webp" data-seo />
 
     <meta name="twitter:card" content="summary_large_image" data-seo />
-    <meta name="twitter:title" content="Lorenzo Sottile | Developer & IT Consultant" data-seo />
-    <meta name="twitter:description" content="Sviluppatore Full Stack e Consulente IT freelance. Realizzo software su misura, web app, campagne digital e rendering 3D. Operativo a Monza Brianza, Milano e da remoto." data-seo />
+    <meta name="twitter:title" content="Lorenzo Sottile | Developer &amp; IT Consultant" data-seo />
+    <meta name="twitter:description" content="Developer &amp; IT Consultant: seguo la parte digitale delle aziende, dalla strategia tecnica al software su misura, fino a campagne Ads e rendering 3D." data-seo />
     <meta name="twitter:image" content="https://www.lorenzosottile.it/og/og-first.webp" data-seo />
     <script type="application/ld+json">
 {
       "@context": "https://schema.org",
       "@type": "ProfessionalService",
       "@id": "https://www.lorenzosottile.it/#business",
-      "name": "Lorenzo Sottile | Developer & IT Consultant",
+      "name": "Lorenzo Sottile",
       "url": "https://www.lorenzosottile.it/",
       "image": "https://www.lorenzosottile.it/og/og-first.webp",
       "email": "info@lorenzosottile.it",
       "vatID": "IT13561690960",
-      "description": "Sviluppatore Full Stack e Consulente IT freelance. Realizzo software su misura, web app, campagne digital e rendering 3D. Operativo a Monza Brianza, Milano e da remoto.",
+      "description": "Developer & IT Consultant: seguo la parte digitale delle aziende, dalla strategia tecnica al software su misura, fino a campagne Ads e rendering 3D.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Via Orsini, 68",
@@ -54,6 +54,26 @@
           "name": "Milano"
         }
       ],
+      "knowsAbout": [
+        "Consulenza IT",
+        "Direzione tecnica",
+        "Sicurezza informatica",
+        "Sviluppo software",
+        "Sviluppo web",
+        "CI/CD",
+        "Digital advertising",
+        "Rendering 3D"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servizi",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "IT Consulting" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Sviluppo Software & Web" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Advertising" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rendering 3D & Video" } }
+        ]
+      },
       "founder": {
         "@type": "Person",
         "name": "Lorenzo Sottile",
@@ -70,8 +90,76 @@
       ]
     }
     </script>
+    <link rel="preload" href="/fonts/libre-barcode-39-text.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+      @font-face {
+        font-family: 'Libre Barcode 39 Text';
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+        src: url('/fonts/libre-barcode-39-text.woff2') format('woff2');
+      }
+
+      #loader {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        background: #0a0a0a;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+      }
+
+      #loader.nascosto {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .loader-marchio {
+        font-family: 'Libre Barcode 39 Text', monospace;
+        font-size: 104px;
+        line-height: 1;
+        color: #fff;
+      }
+
+      .loader-barra {
+        width: 150px;
+        height: 2px;
+        overflow: hidden;
+        border-radius: 2px;
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      .loader-barra span {
+        display: block;
+        width: 0;
+        height: 100%;
+        border-radius: 2px;
+        background: #fff;
+        animation: loader-avanza 2.4s cubic-bezier(0.1, 0.6, 0.3, 1) forwards;
+      }
+
+      @keyframes loader-avanza {
+        to { width: 85%; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .loader-barra span {
+          width: 60%;
+          animation: none;
+        }
+      }
+    </style>
+    <noscript><style>#loader { display: none; }</style></noscript>
   </head>
   <body>
+    <div id="loader" aria-hidden="true">
+      <div class="loader-marchio">LS.</div>
+      <div class="loader-barra"><span></span></div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <noscript>È necessario abilitare JavaScript per visualizzare questo sito.</noscript>

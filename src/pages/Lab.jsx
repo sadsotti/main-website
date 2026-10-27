@@ -5,7 +5,7 @@ import { GithubIcon } from '../components/Icons';
 import Seo from '../components/Seo';
 
 function Lab() {
-  const bentoCard = "bg-[#121212] border border-white/5 rounded-3xl p-6 hover:bg-[#171717] transition-all duration-300 flex flex-col group";
+  const bentoCard = "spotlight bg-[#121212] border border-white/5 rounded-3xl p-6 hover:bg-[#171717] hover:border-white/10 transition-all duration-300 flex flex-col group";
   const badgeStyle = "px-2 py-1 bg-white/5 border border-white/10 rounded-lg text-[10px] font-medium text-neutral-400";
   const bottonePrimario = "flex items-center justify-center gap-2 py-2 bg-white text-black rounded-xl text-xs font-bold hover:bg-neutral-200 transition-colors";
   const bottoneSecondario = "flex items-center justify-center gap-2 py-2 bg-white/5 border border-white/10 text-white rounded-xl text-xs font-medium hover:bg-white/10 transition-colors";
