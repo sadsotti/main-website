@@ -14,6 +14,7 @@ The project is a **Single Page Application (SPA)** built with **React** and **Vi
 
 ### Key Features
 
+- 🌗 **Dark / Light Theme**: Accessible theme toggle in the desktop and mobile navigation, with system preference detection, persistence through `localStorage`, synchronized browser colors, and theme-aware topography and hero artwork.
 - 🍱 **Bento Grid Design**: A modular, responsive layout that organizes information into elegant "cards", with a soft light that follows the pointer on hover.
 - 🗺️ **Topographic Background**: Contour lines generated once as a lightweight SVG (`public/topografia.svg`) that slowly "breathe" with a GPU-friendly CSS animation.
 - 🎭 **Framer Motion Animations**: Spring-based entrance and scroll-reveal animations that enhance the experience without sacrificing performance.

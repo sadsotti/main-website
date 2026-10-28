@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Moon, Sun } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
@@ -28,9 +28,52 @@ const desktopLinkStyle = ({ isActive }) =>
     ? "bg-white/10 text-white px-4 py-2 rounded-xl font-semibold transition-all border border-white/10 text-sm"
     : "text-neutral-400 hover:bg-white/5 hover:text-white px-4 py-2 rounded-xl font-medium transition-all text-sm border border-transparent";
 
+function ThemeToggle({ theme, onToggle }) {
+  return (
+    <button
+      type="button"
+      className="theme-toggle grid h-9 w-9 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/5 text-neutral-400 transition-colors hover:bg-white/10 hover:text-white cursor-pointer"
+      aria-label={`Attiva il tema ${theme === 'dark' ? 'chiaro' : 'scuro'}`}
+      title={`Tema ${theme === 'dark' ? 'chiaro' : 'scuro'}`}
+      onClick={onToggle}
+    >
+      {theme === 'dark' ? <Sun size={18} aria-hidden="true" /> : <Moon size={18} aria-hidden="true" />}
+    </button>
+  );
+}
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || 'dark');
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const applyTheme = (nextTheme) => {
+      root.dataset.theme = nextTheme;
+      root.style.colorScheme = nextTheme;
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', nextTheme === 'dark' ? '#0a0a0a' : '#f7f7f5');
+      setTheme(nextTheme);
+    };
+
+    if (savedTheme === 'light' || savedTheme === 'dark') {
+      applyTheme(savedTheme);
+      return undefined;
+    }
+
+    const syncWithSystem = (event) => {
+      const currentPreference = localStorage.getItem('theme');
+      if (currentPreference !== 'light' && currentPreference !== 'dark') {
+        applyTheme(event.matches ? 'dark' : 'light');
+      }
+    };
+    applyTheme(media.matches ? 'dark' : 'light');
+    media.addEventListener('change', syncWithSystem);
+    return () => media.removeEventListener('change', syncWithSystem);
+  }, []);
 
   useEffect(() => {
     if (!isOpen && !openDropdown) return;
@@ -47,6 +90,15 @@ function Navbar() {
   const closeAll = () => {
     setIsOpen(false);
     setOpenDropdown(null);
+  };
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = nextTheme;
+    document.documentElement.style.colorScheme = nextTheme;
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', nextTheme === 'dark' ? '#0a0a0a' : '#f7f7f5');
+    localStorage.setItem('theme', nextTheme);
+    setTheme(nextTheme);
   };
 
   return (
@@ -126,18 +178,22 @@ function Navbar() {
               </NavLink>
             )
           ))}
+          <ThemeToggle theme={theme} onToggle={toggleTheme} />
         </div>
 
-        <button
-          type="button"
-          className="md:hidden text-neutral-400 hover:text-white transition-colors p-1 cursor-pointer"
-          aria-label={isOpen ? 'Chiudi il menu' : 'Apri il menu'}
-          aria-expanded={isOpen}
-          aria-controls="menu-mobile"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <ThemeToggle theme={theme} onToggle={toggleTheme} />
+          <button
+            type="button"
+            className="text-neutral-400 hover:text-white transition-colors p-1 cursor-pointer"
+            aria-label={isOpen ? 'Chiudi il menu' : 'Apri il menu'}
+            aria-expanded={isOpen}
+            aria-controls="menu-mobile"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+          </button>
+        </div>
 
         <AnimatePresence>
           {isOpen && (

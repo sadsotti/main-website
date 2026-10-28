@@ -30,11 +30,11 @@ function Home() {
       <motion.div className="flex flex-col gap-4" variants={containerVariants} initial="hidden" animate="visible">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <motion.section variants={itemVariants} className={`${cardBase} md:col-span-2 p-8 md:p-12 overflow-hidden group min-h-105 flex`}>
-            <div className="absolute inset-0 opacity-14 group-hover:opacity-20 pointer-events-none -z-10 transition-all duration-700 group-hover:scale-105 flex items-center justify-center overflow-hidden p-12" aria-hidden="true">
-              <img src={mioLogoSfondo} alt="" className="w-full h-full object-contain object-center scale-110" />
+            <div className="absolute inset-0 z-0 opacity-14 group-hover:opacity-20 pointer-events-none transition-all duration-700 group-hover:scale-105 flex items-center justify-center overflow-hidden p-12" aria-hidden="true">
+              <img src={mioLogoSfondo} alt="" className="hero-background-logo w-full h-full object-contain object-center scale-110" />
             </div>
 
-            <div className="flex flex-col justify-between w-full">
+            <div className="relative z-10 flex flex-col justify-between w-full">
               <div>
                 <div className="inline-flex items-center px-3 py-1 mb-8 border border-white/10 rounded-full text-xs font-semibold text-neutral-400 tracking-wider bg-[#121212]">
                   <span className="w-2 h-2 inline-block bg-green-500 rounded-full mr-2 animate-pulse" aria-hidden="true"></span>

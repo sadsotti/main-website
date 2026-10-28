@@ -7,6 +7,79 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+html[data-theme='light'] {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background: #0a0a0a;
+}
+
+html[data-theme='light'] body {
+  background: #f7f7f5;
+}
+
+html[data-theme='light'] .bg-\[\#0a0a0a\] { background-color: #f7f7f5; }
+html[data-theme='light'] .bg-\[\#0a0a0a\]\/80 { background-color: rgb(247 247 245 / 0.86); }
+html[data-theme='light'] .bg-\[\#121212\] { background-color: #fff; }
+html[data-theme='light'] .bg-\[\#171717\] { background-color: #f4f4f2; }
+html[data-theme='light'] .bg-\[\#1a1a1a\] { background-color: #fff; }
+html[data-theme='light'] .hover\:bg-\[\#171717\]:hover { background-color: #f4f4f2; }
+html[data-theme='light'] .bg-neutral-900 { background-color: #ececea; }
+html[data-theme='light'] .bg-neutral-800 { background-color: #dededb; }
+html[data-theme='light'] .bg-neutral-700 { background-color: #525252; }
+
+html[data-theme='light'] .text-white { color: #171717; }
+html[data-theme='light'] .text-neutral-200 { color: #262626; }
+html[data-theme='light'] .text-neutral-300 { color: #404040; }
+html[data-theme='light'] .text-neutral-400 { color: #525252; }
+html[data-theme='light'] .text-neutral-500 { color: #737373; }
+html[data-theme='light'] .text-neutral-600 { color: #8a8a8a; }
+html[data-theme='light'] .text-white\/15 { color: rgb(0 0 0 / 0.15); }
+html[data-theme='light'] .hover\:text-white:hover,
+html[data-theme='light'] .group:hover .group-hover\:text-white { color: #171717; }
+
+html[data-theme='light'] .bg-white { background-color: #171717; }
+html[data-theme='light'] .text-black { color: #fff; }
+html[data-theme='light'] .text-black\/50 { color: rgb(255 255 255 / 0.62); }
+html[data-theme='light'] .border-white { border-color: #171717; }
+html[data-theme='light'] .hover\:bg-white:hover { background-color: #171717; }
+html[data-theme='light'] .hover\:text-black:hover { color: #fff; }
+html[data-theme='light'] .hover\:bg-neutral-200:hover { background-color: #303030; }
+
+html[data-theme='light'] [class~='bg-white/3'],
+html[data-theme='light'] [class~='bg-white/5'],
+html[data-theme='light'] [class~='bg-white/10'],
+html[data-theme='light'] [class~='bg-white/15'],
+html[data-theme='light'] [class~='bg-white/20'] { background-color: rgb(0 0 0 / 0.045); }
+html[data-theme='light'] [class~='border-white/5'],
+html[data-theme='light'] [class~='border-white/10'],
+html[data-theme='light'] [class~='border-white/15'],
+html[data-theme='light'] [class~='border-white/20'],
+html[data-theme='light'] [class~='border-white/30'] { border-color: rgb(0 0 0 / 0.11); }
+html[data-theme='light'] [class~='hover:bg-white/5']:hover,
+html[data-theme='light'] [class~='hover:bg-white/10']:hover,
+html[data-theme='light'] [class~='hover:bg-white/20']:hover { background-color: rgb(0 0 0 / 0.08); }
+html[data-theme='light'] [class~='hover:border-white/10']:hover,
+html[data-theme='light'] [class~='hover:border-white/20']:hover { border-color: rgb(0 0 0 / 0.18); }
+
+html[data-theme='light'] .theme-toggle {
+  background-color: rgb(0 0 0 / 0.045);
+  border-color: rgb(0 0 0 / 0.11);
+  color: #404040;
+}
+
+.hero-background-logo {
+  filter: none;
+  transition: filter 350ms ease;
+}
+
+html[data-theme='light'] .hero-background-logo {
+  filter: invert(1);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -33,6 +106,13 @@ html {
     radial-gradient(40rem 25rem at 100% 0%, rgba(120, 140, 255, 0.05), transparent 70%);
 }
 
+html[data-theme='light'] .ambient {
+  background:
+    radial-gradient(60rem 30rem at 50% -10%, rgba(0, 0, 0, 0.05), transparent 70%),
+    radial-gradient(40rem 25rem at 100% 0%, rgba(85, 100, 190, 0.07), transparent 70%);
+  opacity: 0.72;
+}
+
 .ambient::after {
   content: '';
   position: absolute;
@@ -41,6 +121,13 @@ html {
   mask-image: radial-gradient(ellipse 85% 75% at 50% 30%, #000 40%, transparent 100%);
   animation: respira 70s ease-in-out infinite alternate;
   will-change: transform;
+  filter: none;
+  transition: filter 350ms ease, opacity 350ms ease;
+}
+
+html[data-theme='light'] .ambient::after {
+  filter: invert(1);
+  opacity: 0.82;
 }
 
 @keyframes respira {
@@ -67,6 +154,10 @@ html {
 
 .spotlight:hover::before {
   opacity: 1;
+}
+
+html[data-theme='light'] .spotlight::before {
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(0, 0, 0, 0.055), transparent 45%);
 }
 
 @property --ring-angle {
