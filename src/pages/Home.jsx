@@ -12,7 +12,7 @@ import mioAvatar from '../assets/mia-foto.jpg';
 const numeri = [
   { valore: "50+", etichetta: "Progetti realizzati" },
   { valore: "2022", etichetta: "Dal primo incarico come sviluppatore in azienda" },
-  { valore: SERVIZI.length, etichetta: "Aree di competenza, un unico referente" },
+  { valore: SERVIZI.length, etichetta: "Aree di competenza" },
 ];
 
 const inEvidenza = ['up-solutions', 'corso-liberta', 'stimatech'].map((id) => PROGETTI.find((p) => p.id === id));
@@ -75,7 +75,7 @@ function Home() {
               <img src={mioAvatar} alt="Foto di Lorenzo Sottile" width="112" height="112" className="w-full h-full object-cover" />
             </motion.div>
             <h2 className="text-2xl font-medium text-white mb-2">Freelance</h2>
-            <p className="text-neutral-500 text-sm">Milano, Monza e Brianza & Remote</p>
+            <p className="text-neutral-500 text-sm">Milano, Monza e Brianza e da remoto</p>
             <Link to="/about" className="mt-4 py-2 text-sm text-neutral-400 hover:text-white underline underline-offset-4 transition-colors">
               La mia storia
             </Link>
@@ -92,27 +92,14 @@ function Home() {
         </motion.section>
       </motion.div>
 
-      <motion.section variants={itemVariants} {...inView} className={`${cardBase} mt-4 p-8 md:p-12`}>
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-          <div className="lg:col-span-2 flex flex-col">
-            <p className={`${eyebrow} mb-4`}>Incarico freelance in evidenza</p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-white tracking-tight mb-2">{SNAPIX.ruolo}</h2>
-            <p className="text-xl text-neutral-300 mb-6">{SNAPIX.titolo}</p>
-            <p className="text-sm text-neutral-400 leading-relaxed mb-8">{SNAPIX.testo}</p>
-            <Link to="/portfolio#snapix" className="mt-auto text-sm text-neutral-300 hover:text-white inline-flex items-center gap-2 group/link w-fit py-2">
-              Leggi il caso <ArrowUpRight size={16} className="transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" aria-hidden="true" />
-            </Link>
-          </div>
-          <ol className="lg:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {SNAPIX.fasi.map(({ titolo, testo }, i) => (
-              <li key={titolo} className="p-5 rounded-2xl bg-white/3 border border-white/5">
-                <span className="text-xs font-mono text-neutral-600">0{i + 1}</span>
-                <h3 className="text-white font-medium mt-2 mb-1">{titolo}</h3>
-                <p className="text-xs text-neutral-500 leading-relaxed">{testo}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
+      <motion.section variants={itemVariants} {...inView} className={`${cardBase} mt-4 p-8 md:p-10`}>
+        <p className={`${eyebrow} mb-3`}>Incarico in corso</p>
+        <h2 className="text-2xl font-semibold text-white tracking-tight mb-2">{SNAPIX.titolo}</h2>
+        <p className="text-sm text-neutral-300 mb-4">{SNAPIX.ruolo} · Freelance</p>
+        <p className="text-sm text-neutral-400 leading-relaxed max-w-2xl mb-4">{SNAPIX.breve}</p>
+        <Link to="/portfolio#snapix" className="text-sm text-neutral-300 hover:text-white inline-flex items-center gap-2 group/link w-fit py-2">
+          Approfondisci l'incarico <ArrowUpRight size={16} className="transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" aria-hidden="true" />
+        </Link>
       </motion.section>
 
       <motion.section className="mt-24" variants={containerVariants} {...inView} aria-labelledby="servizi-titolo">
@@ -149,7 +136,7 @@ function Home() {
           <div>
             <p className={`${eyebrow} mb-3`}>Lavori selezionati</p>
             <h2 id="lavori-titolo" className="text-3xl md:text-4xl font-semibold text-white tracking-tight max-w-xl">
-              Progetti online, dal gestionale al 3D.
+              Dal software su misura ai progetti 3D.
             </h2>
           </div>
           <Link to="/portfolio" className="text-sm text-neutral-400 hover:text-white inline-flex items-center gap-2 group/link shrink-0">

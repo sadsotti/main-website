@@ -129,7 +129,7 @@ function Contacts() {
                   </div>
                   <div>
                     <p className="text-xs text-neutral-500 font-medium uppercase tracking-widest mb-1">Zona Operativa</p>
-                    <p className="text-sm text-white">Milano, Monza e Brianza<br/><span className="text-neutral-400">Disponibile Remote</span></p>
+                    <p className="text-sm text-white">Milano, Monza e Brianza<br/><span className="text-neutral-400">Disponibile da remoto</span></p>
                   </div>
                 </div>
               </div>

@@ -20,7 +20,7 @@ function About() {
         <motion.div variants={itemVariants} className="mb-2">
           <h1 className="text-4xl md:text-5xl font-semibold mb-4 text-white tracking-tight">Chi Sono</h1>
           <p className="text-neutral-400 max-w-2xl">
-            Un tuffo nel mio percorso personale, professionale e accademico.
+            Il mio percorso, le esperienze di lavoro e quello che mi piace fare oltre il codice.
           </p>
         </motion.div>
 
@@ -39,10 +39,10 @@ function About() {
                 Dalla strategia tecnica alla realizzazione.
               </h2>
               <p className="text-sm text-neutral-400 leading-relaxed mb-4">
-                Ho iniziato da ragazzo smontando e riparando dispositivi elettronici e oggi guido la parte tecnica di piattaforme in produzione: per Snapix Image seguo, come consulente freelance esterno, sicurezza, architettura e sviluppo del prodotto.
+                Ho iniziato da ragazzo smontando e riparando dispositivi elettronici. Oggi sviluppo software e affianco le aziende nelle scelte tecniche, con la stessa curiosità di capire come funzionano le cose e come migliorarle.
               </p>
               <p className="text-sm text-neutral-400 leading-relaxed">
-                Affianco le aziende come unico referente per la parte digitale: dalle scelte tecniche allo sviluppo di software su misura, fino alle campagne pubblicitarie e ai rendering 3D per il settore immobiliare.
+                Lavoro come freelance: mi occupo di consulenza IT, sviluppo di software su misura, web app e siti web. Seguo anche campagne pubblicitarie su Google e Meta e realizzo rendering 3D e video per il settore immobiliare.
               </p>
             </div>
           </motion.section>
@@ -71,7 +71,7 @@ function About() {
                   <span className="text-xs px-2 py-0.5 bg-green-500/10 border border-green-500/20 rounded text-green-400">In corso</span>
                 </div>
                 <p className="text-sm text-neutral-400 leading-relaxed">
-                  Direzione tecnica esterna della piattaforma digitale di Snapix Image: riferimento per sicurezza, architettura e sviluppo full-stack del prodotto. Ho avviato l'incarico con una revisione completa di sicurezza, architettura e qualità del codice della piattaforma, definendo una roadmap di intervento prioritizzata per rischio/sforzo e verificando sul campo in produzione i rilievi principali. Cura del passaggio di consegne tecnico dal fornitore uscente, con la ricostruzione da zero delle pipeline CI/CD. Oggi seguo con continuità l'hardening e l'ottimizzazione della piattaforma, la risoluzione degli incidenti in produzione, l'onboarding di nuove agenzie partner e lo sviluppo di nuove funzionalità, garantendo inoltre l'assistenza tecnica continuativa.
+                  Direzione tecnica esterna della piattaforma digitale di Snapix Image: riferimento per sicurezza, architettura e sviluppo full-stack del prodotto. Ho avviato l'incarico con una revisione completa di sicurezza, architettura e qualità del codice, definendo una roadmap di intervento prioritizzata per rischio/sforzo e verificando sul campo in produzione i rilievi principali. Cura del passaggio di consegne tecnico dal fornitore uscente, con la ricostruzione da zero delle pipeline CI/CD. Oggi seguo con continuità l'hardening e l'ottimizzazione della piattaforma, la risoluzione degli incidenti in produzione, l'onboarding di nuove agenzie partner e lo sviluppo di nuove funzionalità, garantendo inoltre l'assistenza tecnica continuativa.
                 </p>
               </div>
 
@@ -118,7 +118,7 @@ function About() {
               <Lightbulb className="text-neutral-400 mb-6" size={32} strokeWidth={1.5} aria-hidden="true" />
               <h2 className="font-medium text-white mb-3 uppercase tracking-wider text-xs">Apprendimento continuo</h2>
               <p className="text-sm text-neutral-400 leading-relaxed">
-                Il mondo della tecnologia è in costante evoluzione, e questo mi spinge a mettermi sempre in gioco. Dedico parte del mio tempo alla formazione su alcune delle migliori piattaforme online, per restare aggiornato su tecnologie emergenti e migliori pratiche del settore.
+                Dedico parte del mio tempo a corsi e progetti personali per approfondire ciò che uso nel lavoro e sperimentare tecnologie che mi incuriosiscono. Mi piace passare dalla teoria alla pratica, costruendo qualcosa.
               </p>
             </section>
 
@@ -175,7 +175,7 @@ function About() {
                   Percorso formativo intensivo focalizzato su AI e Prompt Engineering, HTML, CSS, JavaScript (Basics e Advanced), TypeScript, React, Angular, Vue.js, PHP e MySQL, Node.js e Java.
                 </p>
                 <p className="text-sm text-neutral-400 leading-relaxed mb-8">
-                  Include la progettazione di Agenti AI no-code per la produttività e Agenti AI avanzati per lo sviluppo, con la realizzazione di un chatbot AI-based che integra front-end, back-end e modelli di intelligenza artificiale, culminando infine in un Progetto Finale completo che sintetizza le competenze acquisite.
+                  Tra i progetti ci sono un assistente Telegram per email e calendari e una web app che usa la Computer Vision per analizzare capi di abbigliamento. Ho concluso il percorso con RootLoop, un hub per sviluppatori con chat e archiviazione di snippet.
                 </p>
 
                 <div className="mt-auto">

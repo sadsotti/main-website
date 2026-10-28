@@ -15,18 +15,3 @@ createRoot(document.getElementById('root')).render(
     <App />
   </HelmetProvider>
 )
-
-const loader = document.getElementById('loader')
-if (loader) {
-  const barra = loader.querySelector('.loader-barra span')
-  barra.style.width = getComputedStyle(barra).width
-  barra.style.animation = 'none'
-  requestAnimationFrame(() => {
-    barra.style.transition = 'width 0.3s ease'
-    barra.style.width = '100%'
-    setTimeout(() => {
-      loader.classList.add('nascosto')
-      loader.addEventListener('transitionend', () => loader.remove(), { once: true })
-    }, 300)
-  })
-}

@@ -24,7 +24,7 @@ export const PAGES = {
   },
   '/servizi': {
     title: 'Servizi IT e Digitali | Software, Ads & 3D | Lorenzo Sottile',
-    description: "IT Consulting, Sviluppo Software & Web, Digital Advertising su Google e Meta, Rendering 3D & Video per l'immobiliare. Un unico referente per il digitale.",
+    description: "IT Consulting, Sviluppo Software & Web, Digital Advertising su Google e Meta, Rendering 3D & Video per l'immobiliare. Dalle scelte tecniche alla realizzazione.",
   },
   '/portfolio': {
     title: 'Portfolio | Direzione Tecnica, Sviluppo Web e 3D | Lorenzo Sottile',

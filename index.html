@@ -100,66 +100,9 @@
         src: url('/fonts/libre-barcode-39-text.woff2') format('woff2');
       }
 
-      #loader {
-        position: fixed;
-        inset: 0;
-        z-index: 100;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 22px;
-        background: #0a0a0a;
-        transition: opacity 0.5s ease, visibility 0.5s ease;
-      }
-
-      #loader.nascosto {
-        opacity: 0;
-        visibility: hidden;
-      }
-
-      .loader-marchio {
-        font-family: 'Libre Barcode 39 Text', monospace;
-        font-size: 104px;
-        line-height: 1;
-        color: #fff;
-      }
-
-      .loader-barra {
-        width: 150px;
-        height: 2px;
-        overflow: hidden;
-        border-radius: 2px;
-        background: rgba(255, 255, 255, 0.12);
-      }
-
-      .loader-barra span {
-        display: block;
-        width: 0;
-        height: 100%;
-        border-radius: 2px;
-        background: #fff;
-        animation: loader-avanza 2.4s cubic-bezier(0.1, 0.6, 0.3, 1) forwards;
-      }
-
-      @keyframes loader-avanza {
-        to { width: 85%; }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .loader-barra span {
-          width: 60%;
-          animation: none;
-        }
-      }
     </style>
-    <noscript><style>#loader { display: none; }</style></noscript>
   </head>
   <body>
-    <div id="loader" aria-hidden="true">
-      <div class="loader-marchio">LS.</div>
-      <div class="loader-barra"><span></span></div>
-    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
     <noscript>È necessario abilitare JavaScript per visualizzare questo sito.</noscript>

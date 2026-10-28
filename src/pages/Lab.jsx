@@ -67,7 +67,7 @@ function Lab() {
         <motion.div variants={itemVariants}>
           <h1 className="text-4xl font-semibold mb-4 text-white">Progetti Personali</h1>
           <p className="text-neutral-400 max-w-2xl leading-relaxed">
-            Le app e gli strumenti che sviluppo nel tempo libero, per curiosità o per risolvere un problema mio. Dove possibile puoi provarli direttamente, altrimenti trovi il codice su GitHub.
+            Le app e gli strumenti che sviluppo nel tempo libero, per curiosità o per risolvere un problema mio. Per alcuni trovi una demo o il codice su GitHub; altri sono a uso personale o accessibili su invito.
           </p>
         </motion.div>
 

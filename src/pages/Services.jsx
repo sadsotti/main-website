@@ -34,7 +34,7 @@ function Services() {
         <motion.div variants={itemVariants} className="mb-6">
           <h1 className="text-4xl md:text-5xl font-semibold mb-4 text-white tracking-tight">Servizi</h1>
           <p className="text-neutral-400 max-w-2xl leading-relaxed">
-            {PITCH} Un unico referente, invece di tanti fornitori diversi.
+            {PITCH}
           </p>
         </motion.div>
 
@@ -69,9 +69,6 @@ function Services() {
                   <p className="text-sm text-neutral-400 leading-relaxed">{testo}</p>
                 </div>
               ))}
-              <p className="text-xs text-neutral-500 leading-relaxed mt-2">
-                Oggi seguo come Fractional CTO freelance la piattaforma di Snapix Image. <Link to="/portfolio#snapix" className="text-neutral-300 hover:text-white underline underline-offset-4">Leggi il caso</Link>
-              </p>
             </div>
           </div>
         </motion.section>
@@ -106,7 +103,7 @@ function Services() {
         <motion.div variants={itemVariants} className="mb-8">
           <p className={`${eyebrow} mb-3`}>Come lavoro</p>
           <h2 id="metodo-titolo" className="text-3xl md:text-4xl font-semibold text-white tracking-tight max-w-xl">
-            Quattro passaggi, nessuna sorpresa.
+            Come prendiamo in mano il tuo progetto.
           </h2>
         </motion.div>
         <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
