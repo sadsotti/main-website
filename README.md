@@ -86,18 +86,6 @@ main-website/
 
 ---
 
-## 🧑‍💻 Development
-
-```bash
-npm install
-npm run dev      # local development server
-npm run lint     # ESLint
-npm run build    # production build in dist/
-npm run preview  # serve the production build locally
-```
-
----
-
 ## 🔗 Useful Links
 
 - **Live Project**: [https://www.lorenzosottile.it/](https://www.lorenzosottile.it/)
