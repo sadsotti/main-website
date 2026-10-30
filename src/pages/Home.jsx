@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Github, Linkedin } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import { GithubIcon, LinkedinIcon } from '../components/Icons';
 import Seo from '../components/Seo';
 import { containerVariants, itemVariants, inView, cardBase, bentoCard, eyebrow, bottonePrimario } from '../lib/ui';
 import { ROLE, PITCH } from '../lib/site';
@@ -89,7 +90,7 @@ function Home() {
                   aria-label="Profilo LinkedIn di Lorenzo Sottile (si apre in una nuova scheda)"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-neutral-300 hover:bg-white/10 hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                 >
-                  <Linkedin size={16} aria-hidden="true" />
+                  <LinkedinIcon size={16} className="stroke-current" />
                   LinkedIn
                 </a>
                 <a
@@ -99,7 +100,7 @@ function Home() {
                   aria-label="Profilo GitHub di Lorenzo Sottile (si apre in una nuova scheda)"
                   className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-neutral-300 hover:bg-white/10 hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
                 >
-                  <Github size={16} aria-hidden="true" />
+                  <GithubIcon size={16} className="stroke-current" />
                   GitHub
                 </a>
               </div>
