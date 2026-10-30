@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Github, Linkedin } from 'lucide-react';
 import Seo from '../components/Seo';
 import { containerVariants, itemVariants, inView, cardBase, bentoCard, eyebrow, bottonePrimario } from '../lib/ui';
 import { ROLE, PITCH } from '../lib/site';
@@ -79,6 +79,31 @@ function Home() {
             <Link to="/about" className="mt-4 py-2 text-sm text-neutral-400 hover:text-white underline underline-offset-4 transition-colors">
               La mia storia
             </Link>
+            <div className="mt-6 w-full border-t border-white/10 pt-5">
+              <p className="text-xs text-neutral-400 mb-3">Restiamo in contatto</p>
+              <div className="flex flex-wrap justify-center gap-2">
+                <a
+                  href="https://www.linkedin.com/in/lorenzo-sottile/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Profilo LinkedIn di Lorenzo Sottile (si apre in una nuova scheda)"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-neutral-300 hover:bg-white/10 hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                >
+                  <Linkedin size={16} aria-hidden="true" />
+                  LinkedIn
+                </a>
+                <a
+                  href="https://github.com/sadsotti"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Profilo GitHub di Lorenzo Sottile (si apre in una nuova scheda)"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-neutral-300 hover:bg-white/10 hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                >
+                  <Github size={16} aria-hidden="true" />
+                  GitHub
+                </a>
+              </div>
+            </div>
           </motion.section>
         </div>
 
