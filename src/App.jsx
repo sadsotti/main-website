@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import SpotlightTracker from './components/SpotlightTracker';
+import Topografia from './components/Topografia';
 import Home from './pages/Home';
 
 const About = lazy(() => import('./pages/About'));
@@ -24,7 +25,13 @@ function App() {
         <ScrollToTop />
         <SpotlightTracker />
         <div className="min-h-screen bg-[#0a0a0a] text-neutral-200 flex flex-col font-sans selection:bg-white selection:text-black">
-          <div className="ambient" aria-hidden="true" />
+          <div className="ambient" aria-hidden="true">
+            <span className="aurora aurora-1" />
+            <span className="aurora aurora-2" />
+            <span className="aurora aurora-3" />
+            <span className="ambient-glow" />
+            <Topografia />
+          </div>
 
           <a
             href="#contenuto"

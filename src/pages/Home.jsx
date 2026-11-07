@@ -16,7 +16,7 @@ const numeri = [
   { valore: SERVIZI.length, etichetta: "Aree di competenza" },
 ];
 
-const inEvidenza = ['up-solutions', 'corso-liberta', 'stimatech'].map((id) => PROGETTI.find((p) => p.id === id));
+const inEvidenza = ['up-solutions', 'legnarello', 'studio-cabella'].map((id) => PROGETTI.find((p) => p.id === id));
 
 const parolaVariants = {
   hidden: { y: '110%' },

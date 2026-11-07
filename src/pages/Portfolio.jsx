@@ -117,15 +117,16 @@ function Portfolio() {
           </div>
         </motion.div>
 
-        <AnimatePresence mode="popLayout" initial={false}>
+        <motion.div
+          key={filtro}
+          className="flex flex-col gap-10"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35, ease: 'easeOut' }}
+        >
           {mostraSnapix && (
-            <motion.section
-              key="snapix"
+            <section
               id={SNAPIX.id}
-              layout
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.98 }}
               className={`${cardBase} p-8 md:p-12 scroll-mt-28`}
             >
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
@@ -146,7 +147,7 @@ function Portfolio() {
                   ))}
                 </ol>
               </div>
-            </motion.section>
+            </section>
           )}
 
           {progetti.map((p, i) => {
@@ -157,11 +158,9 @@ function Portfolio() {
               <motion.div
                 key={p.id}
                 id={p.id}
-                layout
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
-                exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ type: 'spring', stiffness: 100, damping: 18 }}
                 className="grid grid-cols-1 lg:grid-cols-3 gap-4 scroll-mt-28"
               >
@@ -233,7 +232,7 @@ function Portfolio() {
               </motion.div>
             );
           })}
-        </AnimatePresence>
+        </motion.div>
 
         <Lightbox
           open={openGallery !== null}

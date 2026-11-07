@@ -98,12 +98,17 @@ html[data-theme='light'] .hero-background-logo {
 
 .ambient {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100lvh;
   z-index: 0;
+  overflow: hidden;
   pointer-events: none;
   background:
     radial-gradient(60rem 30rem at 50% -10%, rgba(255, 255, 255, 0.07), transparent 70%),
-    radial-gradient(40rem 25rem at 100% 0%, rgba(120, 140, 255, 0.05), transparent 70%);
+    radial-gradient(40rem 25rem at 100% 0%, rgba(160, 175, 255, 0.05), transparent 70%);
 }
 
 html[data-theme='light'] .ambient {
@@ -113,26 +118,83 @@ html[data-theme='light'] .ambient {
   opacity: 0.72;
 }
 
-.ambient::after {
-  content: '';
+.aurora {
   position: absolute;
-  inset: -8%;
-  background: url('/topografia.svg') center / cover no-repeat;
-  mask-image: radial-gradient(ellipse 85% 75% at 50% 30%, #000 40%, transparent 100%);
-  animation: respira 70s ease-in-out infinite alternate;
+  width: 70vmax;
+  height: 70vmax;
+  border-radius: 50%;
   will-change: transform;
-  filter: none;
-  transition: filter 350ms ease, opacity 350ms ease;
+  mix-blend-mode: screen;
 }
 
-html[data-theme='light'] .ambient::after {
-  filter: invert(1);
-  opacity: 0.82;
+.aurora-1 {
+  top: -35vmax;
+  left: -20vmax;
+  background: radial-gradient(circle, rgba(160, 175, 255, 0.16), transparent 62%);
+  animation: aurora-a 26s ease-in-out infinite alternate;
 }
 
-@keyframes respira {
-  from { transform: translate3d(0, 0, 0) scale(1); }
-  to { transform: translate3d(-3%, -2%, 0) scale(1.07); }
+.aurora-2 {
+  top: -25vmax;
+  right: -30vmax;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 62%);
+  animation: aurora-b 32s ease-in-out infinite alternate;
+}
+
+.aurora-3 {
+  bottom: -45vmax;
+  left: 15vmax;
+  background: radial-gradient(circle, rgba(160, 175, 255, 0.1), transparent 62%);
+  animation: aurora-c 38s ease-in-out infinite alternate;
+}
+
+html[data-theme='light'] .aurora {
+  mix-blend-mode: multiply;
+  opacity: 0.55;
+}
+
+@keyframes aurora-a {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(28vw, 12lvh, 0) scale(1.15); }
+  100% { transform: translate3d(10vw, 30lvh, 0) scale(0.9); }
+}
+
+@keyframes aurora-b {
+  0% { transform: translate3d(0, 0, 0) scale(1.05); }
+  50% { transform: translate3d(-30vw, 20lvh, 0) scale(0.9); }
+  100% { transform: translate3d(-12vw, 45lvh, 0) scale(1.2); }
+}
+
+@keyframes aurora-c {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(25vw, -25lvh, 0) scale(1.2); }
+  100% { transform: translate3d(-15vw, -10lvh, 0) scale(1); }
+}
+
+.ambient-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(520px circle at var(--gx, 50%) var(--gy, 30%), rgba(160, 175, 255, 0.1), transparent 60%);
+  opacity: var(--glow-on, 0);
+  transition: opacity 600ms ease;
+}
+
+html[data-theme='light'] .ambient-glow {
+  background: radial-gradient(520px circle at var(--gx, 50%) var(--gy, 30%), rgba(85, 100, 190, 0.08), transparent 60%);
+}
+
+.topografia {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora {
+    animation: none;
+  }
 }
 
 .spotlight {

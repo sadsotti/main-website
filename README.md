@@ -16,7 +16,7 @@ The project is a **Single Page Application (SPA)** built with **React** and **Vi
 
 - 🌗 **Dark / Light Theme**: Accessible theme toggle in the desktop and mobile navigation, with system preference detection, persistence through `localStorage`, synchronized browser colors, and theme-aware topography and hero artwork.
 - 🍱 **Bento Grid Design**: A modular, responsive layout that organizes information into elegant "cards", with a soft light that follows the pointer on hover.
-- 🗺️ **Topographic Background**: Contour lines generated once as a lightweight SVG (`public/topografia.svg`) that slowly "breathe" with a GPU-friendly CSS animation.
+- 🗺️ **Living Topographic Background**: Contour lines drawn on a canvas from slowly evolving fractal noise, so the terrain reshapes itself like a real map coming to life, over a soft aurora in the same colors as the main call to action. It runs at a capped frame rate with preallocated buffers, pauses when the tab is hidden and stays still with `prefers-reduced-motion`.
 - 🎭 **Framer Motion Animations**: Spring-based entrance and scroll-reveal animations that enhance the experience without sacrificing performance.
 - 🧩 **Single Source of Truth**: Service names and client projects live in `src/lib/services.js` and `src/lib/projects.js`, shared by Home, Services, Portfolio and Contacts so wording stays consistent everywhere.
 - 🤖 **AI Focused**: A dedicated section for the start2impact Master, highlighting 16 projects focused on Full Stack development and AI Agent.
@@ -69,12 +69,12 @@ The website is organized into the following main sections:
 
 ```text
 main-website/
-├── public/                 # Static assets (PDFs, project images, topographic background)
+├── public/                 # Static assets (PDFs, project images, Open Graph images)
 │   ├── _headers            # Netlify security and caching headers
 │   └── _redirects          # Netlify routing (static route pages + SPA fallback)
 ├── src/
 │   ├── assets/             # Images
-│   ├── components/         # Reusable UI components (Navbar, Footer, Seo, Icons, SpotlightTracker)
+│   ├── components/         # Reusable UI components (Navbar, Footer, Seo, Icons, SpotlightTracker, Topografia)
 │   ├── lib/                # Site data and SEO metadata (site.js), services, projects, shared UI tokens
 │   ├── pages/              # Main route components (Home, About, etc.)
 │   ├── App.jsx             # Main Router and layout configuration
