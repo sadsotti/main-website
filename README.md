@@ -23,8 +23,8 @@ The project is a **Single Page Application (SPA)** built with **React** and **Vi
 - 🧪 **Personal Projects Lab**: A showcase of personal tools and apps, each with a custom cover, tech stack, GitHub repository and, when available, a link to the live app.
 - 🖼️ **Interactive Portfolio**: Filterable by service, with a featured case study, a Lightbox for 3D architectural renderings and web mockups, and deep links to each project (`/portfolio#project-id`).
 - 📧 **Professional Contact System**: A form powered by EmailJS with real-time feedback (loading, success, error states), service shortcuts that pre-fill the subject, and GDPR-compliant privacy management.
-- 🔍 **Optimized SEO**: Per-route metadata via React Helmet Async, static HTML generated at build time for every route (title, description, canonical, Open Graph), `ProfessionalService` structured data with the service catalog, and a sitemap.
-- ⚡ **Performance**: Route-based code splitting with per-route `modulepreload`, preloaded key images, WebP images, lazy loading, zero layout shift and self-hosted fonts with no external requests.
+- 🔍 **Optimized SEO**: Per-route metadata via React Helmet Async, static HTML generated at build time for every route (title, description, canonical, Open Graph), `ProfessionalService` structured data with the service catalog, a sitemap and an `llms.txt` summary for AI agents.
+- ⚡ **Performance**: Route-based code splitting with per-route `modulepreload`, preloaded key images, responsive WebP images with `srcset`, lazy loading, zero layout shift and self-hosted fonts with no external requests.
 - 🍪 **Privacy by Design**: No cookies, no trackers and no third-party analytics, so no consent banner is needed.
 - ♿ **Accessibility**: Keyboard-friendly navigation, ARIA attributes, skip link and full support for `prefers-reduced-motion`.
 
@@ -71,7 +71,7 @@ The website is organized into the following main sections:
 main-website/
 ├── public/                 # Static assets (PDFs, project images, Open Graph images)
 │   ├── _headers            # Netlify security and caching headers
-│   └── _redirects          # Netlify routing (static route pages + SPA fallback)
+│   └── _redirects          # Netlify routing (static route pages + SPA fallback with a real 404 status)
 ├── src/
 │   ├── assets/             # Images
 │   ├── components/         # Reusable UI components (Navbar, Footer, Seo, Icons, SpotlightTracker, Topografia)
