@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { PAGES, SITE_URL } from './src/lib/site.js'
+import { srcSetMockup, sizesMockup } from './src/lib/ui.js'
 
 const escapeHtml = (value) =>
   value
@@ -28,10 +29,19 @@ const ROUTE_PAGES = {
 }
 
 const ROUTE_IMAGES = {
-  '/portfolio': '/progetti/mockup-up-solutions-gestionale.webp',
+  '/portfolio': {
+    href: '/progetti/mockup-up-solutions-gestionale.webp',
+    srcset: srcSetMockup('/progetti/mockup-up-solutions-gestionale.webp'),
+    sizes: sizesMockup,
+  },
 }
 
-const imagePreload = (href) => (href ? `<link rel="preload" as="image" href="${href}" fetchpriority="high">` : '')
+const imagePreload = (image) => {
+  if (!image) return ''
+  const { href, srcset, sizes } = typeof image === 'string' ? { href: image } : image
+  const responsive = srcset ? ` imagesrcset="${srcset}" imagesizes="${sizes}"` : ''
+  return `<link rel="preload" as="image" href="${href}"${responsive} fetchpriority="high">`
+}
 
 const homeImage = (bundle) => {
   const logo = Object.values(bundle).find(

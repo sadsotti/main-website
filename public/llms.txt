@@ -1,0 +1,30 @@
+# Lorenzo Sottile
+
+> Developer & IT Consultant freelance. Seguo la parte digitale delle aziende dalla strategia tecnica alla realizzazione, con software su misura, sistemi IT, campagne pubblicitarie e rendering 3D. Opero a Milano, Monza e Brianza e da remoto. Il sito è in italiano.
+
+Dal settembre 2026 sono Fractional CTO di Snapix Image: riferimento tecnico esterno della piattaforma per sicurezza, architettura e sviluppo full-stack.
+
+## Servizi
+
+- [IT Consulting](https://www.lorenzosottile.it/servizi): analisi e ottimizzazione dei sistemi IT, audit di sicurezza e architettura, direzione tecnica esterna (Fractional CTO) e gestione dei fornitori.
+- [Sviluppo Software & Web](https://www.lorenzosottile.it/servizi): software su misura, web app gestionali e piattaforme web, dal progetto alla messa in produzione.
+- [Digital Advertising](https://www.lorenzosottile.it/servizi): campagne Google e Meta Ads basate sui dati, con ottimizzazione costante delle conversioni.
+- [Rendering 3D & Video](https://www.lorenzosottile.it/servizi): rendering fotorealistici, planimetrie 3D e video per il settore immobiliare.
+
+## Pagine
+
+- [Home](https://www.lorenzosottile.it/): presentazione, incarico in corso, servizi e lavori in evidenza.
+- [Portfolio](https://www.lorenzosottile.it/portfolio): incarichi e progetti, filtrabili per servizio: direzione tecnica, web app gestionali, siti per immobiliare e hospitality, rendering 3D e video.
+- [Chi Sono](https://www.lorenzosottile.it/about): esperienze, formazione e certificazioni.
+- [Progetti Personali](https://www.lorenzosottile.it/lab): web app con AI (BookPaw, CineLista, Sumptus), un tool di steganografia in C++, un analizzatore di rete in Python e un bot Discord.
+- [Percorso start2impact](https://www.lorenzosottile.it/start2impact): Master in Full Stack Development e Agenti AI, con 16 progetti pratici.
+
+## Contatti
+
+- [Modulo di contatto](https://www.lorenzosottile.it/contatti): per richiedere una consulenza o un preventivo. L'oggetto si può precompilare con il parametro `oggetto`, ad esempio `https://www.lorenzosottile.it/contatti?oggetto=Richiesta%3A%20IT%20Consulting`.
+- Email: info@lorenzosottile.it
+
+## Optional
+
+- [Privacy Policy & Cookie](https://www.lorenzosottile.it/privacy)
+- [I tuoi diritti](https://www.lorenzosottile.it/diritti)

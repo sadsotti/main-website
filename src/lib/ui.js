@@ -19,6 +19,14 @@ export const inView = {
   viewport: { once: true, margin: '-80px' },
 };
 
+export const srcSetCopertina = (src) => [800, 1200].map((w) => `${src.replace(/\.webp$/, `-${w}.webp`)} ${w}w`).join(', ');
+
+export const sizesCopertina = '(min-width: 1024px) 330px, (min-width: 768px) 50vw, calc(100vw - 32px)';
+
+export const srcSetMockup = (src) => `${src.replace(/\.webp$/, '-800.webp')} 800w, ${src} 1920w`;
+
+export const sizesMockup = '(min-width: 1024px) 1000px, calc(100vw - 32px)';
+
 export const cardBase = 'spotlight bg-[#121212] border border-white/5 rounded-3xl hover:bg-[#171717] hover:border-white/10 transition-colors duration-300';
 
 export const bentoCard = `${cardBase} p-6 md:p-8`;

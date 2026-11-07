@@ -3,10 +3,11 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Mail, BookOpen, Clapperboard, Receipt, ShieldCheck, Radar, Bot } from 'lucide-react';
 import { GithubIcon } from '../components/Icons';
 import Seo from '../components/Seo';
+import { srcSetCopertina, sizesCopertina } from '../lib/ui';
 
 function Lab() {
   const bentoCard = "spotlight bg-[#121212] border border-white/5 rounded-3xl p-6 hover:bg-[#171717] hover:border-white/10 transition-all duration-300 flex flex-col group";
-  const badgeStyle = "px-2 py-1 bg-white/5 border border-white/10 rounded-lg text-[10px] font-medium text-neutral-400";
+  const badgeStyle = "px-2 py-1 bg-white/5 border border-white/10 rounded-lg text-xs font-medium text-neutral-400";
   const bottonePrimario = "flex items-center justify-center gap-2 py-2 bg-white text-black rounded-xl text-xs font-bold hover:bg-neutral-200 transition-colors";
   const bottoneSecondario = "flex items-center justify-center gap-2 py-2 bg-white/5 border border-white/10 text-white rounded-xl text-xs font-medium hover:bg-white/10 transition-colors";
 
@@ -78,6 +79,10 @@ function Lab() {
                 {p.cover ? (
                   <img
                     src={p.cover}
+                    srcSet={srcSetCopertina(p.cover)}
+                    sizes={sizesCopertina}
+                    width="1920"
+                    height="1080"
                     alt={p.alt}
                     loading="lazy"
                     decoding="async"
@@ -85,7 +90,7 @@ function Lab() {
                   />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity text-neutral-600">
-                    <p className="text-[10px] font-mono uppercase tracking-widest italic">Preview Image</p>
+                    <p className="text-xs font-mono uppercase tracking-widest italic">Preview Image</p>
                   </div>
                 )}
               </div>

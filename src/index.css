@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @theme {
+  --color-neutral-500: #8f8f8f;
+  --color-neutral-600: #828282;
   --font-sans: "Space Grotesk", system-ui, sans-serif;
   --font-barcode: "Libre Barcode 39 Text", system-ui, sans-serif;
 }
@@ -37,8 +39,8 @@ html[data-theme='light'] .text-white { color: #171717; }
 html[data-theme='light'] .text-neutral-200 { color: #262626; }
 html[data-theme='light'] .text-neutral-300 { color: #404040; }
 html[data-theme='light'] .text-neutral-400 { color: #525252; }
-html[data-theme='light'] .text-neutral-500 { color: #737373; }
-html[data-theme='light'] .text-neutral-600 { color: #8a8a8a; }
+html[data-theme='light'] .text-neutral-500 { color: #666666; }
+html[data-theme='light'] .text-neutral-600 { color: #6e6e6e; }
 html[data-theme='light'] .text-white\/15 { color: rgb(0 0 0 / 0.15); }
 html[data-theme='light'] .hover\:text-white:hover,
 html[data-theme='light'] .group:hover .group-hover\:text-white { color: #171717; }

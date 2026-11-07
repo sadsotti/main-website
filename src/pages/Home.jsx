@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '../components/Icons';
 import Seo from '../components/Seo';
-import { containerVariants, itemVariants, inView, cardBase, bentoCard, eyebrow, bottonePrimario } from '../lib/ui';
+import { containerVariants, itemVariants, inView, cardBase, bentoCard, eyebrow, bottonePrimario, srcSetMockup, sizesMockup } from '../lib/ui';
 import { ROLE, PITCH } from '../lib/site';
 import { SERVIZI } from '../lib/services';
 import { PROGETTI, SNAPIX } from '../lib/projects';
@@ -112,7 +112,7 @@ function Home() {
           {numeri.map(({ valore, etichetta }) => (
             <div key={etichetta} className={`${cardBase} p-4 sm:p-6`}>
               <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-white tracking-tight mb-1 sm:mb-2">{valore}</p>
-              <p className="text-[11px] sm:text-xs text-neutral-500 leading-snug sm:leading-relaxed">{etichetta}</p>
+              <p className="text-xs text-neutral-500 leading-snug sm:leading-relaxed">{etichetta}</p>
             </div>
           ))}
         </motion.section>
@@ -177,6 +177,10 @@ function Home() {
                 <div className={`relative overflow-hidden ${i === 0 ? 'aspect-video md:aspect-21/9' : 'aspect-16/10'}`}>
                   <img
                     src={p.img}
+                    srcSet={srcSetMockup(p.img)}
+                    sizes={sizesMockup}
+                    width="1920"
+                    height="1080"
                     alt={p.alt}
                     loading="lazy"
                     decoding="async"

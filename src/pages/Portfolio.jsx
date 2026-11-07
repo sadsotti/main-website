@@ -6,7 +6,7 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { Image as ImageIcon, Lock, Info, X, Users, CalendarClock, Target, Megaphone, LayoutDashboard, KeyRound, SearchCheck, FileSpreadsheet, Smartphone } from 'lucide-react';
 import Seo from '../components/Seo';
-import { containerVariants, itemVariants, cardBase, bentoCard, eyebrow, bottonePrimario, bottoneSecondario } from '../lib/ui';
+import { containerVariants, itemVariants, cardBase, bentoCard, eyebrow, bottonePrimario, bottoneSecondario, srcSetMockup, sizesMockup } from '../lib/ui';
 import { CATEGORIE, PROGETTI, SNAPIX } from '../lib/projects';
 
 const funzionalitaUps = [
@@ -31,7 +31,7 @@ const conteggi = {
 };
 
 function Portfolio() {
-  const badgeStyle = "px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] sm:text-xs font-medium text-neutral-300";
+  const badgeStyle = "px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-medium text-neutral-300";
   const { hash } = useLocation();
 
   const [filtro, setFiltro] = useState('tutti');
@@ -168,6 +168,10 @@ function Portfolio() {
                   <div className={`${cardBase} overflow-hidden relative group ${conAzione ? 'aspect-video' : 'aspect-16/10 lg:aspect-auto lg:grow'}`}>
                     <img
                       src={p.img}
+                      srcSet={srcSetMockup(p.img)}
+                      sizes={sizesMockup}
+                      width="1920"
+                      height="1080"
                       alt={p.alt}
                       {...(i === 0 ? { fetchPriority: 'high' } : { loading: 'lazy', decoding: 'async' })}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -178,7 +182,7 @@ function Portfolio() {
                   {p.galleria && (
                     <div className={`${cardBase} flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6`}>
                       <div>
-                        <h3 className="text-white font-medium">Esplora il progetto 3D</h3>
+                        <p className="text-white font-medium">Esplora il progetto 3D</p>
                         <p className="text-sm text-neutral-400">{p.galleriaTesto}</p>
                       </div>
                       <button type="button" onClick={() => setOpenGallery(p.id)} className={`${bottoneSecondario} whitespace-nowrap w-full sm:w-auto`}>
@@ -190,7 +194,7 @@ function Portfolio() {
                   {p.dettagli && (
                     <div className={`${cardBase} flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6`}>
                       <div>
-                        <h3 className="text-white font-medium">Scopri il progetto</h3>
+                        <p className="text-white font-medium">Scopri il progetto</p>
                         <p className="text-sm text-neutral-400">Funzionalità e moduli della piattaforma.</p>
                       </div>
                       <button ref={bottoneDettagliRef} type="button" aria-haspopup="dialog" onClick={() => setDettagliUps(true)} className={`${bottoneSecondario} whitespace-nowrap w-full sm:w-auto`}>

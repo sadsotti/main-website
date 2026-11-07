@@ -2,10 +2,11 @@ import { motion } from 'framer-motion';
 import { FileText, Code, Terminal, Globe, Cpu, Layers, Database, Server, Coffee, Bot, Brain, Trophy, ShieldCheck } from 'lucide-react';
 import { GithubIcon, CodepenIcon } from '../components/Icons';
 import Seo from '../components/Seo';
+import { srcSetCopertina, sizesCopertina } from '../lib/ui';
 
 function Start2Impact() {
   const bentoCard = "spotlight bg-[#121212] border border-white/5 rounded-3xl p-6 hover:bg-[#171717] hover:border-white/10 transition-all duration-300 flex flex-col group";
-  const badgeStyle = "px-2 py-1 bg-white/5 border border-white/10 rounded-lg text-[10px] font-medium text-neutral-400";
+  const badgeStyle = "px-2 py-1 bg-white/5 border border-white/10 rounded-lg text-xs font-medium text-neutral-400";
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -122,7 +123,7 @@ function Start2Impact() {
 
       <motion.div className="flex flex-col gap-10" variants={containerVariants} initial="hidden" animate="visible">
         <motion.div variants={itemVariants}>
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold text-neutral-400 tracking-widest mb-4 uppercase">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs font-bold text-neutral-400 tracking-widest mb-4 uppercase">
             Full Stack Development e Agenti AI
           </div>
           <h1 className="text-4xl font-semibold mb-4 text-white">Percorso start2impact</h1>
@@ -138,6 +139,10 @@ function Start2Impact() {
                 {p.cover ? (
                   <img
                     src={p.cover}
+                    srcSet={srcSetCopertina(p.cover)}
+                    sizes={sizesCopertina}
+                    width="1920"
+                    height="1080"
                     alt={`Copertina del progetto ${p.titolo}`}
                     loading="lazy"
                     decoding="async"
@@ -145,7 +150,7 @@ function Start2Impact() {
                   />
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center opacity-20 group-hover:opacity-40 transition-opacity text-neutral-600">
-                    <p className="text-[10px] font-mono uppercase tracking-widest italic">Preview Image</p>
+                    <p className="text-xs font-mono uppercase tracking-widest italic">Preview Image</p>
                   </div>
                 )}
               </div>
