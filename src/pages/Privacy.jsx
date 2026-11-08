@@ -21,7 +21,7 @@ const fornitori = [
   {
     nome: 'Aruba S.p.A.',
     ruolo: 'Posta elettronica',
-    dettaglio: `Fornisce il servizio di posta elettronica del Titolare e conserva sui propri server, situati in Italia, i messaggi inviati e ricevuti all'indirizzo ${OWNER.email}.`,
+    dettaglio: `Fornisce il servizio di posta elettronica del Titolare e conserva sui propri server, situati in Italia, i messaggi inviati e ricevuti dalle caselle del dominio lorenzosottile.it.`,
     link: 'https://www.aruba.it/documents/tc-files/it/11_it_privacy_policy_aruba_spa.aspx',
   },
 ];
