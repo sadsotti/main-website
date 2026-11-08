@@ -126,7 +126,6 @@ html[data-theme='light'] .ambient {
   height: 70vmax;
   border-radius: 50%;
   will-change: transform;
-  mix-blend-mode: screen;
 }
 
 .aurora-1 {
@@ -151,7 +150,6 @@ html[data-theme='light'] .ambient {
 }
 
 html[data-theme='light'] .aurora {
-  mix-blend-mode: multiply;
   opacity: 0.55;
 }
 
@@ -175,14 +173,18 @@ html[data-theme='light'] .aurora {
 
 .ambient-glow {
   position: absolute;
-  inset: 0;
-  background: radial-gradient(520px circle at var(--gx, 50%) var(--gy, 30%), rgba(160, 175, 255, 0.1), transparent 60%);
-  opacity: var(--glow-on, 0);
+  top: -520px;
+  left: -520px;
+  width: 1040px;
+  height: 1040px;
+  background: radial-gradient(circle closest-side, rgba(160, 175, 255, 0.1), transparent 60%);
+  opacity: 0;
   transition: opacity 600ms ease;
+  will-change: transform;
 }
 
 html[data-theme='light'] .ambient-glow {
-  background: radial-gradient(520px circle at var(--gx, 50%) var(--gy, 30%), rgba(85, 100, 190, 0.08), transparent 60%);
+  background: radial-gradient(circle closest-side, rgba(85, 100, 190, 0.08), transparent 60%);
 }
 
 .topografia {
@@ -191,6 +193,12 @@ html[data-theme='light'] .ambient-glow {
   width: 100%;
   height: 100%;
   display: block;
+}
+
+.topografia canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
