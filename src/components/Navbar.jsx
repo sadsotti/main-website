@@ -105,7 +105,7 @@ function Navbar() {
     <div className="fixed top-0 left-0 w-full flex justify-center p-4 z-50 pointer-events-none">
       <nav
         aria-label="Navigazione principale"
-        className="pointer-events-auto bg-[#0a0a0a]/80 backdrop-blur-xl shadow-2xl border border-white/10 rounded-2xl w-full max-w-5xl px-4 py-3 flex justify-between items-center relative"
+        className="pointer-events-auto bg-[#0a0a0a]/80 backdrop-blur-md shadow-2xl border border-white/10 rounded-2xl w-full max-w-5xl px-4 py-3 flex justify-between items-center relative"
       >
         <NavLink
           to="/"

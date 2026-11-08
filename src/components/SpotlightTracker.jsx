@@ -2,16 +2,31 @@ import { useEffect } from 'react';
 
 function SpotlightTracker() {
   useEffect(() => {
-    const root = document.documentElement;
+    const glow = document.querySelector('.ambient-glow');
     let frame = 0;
     let gx = 0;
     let gy = 0;
+    let mouse = false;
+    let card = null;
+    let cx = 0;
+    let cy = 0;
+    let acceso = false;
 
     const aggiorna = () => {
       frame = 0;
-      root.style.setProperty('--gx', `${gx}px`);
-      root.style.setProperty('--gy', `${gy}px`);
-      root.style.setProperty('--glow-on', '1');
+      if (mouse && glow) {
+        glow.style.transform = `translate3d(${gx}px, ${gy}px, 0)`;
+        if (!acceso) {
+          acceso = true;
+          glow.style.opacity = '1';
+        }
+      }
+      if (card) {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mx', `${cx - rect.left}px`);
+        card.style.setProperty('--my', `${cy - rect.top}px`);
+        card = null;
+      }
     };
 
     const pianifica = () => {
@@ -19,20 +34,24 @@ function SpotlightTracker() {
     };
 
     const onMove = (e) => {
-      if (e.pointerType === 'mouse') {
+      mouse = e.pointerType === 'mouse';
+      if (mouse) {
         gx = e.clientX;
         gy = e.clientY;
-        pianifica();
       }
-
-      const card = e.target.closest?.('.spotlight');
-      if (!card) return;
-      const rect = card.getBoundingClientRect();
-      card.style.setProperty('--mx', `${e.clientX - rect.left}px`);
-      card.style.setProperty('--my', `${e.clientY - rect.top}px`);
+      const bersaglio = e.target.closest?.('.spotlight');
+      if (bersaglio) {
+        card = bersaglio;
+        cx = e.clientX;
+        cy = e.clientY;
+      }
+      if (mouse || bersaglio) pianifica();
     };
 
-    const onLeave = () => root.style.setProperty('--glow-on', '0');
+    const onLeave = () => {
+      acceso = false;
+      if (glow) glow.style.opacity = '0';
+    };
 
     window.addEventListener('pointermove', onMove, { passive: true });
     document.addEventListener('pointerleave', onLeave);
