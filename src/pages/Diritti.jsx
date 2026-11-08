@@ -38,7 +38,7 @@ function Diritti() {
               Invia una email a <a href={`mailto:${OWNER.email}?subject=Richiesta%20esercizio%20diritti%20privacy`} className="text-white font-medium underline underline-offset-2">{OWNER.email}</a> indicando nell’oggetto <span className="text-white italic">“Richiesta esercizio diritti privacy”</span> e specificando nel testo una o più delle seguenti richieste:
             </p>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-neutral-300">
-              <li className="bg-white/5 p-3 rounded-xl border border-white/5">Opposizione al trattamento dei dati inviati tramite il modulo contatti</li>
+              <li className="bg-white/5 p-3 rounded-xl border border-white/5">Opposizione al trattamento dei dati inviati tramite il modulo contatti o via email</li>
               <li className="bg-white/5 p-3 rounded-xl border border-white/5">Cancellazione dei dati personali</li>
               <li className="bg-white/5 p-3 rounded-xl border border-white/5">Accesso o copia dei dati personali</li>
               <li className="bg-white/5 p-3 rounded-xl border border-white/5">Rettifica o limitazione del trattamento</li>
