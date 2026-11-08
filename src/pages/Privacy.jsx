@@ -18,6 +18,12 @@ const fornitori = [
     dettaglio: 'Recapita al Titolare, via email, i dati inseriti nel modulo contatti (nome, email, oggetto e messaggio).',
     link: 'https://www.emailjs.com/legal/privacy-policy/',
   },
+  {
+    nome: 'Aruba S.p.A.',
+    ruolo: 'Posta elettronica',
+    dettaglio: `Fornisce il servizio di posta elettronica del Titolare e conserva sui propri server, situati in Italia, i messaggi inviati e ricevuti all'indirizzo ${OWNER.email}.`,
+    link: 'https://www.aruba.it/documents/tc-files/it/11_it_privacy_policy_aruba_spa.aspx',
+  },
 ];
 
 function Privacy() {
@@ -35,9 +41,9 @@ function Privacy() {
         <motion.div variants={itemVariants} className="mb-2">
           <h1 className="text-4xl font-semibold mb-4 text-white">Privacy Policy & Cookie</h1>
           <p className="text-neutral-400 max-w-3xl leading-relaxed">
-            Informativa resa ai sensi degli artt. 13 e 14 del Regolamento (UE) 2016/679 (GDPR) a chi visita il sito lorenzosottile.it (di seguito, il “Sito”) o utilizza il modulo contatti.
+            Informativa resa ai sensi degli artt. 13 e 14 del Regolamento (UE) 2016/679 (GDPR) a chi visita il sito lorenzosottile.it (di seguito, il “Sito”), utilizza il modulo contatti o è in contatto con il Titolare via email.
           </p>
-          <p className="text-xs text-neutral-500 mt-3">Ultimo aggiornamento: 27 settembre 2026</p>
+          <p className="text-xs text-neutral-500 mt-3">Ultimo aggiornamento: 8 novembre 2026</p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -81,9 +87,9 @@ function Privacy() {
           <motion.section variants={itemVariants} className={`${bentoCard} lg:col-span-2`}>
             <h2 className={sectionTitle}><Server className={iconClass} size={24} aria-hidden="true" /> Destinatari e fornitori</h2>
             <p className={`${paragraph} mb-4`}>
-              I dati sono trattati dal Titolare e non vengono diffusi. Per il funzionamento del Sito ci si avvale dei seguenti fornitori, che operano in qualità di Responsabili del trattamento:
+              I dati sono trattati dal Titolare e non vengono diffusi. Per il funzionamento del Sito e della posta elettronica ci si avvale dei seguenti fornitori, che operano in qualità di Responsabili del trattamento:
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
               {fornitori.map((f) => (
                 <div key={f.nome} className="bg-white/5 border border-white/5 rounded-2xl p-4 flex flex-col">
                   <p className="text-xs text-neutral-500 uppercase tracking-wider mb-1">{f.ruolo}</p>
@@ -107,7 +113,7 @@ function Privacy() {
             <h2 className={sectionTitle}><Clock className={iconClass} size={24} aria-hidden="true" /> Conservazione e conferimento</h2>
             <div className="space-y-4">
               <p className={paragraph}>
-                I dati inviati tramite il modulo contatti sono conservati per il tempo necessario a gestire la richiesta e, se non ne deriva alcun rapporto professionale, non oltre 24 mesi. I dati legati a un incarico sono conservati per la durata del rapporto e successivamente per il periodo previsto dalla normativa fiscale e civilistica (di norma 10 anni).
+                I dati inviati tramite il modulo contatti o via email sono conservati per il tempo necessario a gestire la richiesta e, se non ne deriva alcun rapporto professionale, non oltre 24 mesi. I dati legati a un incarico sono conservati per la durata del rapporto e successivamente per il periodo previsto dalla normativa fiscale e civilistica (di norma 10 anni).
               </p>
               <p className={paragraph}>
                 Il conferimento dei dati nel modulo contatti è facoltativo, ma i campi obbligatori sono necessari per poterti rispondere.
